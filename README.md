@@ -1,6 +1,8 @@
 # QuboVerde
 
-<img width="769" alt="demo" src="https://user-images.githubusercontent.com/21150483/117097742-dea90e00-ad42-11eb-84b4-bb2b26162ce4.png">
+## [Link a Sprint 1](https://drive.google.com/drive/folders/1Bvg1bAdSscnmhozmx9_QSjeMqKKybhnR?usp=sharing)
+
+![0513_Quboverde_CS6_Detalle Producto](https://user-images.githubusercontent.com/83041257/118205825-a1760780-b437-11eb-9505-879eb5731c87.jpg)
 
 __QuboVerde__ es el marketplace de plantas de interior y exterior para todos los que les encantaría tener plantas pero no se animan a ir a un vivero.
 
