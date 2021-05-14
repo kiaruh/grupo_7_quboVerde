@@ -31,7 +31,7 @@ El marketplace de __QuboVerde__ se diferenciará de otros similares por las sigu
    * Login last.
      Se optimizará el sitio para que el usuario pueda recorrer y seleccionar los productos para la compra sin estar previamente logueado, y en todo caso que la instancia del login sea el ultimo paso necesario.
 
-## Sitios de refetencia:
+## Sitios de referencia:
 
 * [plants](https://www.plants.com/c/best-selling-plants): Buen manejo de la cantidad de información en cada ítem.
 
@@ -58,7 +58,7 @@ https://drive.google.com/drive/folders/1Bvg1bAdSscnmhozmx9_QSjeMqKKybhnR?usp=sha
 hi-res (mockup)
 https://github.com/kiaruh/grupo_7_quboVerde/blob/main/recursos_g7/editables/0513_Quboverde_CS6.pdf
 
-low-res (analogicos)
+low-res (analógicos)
 https://github.com/kiaruh/grupo_7_quboVerde/tree/main/recursos_g7/Wireframes_LowFi
 
 ## Rutas a Vistas:
