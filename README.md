@@ -1,10 +1,12 @@
 # QuboVerde
 
-<img width="769" alt="demo" src="https://user-images.githubusercontent.com/21150483/117097742-dea90e00-ad42-11eb-84b4-bb2b26162ce4.png">
+## [Link a Sprint 1](https://drive.google.com/drive/folders/1Bvg1bAdSscnmhozmx9_QSjeMqKKybhnR?usp=sharing)
 
-__QuboVerde__ es el marketplace de plantas de interior y exterior para todos los que les encantaría tener plantas en su balcón, pero no se animan a ir a un vivero.
+![0513_Quboverde_CS6_Detalle Producto](https://user-images.githubusercontent.com/83041257/118205825-a1760780-b437-11eb-9505-879eb5731c87.jpg)
 
-Nuestro publico objetivo son habitantes de núcleos urbanos consolidados de entre 16 a 99 años, que por su experiencia viviendo en ciudades no cuentan con conocimiento específico de plantas -desde especies hasta formas de cuidado- .Los usuarios cuentan en sus viviendas con espacio limitado y con características particulares (limitaciones en altura, en asoleamiento, en capacidad de mantenimiento).
+__QuboVerde__ es el marketplace de plantas de interior y exterior para todos los que les encantaría tener plantas pero no se animan a ir a un vivero.
+
+Nuestro público objetivo son habitantes de núcleos urbanos consolidados, que por su experiencia viviendo en ciudades no cuentan con conocimiento específico de plantas -desde especies hasta formas de cuidado-. Los usuarios cuentan en sus viviendas con espacio limitado y con características particulares (limitaciones en altura, en asoleamiento, en capacidad de mantenimiento).
 
 Estos usuarios, que particularmente en la actualidad, resuelven una gran cantidad de tareas desde sus viviendas por el cambio de paradigma generado por la pandemia del COVID-19, en busca de nuevas actividades recreativas se interesan por la jardinería. Sin embargo, son pocos lo marketplaces especializados en plantas. Y los existentes suelen proveer a clientes con grandes espacios disponibles, profesionales en la materia o con conocimientos previos, por lo tanto no brindan la información suficiente sobre el cuidado de especies, ni sobre el tamaño/volumen que tendrán en el futuro. 
 
@@ -42,8 +44,12 @@ El marketplace de __QuboVerde__ se diferenciará de otros similares por las sigu
 * [greeneryncy](https://greenerynyc.com/): User centered: Todas las imágenes del catálogo hacen referencia a la escala humana ya sea con una mano (cuando son minis) o con una persona al lado de la planta.
 
 ## Paleta de colores en Hex:
+#ffffff, #f6f2ed, #bb7f66, #f6ece9, #bac9c0, #51505d
 
 ## Font:
+* Archivo
+* Absolut
+* Gilmer
 
 ## Rutas a Vistas:
 
