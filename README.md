@@ -51,6 +51,16 @@ El marketplace de __QuboVerde__ se diferenciará de otros similares por las sigu
 * Absolut
 * Gilmer
 
+## Entregables
+https://drive.google.com/drive/folders/1Bvg1bAdSscnmhozmx9_QSjeMqKKybhnR?usp=sharing
+
+## Link a Wireframes 
+hi-res (mockup)
+https://github.com/kiaruh/grupo_7_quboVerde/blob/main/recursos_g7/editables/0513_Quboverde_CS6.pdf
+
+low-res (analogicos)
+https://github.com/kiaruh/grupo_7_quboVerde/tree/main/recursos_g7/Wireframes_LowFi
+
 ## Rutas a Vistas:
 
 * Home:'/'
