@@ -61,6 +61,9 @@ https://github.com/kiaruh/grupo_7_quboVerde/blob/main/recursos_g7/editables/0513
 low-res (analógicos)
 https://github.com/kiaruh/grupo_7_quboVerde/tree/main/recursos_g7/Wireframes_LowFi
 
+## Tablero (trello)
+https://trello.com/b/gVOnfqix/grupo-7
+
 ## Rutas a Vistas:
 
 * Home:'/'
