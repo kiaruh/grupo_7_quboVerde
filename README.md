@@ -82,3 +82,5 @@ https://github.com/kiaruh/grupo_7_quboVerde/tree/main/recursos_g7/Wireframes_Low
 * Formulario de edicion de usuario: '/user/edit/:id'
 
 * Perfil de usuario: '/user/profile/:id'
+
+*-
