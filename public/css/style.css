@@ -1,0 +1,275 @@
+/* no encontre la Gilmer en google fonts, asi que busque una similar */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+.main-header{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    top: 0px;
+
+    padding: 4px;
+
+    background-color:#F4E7DE;
+
+    width: 100vw;
+    height: 40px;
+}
+
+.burger{
+   width: 25px;
+   padding: 2px;
+}
+
+.burger img{
+    width: 100%;
+}
+
+.navbar-menu{
+    display: none; 
+    position: absolute;
+    top: 0px;
+    width: 80%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 100;
+}
+
+.navbar-menu li{
+    list-style: none;
+    padding: 4px;
+    margin: 0 5px;
+
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.header-logo{
+    border: none;
+    position: relative;
+}
+
+.header-logo img{
+    height: 40px;
+  /* width: 100%; */
+  color: #323231;
+}
+
+.icon-navbar{
+    position: relative;
+    width: 25px;
+    padding: 2px;
+    margin-right: 2px;
+}
+
+.icon-navbar img{
+    width: 20px;
+    /* valor anterior: 100% */
+}
+
+.icons{
+    display: none;
+}
+
+.search-bar{
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    width: 100vw;
+
+    padding: 5px;
+}
+
+.search-bar-container{
+    position: relative;
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    height: 30px;
+    margin: auto;
+}
+
+.search-bar-container input{
+    border: none;
+    margin-left: 10px;
+    padding: 2px;
+    width: 75%;
+
+}
+
+.search-bar-container button{
+    border: none;
+    margin-right: 10px;
+    background-color: #fff;
+    border: none;
+    padding: 2px;
+
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-container img{
+   width: 20px;
+}
+
+.main{
+    margin-top: 100px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+.footer{
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    width: 100vw;
+    background-color: #CB6565;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    line-height: 0.2em;
+}
+
+.footer section{
+    padding: 10px;
+}
+
+.footer h2{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.footer h3{
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.footer-logo{
+    display: none;
+}
+
+
+
+
+/* desktop-tablet  - lo cambie de 361 al tamaño mas conveniente */
+@media (min-width: 480px) {
+    /* menu */
+    .burger{
+        display: none;
+    }
+
+    .navbar-menu{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+
+        position: relative;
+
+        background-color: #F4E7DE;
+        height: auto;
+    }
+
+
+    .header-logo{
+        order: -1;
+        width: 25%;
+
+        /* agregue el width para centrar */
+        
+    }
+
+    .header-logo img{
+        height: 40px;
+        margin-left: 20px;
+    }
+
+    .search-bar{
+        display: none;
+    }
+
+    .icon-navbar{
+        /* width:fit-content; */
+        width: 25%;
+
+        position: relative;
+        padding: 4;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
+
+    .icon-navbar img{
+        padding: 1px;
+        margin-left: 5px;
+    }
+
+    .icons{
+        display: block;
+    }
+
+    /*main */
+    .main{
+        width: 50vw;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 40px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+
+    /* footer */
+    .footer{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    
+        line-height: 0.2em;
+    }
+
+    .footer-logo{
+        display: block;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        width: 25%;
+    }
+
+    .footer-logo img{
+        height: 40px;
+        margin-left: 10px;
+        filter:brightness(100);
+    }
+
+    .footer-social{
+        width: 25%;
+    }
+
+}
