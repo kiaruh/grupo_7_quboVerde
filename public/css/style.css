@@ -10,6 +10,7 @@
 body {
     margin: 0px;
 }
+ /* header */
 
 .main-header{
     display: flex;
@@ -36,6 +37,8 @@ body {
 .burger img{
     width: 100%;
 }
+
+/* menu para version movil oculto */
 
 .navbar-menu{
     display: none; 
@@ -131,12 +134,15 @@ body {
    width: 20px;
 }
 
+/* main */
+
 .main{
     margin-top: 100px;
     margin-left: 8px;
     margin-right: 8px;
 }
 
+/* footer */
 
 .footer{
     position: relative;
@@ -175,8 +181,10 @@ body {
 
 
 /* desktop-tablet  - lo cambie de 361 al tamaño mas conveniente */
+
 @media (min-width: 480px) {
-    /* menu */
+
+    /* header */
     .burger{
         display: none;
     }
@@ -196,8 +204,7 @@ body {
     .header-logo{
         order: -1;
         width: 25%;
-
-        /* agregue el width para centrar */
+    /* agregue el width para centrar */
         
     }
 
