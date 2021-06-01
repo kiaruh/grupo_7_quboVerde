@@ -1,0 +1,107 @@
+body {
+    background: rgb(238, 238, 238);
+  }
+  
+  .main {
+    align-content: center;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    max-width: 650px;
+    box-shadow: 0px 0px 10px #646464;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+  main input,.btn {
+    width: 75%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; 
+  }
+
+  .container-main {
+      padding: auto;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+  }
+
+  main ::-webkit-input-placeholder { 
+    color: rgb(209, 207, 207);
+    font-style: italic;
+  }
+  .main-input {
+    width: 75%;
+    padding: 12px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: whitesmoke;
+    border-radius: 20px;
+  }
+
+  hr {
+    align-self: center;
+    width: 75%;
+    border: 2px solid #ebebeb;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .btn-main {
+    background-color: #034b9e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+  }
+.btn:hover {
+    opacity:1;
+  }
+
+  .fb {
+    background-color: #3B5998;
+    color: white;
+  }
+  
+  .twitter {
+    background-color: #55ACEE;
+    color: white;
+  }
+  
+  .google {
+    background-color: #dd4b39;
+    color: white;
+  }
+  .login-btn {
+      margin-bottom: 4%;
+  }
+ 
+  .login-normal {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+      align-content: center;
+  }
+ 
+ .redes-sociales ,h1 {
+      text-align: center;
+
+  }
+
+  .footer {
+    background: rgb(238, 238, 238);
+  }
+
+
+  /* media */
+
