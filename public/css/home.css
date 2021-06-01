@@ -5,13 +5,12 @@
 }
 
 .prod{
-    display: block;
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 85%;
     margin: 10px auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 15px;
 
     border-radius: 10px;
 
@@ -23,9 +22,17 @@
 }
 
 .prod:hover > .prod-box .prod-action{
-    height: 40px;
-    padding: 5px;
+    /* height: 40px;
+    padding: 5px; */
     opacity: 1;
+}
+
+.prod-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    max-height:fit-content;
 }
 
 .prod-img img{
@@ -34,11 +41,15 @@
 }
 
 .prod-box{
+    position: relative;
+    top: 0px;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
     transition: all 0.3s linear;
+
+    height: 100%;
 }
 
 /* 
@@ -80,6 +91,7 @@
 }
 
 .prod-action{
+        
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -87,13 +99,16 @@
     align-items: center;
 
     width: 100%;
-    height: 0px;
+    /* height: 0px; */
+    height: 32px;
     padding: 0px;
     opacity: 0;
 
     transition: all 100ms linear;
 
     overflow: hidden;
+
+    align-self: flex-end;
 
 }
 
@@ -128,6 +143,14 @@
 
 @media (min-width: 480px) {
 
+   /* .caja-centro{
+       height: calc(100% + 60px);
+       border: 2px solid blue;
+    } 
+    esta va a ser una caja con altura fija, que se va a usar para que se pueda agrandar la parte de abajo bien
+    es como reemplazo de poner oootra caja mas en cada seccion con algo similar
+    */
+
     .prod-container{
         flex-direction: row;
         justify-content: space-between;
@@ -138,13 +161,12 @@
     }
 
     .prod{
-        max-width: 20%;
-        min-width: 150px;
+        max-width: 30%;
+        min-width: 180px;
         max-height:fit-content;
 
         margin-top: 0px;
         margin-left: 5px;
         margin-right: 5px;
-
     }
 }

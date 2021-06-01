@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 
-    <title>quboverde</title>
+    <title>quboverde Ingresar</title>
 </head>
 <body>
     <header>
@@ -26,16 +27,16 @@
             <!-- barra de navegacion-->
             <article class="navbar-menu">
             
-                <li>Seccion 1</li>
-                <li>Seccion 2</li>
-                <li>Seccion 3</li>
+                <li> <a href="">Seccion 1</a> </li>
+                <li> <a href="/login">login</a></li>
+                <li> <a href="/register">register</a></li>
             
             </article>
         </navbar>
 
         <!-- este article es solo el logo, para tenerlo mas controlado en caja-->
         <article class="header-logo">
-            <img src="/img/quboverde_logo.svg" alt="">
+            <a href="/"><img src="/img/quboverde_logo.svg" alt=""></a>
         </article>
 
         <!-- este article todo el carrito, que en la version web tendria mas contenidos-->
@@ -63,7 +64,41 @@
 
     </header>
 
-    <main class="main">
+    <main class="main-login">
+
+        <form class="form" action="#" style="border:1px solid #ccc">
+            <div class="container-main">
+                <h1>Ingresa a tu cuenta</h1>
+                  
+                <hr>
+                <div class="redes-sociales">
+                   <a href="#" class="fb btn">
+                     <i class="fa fa-facebook fa-fw"></i> Facebook
+                    </a>
+                   <a href="#" class="twitter btn">
+                     <i class="fa fa-twitter fa-fw"></i> Twitter
+                   </a>
+                   <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                     </i> Google+
+                   </a>
+                 </div>
+    
+                 <hr>
+    
+                <div class="login-normal">
+    
+                    <div class="labels"><label for="usuario">Usuario:</label></div>
+                
+                  <input class="main-input" type="text" id="usuario" placeholder="Usarioimaginario1234" name="user" minlength="2" required> 
+                  <div><label for="psw">Contraseña:</label></div>
+                  <input class="main-input"  type="password" id="psw" placeholder="Contraseña" name="psw" required>
+                  <a class="olvide-psw" href="#">Me olvidé la Contraseña</a>
+                  <button type="submit" class="login-btn btn-main btn" >Ingresar</button> 
+                </div>
+    
+                  
+            </div> 
+            </form>
     
     </main>
 
