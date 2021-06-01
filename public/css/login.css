@@ -2,7 +2,7 @@ body {
     background: rgb(238, 238, 238);
   }
   
-  .main {
+  .main-login {
     align-content: center;
     margin: auto;
     margin-top: 2%;
@@ -98,10 +98,7 @@ body {
 
   }
 
-  .footer {
-    background: rgb(238, 238, 238);
-  }
-
+ 
 
   /* media */
 
