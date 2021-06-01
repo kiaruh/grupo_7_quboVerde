@@ -1,0 +1,26 @@
+{
+  "name": "grupo_7_quboVerde",
+  "version": "1.0.0",
+  "description": "## [Link a Sprint 1](https://drive.google.com/drive/folders/1Bvg1bAdSscnmhozmx9_QSjeMqKKybhnR?usp=sharing)",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js -e css,html,js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiaruh/grupo_7_quboVerde.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kiaruh/grupo_7_quboVerde/issues"
+  },
+  "homepage": "https://github.com/kiaruh/grupo_7_quboVerde#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^16.1.0",
+    "nodemon": "^2.0.7"
+  }
+}

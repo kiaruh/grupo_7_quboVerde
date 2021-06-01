@@ -1,8 +1,13 @@
 const path = require('path');
+const fs =require('fs')
 const express = require('express');
 const app = express();
+const { send } = require('process');
 
-app.listen(3000, ()=> console.log("conectado a http://localhost:3000"));
+
+app.set('port',process.env.PORT || 3000) //establece el puerto que nos da el server o el 3000
+
+app.listen(app.get('port'),() => console.log('conectado a http://localhost:' + app.get('port')));//levanta la pagina
 
 app.use(express.static (path.resolve(__dirname, "./public")));
 
@@ -11,4 +16,13 @@ app.get("/", (req, res) => {
     // el join agrega las / entre cada parametro que le metamos
     res.sendFile(path.join(__dirname, "view", "home.html"));
 });
+
+app.get("/register", (req, res) => {
+    res.sendFile(path.join(__dirname, "view", "register.html")); // get register
+});
+
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname, "view", "login.html")); // get login
+});
+
 
