@@ -22,10 +22,15 @@
 }
 
 .product-desc{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+
     width: 50%;
     height: 60%;
     border: 1px solid black;
+
+    overflow: hidden;
 }
 
 .desc-care{
