@@ -1,17 +1,16 @@
 .product{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
-    direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    /* justify-content: space-between;
+    align-items: center; */
 }
 
 .product-img{
     display: block;
-    width: 50%;
-    height: 60%;
+    width: 100%;
     border: 1px solid black;
 
     overflow: hidden;
@@ -26,8 +25,7 @@
     flex-direction: column;
     flex-wrap:nowrap;
 
-    width: 50%;
-    height: 60%;
+    width: 100%;
     border: 1px solid black;
 
     overflow: hidden;
@@ -61,15 +59,13 @@
 
 .product-care{
     display: block;
-    width: 50%;
-    height: 30%;
+    width: 100%;
     border: 1px solid black;
 }
 
 .product-scale{
     display: block;
-    width: 50%;
-    height: 30%;
+    width: 100%;
     border: 1px solid black;
 }
 
@@ -78,4 +74,49 @@
     height: 30%;
     background-color: coral;
 
+}
+
+@media (min-width: 480px) {
+    .product{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-img{
+        display: block;
+        width: 50%;
+        height: 60%;
+        border: 1px solid black;
+    
+        overflow: hidden;
+    }
+
+    .product-desc{
+        display: flex;
+        flex-direction: column;
+        flex-wrap:nowrap;
+    
+        width: 50%;
+        height: 60%;
+        border: 1px solid black;
+    
+        overflow: hidden;
+    }
+
+
+    .product-care{
+        display: block;
+        width: 50%;
+        height: 30%;
+        border: 1px solid black;
+    }
+    
+    .product-scale{
+        display: block;
+        width: 50%;
+        height: 30%;
+        border: 1px solid black;
+    }
 }
