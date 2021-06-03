@@ -1,93 +1,3 @@
-/* prueba range */
-
-input[type=range] {
-    height: 26px;
-    -webkit-appearance: none;
-    margin: 10px 0;
-    width: 100%;
-  }
-  input[type=range]:focus {
-    outline: none;
-  }
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 15px;
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #FFFFFF;
-    background: #EDEDED;
-    border-radius: 25px;
-    border: 0px solid #FFFFFF;
-  }
-  input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #65001C;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -2.5px;
-  }
-  input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #EDEDED;
-  }
-  input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 15px;
-    cursor: pointer;
-    box-shadow: 0px 0px 0px #FFFFFF;
-    background: #EDEDED;
-    border-radius: 25px;
-    border: 0px solid #FFFFFF;
-  }
-  input[type=range]::-moz-range-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #65001C;
-    cursor: pointer;
-  }
-  input[type=range]::-ms-track {
-    width: 100%;
-    height: 15px;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-  input[type=range]::-ms-fill-lower {
-    background: #EDEDED;
-    border: 0px solid #FFFFFF;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #FFFFFF;
-  }
-  input[type=range]::-ms-fill-upper {
-    background: #EDEDED;
-    border: 0px solid #FFFFFF;
-    border-radius: 50px;
-    box-shadow: 0px 0px 0px #FFFFFF;
-  }
-  input[type=range]::-ms-thumb {
-    margin-top: 1px;
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: #65001C;
-    cursor: pointer;
-  }
-  input[type=range]:focus::-ms-fill-lower {
-    background: #EDEDED;
-  }
-  input[type=range]:focus::-ms-fill-upper {
-    background: #EDEDED;
-  }
-
-/* fin prueba */
 .product{
     width: 100%;
     display: flex;
@@ -288,30 +198,219 @@ input[type=range] {
 }
 
 .product-care{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
     width: 100%;
-    border: 1px solid black;
-}
 
+    padding: 10px;
+    
+}
 
 
 .care-bar{
     width: 100%;
+    padding: 5px;
 
+    display: flex;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar-img{
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.bar-img img{
+    width: 100%;
+}
+
+/* probando idea con check */
+/* RIEGO */
+.care-bar-r label {
+    display: block;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .care-bar-r label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .care-bar-r label div {
+    height: 10px;
+    width: 15vw;
+    border-radius: 4px;
+    background-color: #acc1c67a;
+  }
+  
+  .care-bar-r label input:checked ~ div {
+    background-color: #ACC1C6;
+  }
+
+
+/* LUZ */
+.care-bar-l label {
+    display: block;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .care-bar-l label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .care-bar-l label div {
+    height: 10px;
+    width: 15vw;
+    border-radius: 4px;
+    background-color:#F6ECE9;
+  }
+  
+  .care-bar-l label input:checked ~ div {
+    background-color: #E8CFCA;
+  }
+
+  /* MANTENIMIENTO*/
+  .care-bar-m label {
+    display: block;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .care-bar-m label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .care-bar-m label div {
+    height: 10px;
+    width: 15vw;
+    border-radius: 4px;
+    background-color: #bac9c079;
+  }
+  
+  .care-bar-m label input:checked ~ div {
+    background-color: #BAC9C0;
+  }
+
+/* fin prueba check*/
+
+.care-riego h2{
+    margin: 0px;
+    padding: 0 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .product-scale{
+    position: relative;
     display: block;
     width: 100%;
     border: 1px solid black;
+    padding: 5px;
+    height: 30vh;
+}
+
+.line1{
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 0px;
+    width: 100%;
+    border-top: 1px dashed black;
+}
+
+.line2{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    border-top: 1px dashed black;
+}
+
+.line3{
+    display: block;
+    position: absolute;
+    top: 75%;
+    left: 0px;
+    width: 100%;
+    border-top: 1px dashed black;
+}
+
+.line-base{
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+.product-scale-centered{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-around;
+
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 5px;
+
+}
+
+.product-scale-img img{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: auto;
+
 }
 
 .other-products{
     width: 100%;
     height: 30%;
     background-color: coral;
-
 }
+
+
 
 @media (min-width: 480px) {
     .product{
@@ -344,11 +443,26 @@ input[type=range] {
 
 
     .product-care{
-        display: block;
         width: 50%;
         height: 30%;
         border: 1px solid black;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
+
+    .care-bar-r label div {
+        width: 5vw;
+      }
+    
+    .care-bar-l label div {
+        width: 5vw;
+      }
+    
+    .care-bar-m label div {
+        width: 5vw;
+      }
     
     .product-scale{
         display: block;
