@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+  }
+  .main-register {
+    position: relative;
+    align-content: center ;
+  }
+  
+  .register-fondo {
+    margin-top: 80px;
+  }
+  
+  .header-banner-mobile {
+    opacity: 0.65;
+  
+  }
+  
+  .form-register{
+    width: 100%;
+    position: absolute;
+    border: none;
+    top: 8%;
+  }
+  .titulo-register{
+    text-align: center;
+    margin-bottom: 6%;
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 1.8s ease forwards;
+  }
+  
+  .register {
+    margin: auto;
+    width: 80vw;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-radius: 25px;
+  }
+  .register-input, .register-btn {
+    background: rgba(136, 136, 136, 0.55);
+    padding-left: 7%;
+    color: #FDFCFD;
+    border-radius: 50px;
+    height: 35px;
+    border: none;
+    outline: none;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .nacimiento {
+      border: none;
+      color: #FDFCFD;
+      width: 118px;
+      font-size: 14px;
+      margin-left: 4%;
+      background: transparent;
+  }
+  fieldset ::placeholder{
+    color: #FDFCFD;
+  }
+  .condiciones {
+    border: none;
+    outline: none;
+  }
+  .condiciones:hover{
+      text-decoration: underline;
+  }
+
+  .register-btn{
+    color: whitesmoke;
+    height: 35px;
+    background: #CB6565;
+    border-radius: 50px;
+  }
+  .register-btn:hover {
+    background: #ff8282;
+    cursor: pointer;
+  }
+  
+  .side-banner {
+    display: none;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+  }
+  
+  
+  @media (min-width: 480px) {
+    .register-fondo {
+      margin-top: 40px;
+      opacity: 0.58;
+    }
+    .form-register {
+      top: 5%;
+    }
+    .titulo-register {
+      margin-bottom: 10%;
+    }
+    .register {
+      width: 60vw;
+    }
+  
+  
+  }
+  
+  @media (min-width: 1000px){
+    .header-banner-desktop img{
+      display: none;
+    }
+    main{
+      display: block;
+      position: relative;
+      background: #f5f4f4;
+      height: 80vh;
+    }
+    .side-banner img{
+      opacity: 0.8;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .titulo-register{
+      margin-bottom: 8%;
+    }
+    .side-banner{
+      display: inline;
+      height: 100%;
+      position: absolute;
+      right: 0px;
+      z-index: 2;
+    }
+    .form-register {
+      margin:auto;
+      height: 70vh;
+      width: 64vw;
+      display: block;
+    }
+    .register {
+      width: 46%;
+    }
+    .register-input, .condiciones {
+      margin-top: 11px;
+      margin-bottom: 11px;
+    }
+  
+    .register-input {
+      background: transparent;
+      text-align: center;
+      color: black;
+      padding: 0;
+      border-radius:0;
+      height: 35px;
+      border-bottom: solid 1px black;
+    }
+    .register-btn{
+      border-radius: 5px;
+    }
+    .register-input{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    fieldset ::placeholder{
+      color: black;
+    }
+    .nacimiento {
+        color: black;
+    }
+  
+   
+  
+    
+  
+  
+  
+  
+  }
