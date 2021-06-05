@@ -38,7 +38,22 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+
+    /* lineas para el efecto*/
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUp 1.2s ease forwards;
+    /* lineas para el efecto - FIN*/
 }
+/* agregue el mismo efectito que tiene registro en el titulo */
+
+@keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+  }
 
 .desc-name h2{
     font-family: 'Questrial', sans-serif;
@@ -403,9 +418,89 @@
 
 .other-products{
     width: 100%;
-    height: 30%;
-    background-color: coral;
+    background-color: #F6ECE9;
+    margin: 15px auto;
+
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items:stretch;
 }
+
+.other-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.other-bar{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.other-bar-prod{
+    width: 12vw;
+    height: 100%;
+    background-color: white;
+
+    padding: 10px;
+}
+
+.other-content{
+    margin-top: 5px;
+}
+
+.other-bar-prod h2{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.other-bar-prod h3{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.other-bar-prod h4{
+    margin: 5px 0;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.other-bar-prod picture{
+    width: 100%;
+    position: relative;
+}
+
+.other-bar-img{
+    width: 100%;
+}
+
+.other-bar-fav{
+    width: 1.5rem;
+    padding: 3px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+
+
 
 
 
