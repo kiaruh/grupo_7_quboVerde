@@ -78,6 +78,10 @@ fieldset ::placeholder{
   text-decoration: underline;
 }
 
+.side-banner {
+  display: none;
+}
+
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -99,13 +103,51 @@ fieldset ::placeholder{
     margin-bottom: 20%;
   }
   .login {
-    width: 70vw;
+    width: 60vw;
   }
 
 
 }
 
-@media (min-width: 720px){
+@media (min-width: 1000px){
+  .header-banner-desktop img{
+    display: none;
+  }
+  main{
+    display: block;
+    position: relative;
+    background: #f5f4f4;
+    height: 80vh;
+  }
+  .side-banner img{
+    max-width: 100vw;
+    max-height: 100%;
+  }
+  .titulo-login{
+    margin-bottom: 18%;
+  }
+  .side-banner{
+    display: inline;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    z-index: 2;
+  }
+  .form-login {
+    margin:auto;
+    height: 70vh;
+    width: 64vw;
+    display: block;
+  }
+  .login {
+
+    width: 46%;
+  }
+
+ 
+
+  
+
 
 
 
