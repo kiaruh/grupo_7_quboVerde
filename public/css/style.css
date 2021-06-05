@@ -61,6 +61,22 @@ body {
     white-space: nowrap;
 }
 
+.navbar-menu a{
+    font-style:normal;
+    text-decoration: none;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+
+    border-bottom: 0.5px solid rgba(0,0,0,0);
+
+    transition: all 150ms linear;
+}
+
+.navbar-menu a:hover{
+    border-bottom: 0.5px solid black;
+}
+
 .header-logo{
     border: none;
     position: relative;
@@ -76,12 +92,23 @@ body {
     position: relative;
     width: 25px;
     padding: 2px;
-    margin-right: 2px;
+    margin-right: 5px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .icon-navbar img{
     width: 20px;
+    transition: all 250ms linear;
     /* valor anterior: 100% */
+}
+
+.icon-navbar a:hover > img{
+    filter:opacity(0.5);
 }
 
 .icons{
