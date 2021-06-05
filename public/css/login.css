@@ -7,41 +7,106 @@
 }
 
 .login-fondo {
-margin-top: 12%;
-
+  margin-top: 80px;
 }
 
 .header-banner-mobile {
-  opacity: 0.4;
+  opacity: 0.65;
+
 }
 
 .form-login {
   width: 100%;
   position: absolute;
   border: none;
-  z-index: 100;
-  top: 20%;
+  top: 15%;
 }
 .titulo-login {
   text-align: center;
+  margin-bottom: 35%;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 1.5s ease forwards;
 }
 
 .login {
-  width: 60vw;
-  height: 22vh;
+  margin: auto;
+  width: 80vw;
+  border: none;
   display: flex;
-
   flex-direction: column;
   flex-wrap: nowrap;
-  border: solid 0.5px black;
   border-radius: 25px;
 }
 .login-input, .login-btn {
+  background: rgba(136, 136, 136, 0.55);
+  padding-left: 7%;
+  color: #FDFCFD;
+  border-radius: 50px;
+  height: 35px;
   border: none;
   outline: none;
-  background: none;
+  
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+fieldset ::placeholder{
+  color: #FDFCFD;
+}
+.recordar {
+  border: none;
+  outline: none;
 }
 .login-btn{
-  background: #F4E7DE;
+  color: whitesmoke;
+  height: 35px;
+  background: #CB6565;
   border-radius: 50px;
+}
+.login-btn:hover {
+  background: #ff8282;
+  cursor: pointer;
+}
+.olvide-psw{
+  text-decoration: none;
+  color: black;
+}
+
+.olvide-psw:hover {
+  color: rgb(66, 55, 55);
+  text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+
+@media (min-width: 480px) {
+  .login-fondo {
+    margin-top: 40px;
+    opacity: 0.58;
+  }
+  .form-login {
+    top: 5%;
+  }
+  .titulo-login {
+    margin-bottom: 20%;
+  }
+  .login {
+    width: 70vw;
+  }
+
+
+}
+
+@media (min-width: 720px){
+
+
+
 }

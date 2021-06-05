@@ -4,7 +4,7 @@
   "description": "## [Link a Sprint 1](https://drive.google.com/drive/folders/1Bvg1bAdSscnmhozmx9_QSjeMqKKybhnR?usp=sharing)",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js -e css,html,js",
+    "test": "nodemon app.js -e .css,.html,.js,mjs.json",
     "start": "node app.js"
   },
   "repository": {

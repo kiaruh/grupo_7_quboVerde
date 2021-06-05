@@ -62,7 +62,7 @@
     </header>
 
     <main class="main-login">
-        <section class="header-banner login-fondo">
+        <section class="login-fondo">
             <picture class="header-banner-mobile"><img src="/img/banner-mobile.jpg" alt=""></picture>
             <picture class="header-banner-desktop"><img src="/img/banner-desktop.jpg" alt=""></picture>
         </section>
@@ -73,18 +73,24 @@
                   
 
                 <fieldset class="login">
-    
-                    <div class="labels"><label for="usuario">Usuario:</label></div>
-                
-                  <input class="login-input" type="text" id="usuario" placeholder="Usarioimaginario1234" name="user" minlength="2" required> 
-                  <div><label for="psw">Contraseña:</label></div>
+                                  
+                  <input class="login-input" type="text" id="usuario" placeholder="Usuario" name="user" minlength="2" required> 
                   <input class="login-input"  type="password" id="psw" placeholder="Contraseña" name="psw" required>
-                  <a class="olvide-psw" href="#">Me olvidé la Contraseña</a>
+
+                  <fieldset class="recordar">
+                    <input type="checkbox" id="check" class="check" checked>
+                    <label for="check">Recordar mi sesion</label> 
+                  </fieldset>
+                  
+            
                   <button type="submit" class="login-btn btn-main btn" >Ingresar</button> 
+                  
+                  <hr>
+
+                  <a class="olvide-psw" href="#">Me olvidé la Contraseña</a>
                 </fieldset>
     
-            </form>
-    
+            </form> 
     </main>
 
     <footer class="footer">
