@@ -98,11 +98,11 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .icon-navbar img{
-    width: 20px;
+    height: 20px;
     transition: all 250ms linear;
     /* valor anterior: 100% */
 }
