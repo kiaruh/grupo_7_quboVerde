@@ -524,7 +524,7 @@ display: none;
         justify-content: space-between;
         align-items: center;
 
-        margin-top: 100px;
+        margin-top: 10px;
     }
 
     .product-img{
@@ -602,9 +602,14 @@ display: none;
     display: block;
 }
 
-
-
+    .product{
+       margin-top: 60px;
+    }
 }
+
+
+
+
 
 @media (max-width: 480px) {
     .header-banner{
@@ -613,6 +618,11 @@ display: none;
 .header-banner-desktop{
     display: none;
 }
+
+.product{
+    margin-top: 60px;
+ }
+
 }
 
 @media (max-width: 720px){
