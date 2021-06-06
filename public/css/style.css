@@ -405,7 +405,7 @@ body {
     
         overflow: hidden;
     }
-/* agregado por mi */
+/* lo de aca arriba estaba en el otro mediaquery*/
     .main{
         width: 70vw;
         margin-left: 12.5%;
