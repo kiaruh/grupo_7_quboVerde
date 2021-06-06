@@ -17,15 +17,15 @@
         <navbar>
             <!-- boton del menu hamburguesa-->
             <article class="burger">
-                <img src="/img/burger-menu.svg" alt="">
+                <a href="#" onclick="burgerMenuAction()"><img src="/img/burger-menu.svg" alt=""></a>
             </article>
 
             <!-- barra de navegacion-->
-            <article class="navbar-menu">
+            <article class="navbar-menu" id="IDburgerMenu">
             
-                <li>Seccion 1</li>
-                <li>Seccion 2</li>
-                <li>Seccion 3</li>
+                <li> <a href="">Seccion 1</a> </li>
+                <li> <a href="/login">login</a></li>
+                <li> <a href="/register">register</a></li>
             
             </article>
         </navbar>
@@ -186,5 +186,7 @@
 
     </footer>
 
+
+<script src="/js/script.js"></script>
 </body>
 </html>
