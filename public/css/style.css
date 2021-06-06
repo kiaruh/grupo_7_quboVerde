@@ -45,10 +45,10 @@ body {
 .navbar-menu{
     display: none; 
     position: absolute;
-    top: 0px;
-    width: 80%;
+    top: 30px; /* antes estaba en 0px  y le puse left 0*/
+    width: 180px;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #F4E7DE;
     z-index: 100;
 }
 
@@ -254,17 +254,101 @@ body {
 @media (min-width: 480px) {
 
     /* header */
-    .burger{
+    /* .burger{
         display: none;
     }
 
     .navbar-menu{
+        top:0px;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
 
         position: relative;
 
+        background-color: #F4E7DE;
+        height: auto;
+    } */
+
+    .header-banner-desktop img{
+        display: block;
+        min-width: 100vw;
+        /* min-width:400px; */
+    }
+    
+    .header-banner-mobile img{
+        display: none; 
+    }
+
+    /*main */
+    .main{
+        width: 75vw;
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+        margin-top: 40px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+
+
+    /* footer */
+    .footer{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    
+        line-height: 0.2em;
+    }
+
+    .footer-logo{
+        display: block;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        width: 25%;
+    }
+
+    .footer-logo img{
+        height: 40px;
+        margin-left: 10px;
+        filter:brightness(100);
+    }
+
+    .footer-social{
+        width: 25%;
+    }
+
+}
+
+@media (min-width: 720px) {
+    .burger{
+        display: none;
+    }
+    .icons{
+        display: block;
+    }
+
+    .header-banner{
+        margin-top: 40px;
+        width: 100%;
+        max-height: 40vh;
+
+        position: relative;
+        top: 0px;
+        left: 0px;
+    
+        overflow: hidden;
+    }
+
+    .navbar-menu{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        top: 0px;
+        position: relative;
+        width: 80%;
         background-color: #F4E7DE;
         height: auto;
     }
@@ -321,61 +405,7 @@ body {
     
         overflow: hidden;
     }
-    
-    .header-banner-desktop img{
-        display: block;
-        min-width: 100vw;
-        /* min-width:400px; */
-    }
-    
-    .header-banner-mobile img{
-        display: none; 
-    }
-
-    /*main */
-    .main{
-        width: 75vw;
-        margin-left: 12.5%;
-        margin-right: 12.5%;
-        margin-top: 40px;
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-    }
-
-
-    /* footer */
-    .footer{
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    
-        line-height: 0.2em;
-    }
-
-    .footer-logo{
-        display: block;
-        margin-left: 0px;
-        margin-bottom: 0px;
-        width: 25%;
-    }
-
-    .footer-logo img{
-        height: 40px;
-        margin-left: 10px;
-        filter:brightness(100);
-    }
-
-    .footer-social{
-        width: 25%;
-    }
-
-}
-
-@media (min-width: 720px) {
-
+/* lo de aca arriba estaba en el otro mediaquery*/
     .main{
         width: 70vw;
         margin-left: 12.5%;
