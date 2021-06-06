@@ -270,25 +270,6 @@ body {
         height: auto;
     } */
 
-
-    
-
-    .icons{
-        display: block;
-    }
-
-    .header-banner{
-        margin-top: 40px;
-        width: 100%;
-        max-height: 40vh;
-
-        position: relative;
-        top: 0px;
-        left: 0px;
-    
-        overflow: hidden;
-    }
-    
     .header-banner-desktop img{
         display: block;
         min-width: 100vw;
@@ -344,6 +325,21 @@ body {
 @media (min-width: 720px) {
     .burger{
         display: none;
+    }
+    .icons{
+        display: block;
+    }
+
+    .header-banner{
+        margin-top: 40px;
+        width: 100%;
+        max-height: 40vh;
+
+        position: relative;
+        top: 0px;
+        left: 0px;
+    
+        overflow: hidden;
     }
 
     .navbar-menu{
