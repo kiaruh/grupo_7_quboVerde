@@ -45,7 +45,7 @@ body {
 .navbar-menu{
     display: none; 
     position: absolute;
-    top: 30px; /* antes estaba en 0px  y le puse left 0*/
+    top: 40px; /* antes estaba en 0px  y le puse left 0*/
     width: 180px;
     height: 100vh;
     background-color: #F4E7DE;
