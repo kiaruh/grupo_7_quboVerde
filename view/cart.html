@@ -24,9 +24,9 @@
             <!-- barra de navegacion-->
             <article class="navbar-menu" id="IDburgerMenu">
             
-                <li> <a href="">Seccion 1</a> </li>
-                <li> <a href="/login">login</a></li>
-                <li> <a href="/register">register</a></li>
+                <li> <a href="/product">Detalle de producto</a> </li>
+                <li> <a href="/login">Inicia sesión</a></li>
+                <li> <a href="/register">Crea tu cuenta</a></li>
             
             </article>
         </navbar>
@@ -69,6 +69,7 @@
                 <thead class="t-head">
                   <th scope="col" class="t-description"></th>
                   <th scope="col" class="t-quantity">Cantidad</th>
+                  <th scope="col" class="t-trash"></th>
                   <th scope="col" class="t-price">Precio</th>
                 </thead>
                 <tbody class="t-body">
@@ -84,6 +85,11 @@
                     </td>
                     <td class="t-quantity">
                         <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-trash">
+                        <button class="trash-icon" type="reset">
+                            <img src="/img/trash.svg" alt="">
+                        </button>
                     </td>
                     <td class="t-price"><h4 class="cart-price">$1.000</h4></td>
                   </tr>
@@ -101,6 +107,11 @@
                     <td class="t-quantity">
                         <input type="number" value="1" min="0" pattern="[0-9]*">
                     </td>
+                    <td class="t-trash">
+                        <button class="trash-icon" type="reset">
+                            <img src="/img/trash.svg" alt="">
+                        </button>
+                    </td>
                     <td class="t-price"><h4 class="cart-price">$1.800</h4></td>
                   </tr>
 
@@ -116,6 +127,11 @@
                     </td>
                     <td class="t-quantity">
                         <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-trash">
+                        <button class="trash-icon" type="reset">
+                            <img src="/img/trash.svg" alt="">
+                        </button>
                     </td>
                     <td class="t-price"><h4 class="cart-price">$700</h4></td>
                   </tr>
@@ -133,6 +149,11 @@
                     <td class="t-quantity">
                         <input type="number" value="1" min="0" pattern="[0-9]*">
                     </td>
+                    <td class="t-trash">
+                        <button class="trash-icon" type="reset">
+                            <img src="/img/trash.svg" alt="">
+                        </button>
+                    </td>
                     <td class="t-price"><h4 class="cart-price">$1000</h4></td>
                   </tr>
 
@@ -148,6 +169,11 @@
                     </td>
                     <td class="t-quantity">
                         <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-trash">
+                        <button class="trash-icon" type="reset">
+                            <img src="/img/trash.svg" alt="">
+                        </button>
                     </td>
                     <td class="t-price"><h4 class="cart-price">$300</h4></td>
                   </tr>
@@ -170,6 +196,7 @@
                          </article>
                       </td>
                       <td class="t-quantity">Total</td>
+                      <th class="t-trash"></th>
                       <td class="t-price">$4800</td>
                     </tr>
                   </tfoot>
@@ -200,10 +227,10 @@
 
          <section class="footer-section">
             <h2>seccion 1</h2>
-            <a href=""><h3>subseccion 1</h3></a>
-            <a href=""><h3>subseccion 2</h3></a>
-            <a href=""><h3>subseccion 3</h3></a>
-            <a href=""><h3>subseccion 4</h3></a>
+            <a href="/error"><h3>subseccion 1</h3></a>
+            <a href="/error"><h3>subseccion 2</h3></a>
+            <a href="/error"><h3>subseccion 3</h3></a>
+            <a href="/error"><h3>subseccion 4</h3></a>
          </section>
 
         <section class="footer-section">
