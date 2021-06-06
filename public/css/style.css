@@ -136,6 +136,8 @@ body {
     padding: 5px;
     height: 30px;
     margin: auto;
+
+    background-color: white;
 }
 
 .search-bar-container input{
