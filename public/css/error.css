@@ -48,15 +48,15 @@ section{
 
 
 h1{
-    font-size: 250px;
+    font-size: 100px;
     margin:0;
     color:#BB7F66;
 }
 
 h2{ 
-    margin-top: -30px;
     margin-bottom: 20px;
     color:#D3A394;
+    font-size: 20px;
 }
 
 button{
@@ -66,24 +66,25 @@ button{
 button:hover{
     background-color: #BAC9C0;
     border: solid #BAC9C0 2.5px;
-    color: black
+    color: black;
 }
 
 #error-top{
-    height: 27%;
+    width: 67%;
     position: absolute;
     top: -10%;
 }
 
 #error-left{
-    width: 35%;
+    width: 55%;
     position: absolute;
     left: 0;
     bottom:10%;
+    z-index: -9;
 }
 
 #error-topright{
-    width: 40%;
+    width: 50%;
     position: absolute;
     top: -10%;
     right: 0;
@@ -94,5 +95,45 @@ button:hover{
     position: absolute;
     bottom: 0;
     right: 10%;
-    z-index: -10;
+
+}
+
+
+/* --------------------------------- Media Querys --------------------------------- */
+
+@media (min-width: 600px) {
+    #error-top{
+        width: 47%;
+        position: absolute;
+        top: -10%;
+    } 
+
+    h1{
+        font-size: 250px;
+    }
+
+    h2{ 
+        margin-top: -30px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+    }
+ 
+    #error-topright{
+        width: 40%;
+        position: absolute;
+        top: -10%;
+        right: 0;
+    }
+
+    #error-left{
+        width: 35%;
+        position: absolute;
+        left: 0;
+        bottom:10%;
+        z-index: 0;
+    }
+
+    #error-bottom{
+        z-index: -10;
+    }
 }
