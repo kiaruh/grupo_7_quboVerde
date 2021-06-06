@@ -7,7 +7,7 @@
     /* justify-content: space-between;
     align-items: center; */
 
-    margin-top: 50px;
+    margin-top: 90px;
 }
 
 .product-img{
@@ -590,6 +590,10 @@ display: none;
     .header-banner{
         display: block;
     }
+
+    .product{
+        margin-top: 10px;
+     }
     
 }
 
@@ -603,7 +607,7 @@ display: none;
 }
 
     .product{
-       margin-top: 60px;
+       margin-top: 10px;
     }
 }
 
@@ -620,7 +624,7 @@ display: none;
 }
 
 .product{
-    margin-top: 60px;
+    margin-top: 90px;
  }
 
 }
