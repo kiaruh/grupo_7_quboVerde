@@ -26,6 +26,13 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/product", (req, res) => {
-    res.sendFile(path.join(__dirname, "view", "product.html")); // get login
+    res.sendFile(path.join(__dirname, "view", "product.html")); // get product
 });
 
+app.get("/error", (req, res) => {
+    res.sendFile(path.join(__dirname, "view", "error.html")); // get error
+});
+
+app.get("/cart", (req, res) => {
+    res.sendFile(path.join(__dirname, "view", "cart.html")); // get cart
+});

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/cart.css">
+
+    <title>cart</title>
+</head>
+<body>
+    <header>
+        <section class="main-header">
+            
+        <navbar>
+            <!-- boton del menu hamburguesa-->
+            <article class="burger">
+                <img src="/img/burger-menu.svg" alt="">
+            </article>
+
+            <!-- barra de navegacion-->
+            <article class="navbar-menu">
+            
+                <li> <a href="">Seccion 1</a> </li>
+                <li> <a href="/login">login</a></li>
+                <li> <a href="/register">register</a></li>
+            
+            </article>
+        </navbar>
+
+        <!-- este article es solo el logo, para tenerlo mas controlado en caja-->
+        <article class="header-logo">
+            <a href="/"><img src="/img/quboverde_logo.svg" alt=""></a>
+        </article>
+
+        <!-- este article todo el carrito, que en la version web tendria mas contenidos-->
+        <article class="icon-navbar">
+            <a href="#"><img class ="icons" src="/img/search.svg" alt=""></a>
+            <a href="/login"><img class ="icons" src="/img/user.svg" alt=""></a>
+            <a href="/cart"><img src="/img/cart.svg" alt=""></a>
+        </article>
+
+    </section>
+
+    <section class="search-bar">
+        <article>
+        <form action="/" class="search-bar-container">
+            <input type="text" placeholder="¿Qué estás buscando?">
+            <button><img src="/img/search.svg" alt=""></button>
+        </form>
+        </article>
+           
+    </section>
+
+    <section class="header-banner">
+        <picture class="header-banner-mobile"><img src="/img/banner-mobile.jpg" alt=""></picture>
+        <picture class="header-banner-desktop"><img src="/img/banner-desktop.jpg" alt=""></picture>
+    </section>
+
+    </header>
+
+    <main class="main-cart">
+        <section>
+            <h2>Tu carrito</h2>
+            <table>
+                <thead class="t-head">
+                  <th scope="col" class="t-description"></th>
+                  <th scope="col" class="t-quantity">Cantidad</th>
+                  <th scope="col" class="t-price">Precio</th>
+                </thead>
+                <tbody class="t-body">
+                  <tr class="t-item">
+                    <td class="t-info">
+                        <figure class="cart-img">
+                            <img src="/img/img_prod/large-plant-rojo-congo-black-pot.jpg" alt="">
+                        </figure>
+                        <article class="t-description">
+                            <h3 class="cart-title">Rojo Congo</h3>
+                            <h5 class="cart-type">especie uno</h5>
+                        </article>
+                    </td>
+                    <td class="t-quantity">
+                        <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-price"><h4 class="cart-price">$1.000</h4></td>
+                  </tr>
+
+                  <tr class="t-item">
+                    <td class="t-info">
+                        <figure class="cart-img">
+                            <img src="/img/img_prod/large-plant-umbrella-black-pot.jpg" alt="">
+                        </figure>
+                        <article class="t-description">
+                            <h3 class="cart-title">Umbrella</h3>
+                            <h5 class="cart-type">especie dos</h5>
+                        </article>
+                    </td>
+                    <td class="t-quantity">
+                        <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-price"><h4 class="cart-price">$1.800</h4></td>
+                  </tr>
+
+                  <tr class="t-item">
+                    <td class="t-info">
+                        <figure class="cart-img">
+                            <img src="/img/img_prod/medium-plant-brasil-philodendron-white-pot.jpg" alt="">
+                        </figure>
+                        <article class="t-description">
+                            <h3 class="cart-title">Philodendron blanca</h3>
+                            <h5 class="cart-type">especie de brasil</h5>
+                        </article>
+                    </td>
+                    <td class="t-quantity">
+                        <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-price"><h4 class="cart-price">$700</h4></td>
+                  </tr>
+
+                  <tr class="t-item">
+                    <td class="t-info">
+                        <figure class="cart-img">
+                            <img src="/img/img_prod/medium-plant-cornstalk-dracaena-seafoam-pot.jpg" alt="">
+                        </figure>
+                        <article class="t-description">
+                            <h3 class="cart-title">Cornstalk</h3>
+                            <h5 class="cart-type">dracaena</h5>
+                        </article>
+                    </td>
+                    <td class="t-quantity">
+                        <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-price"><h4 class="cart-price">$1000</h4></td>
+                  </tr>
+
+                  <tr class="t-item">
+                    <td class="t-info">
+                        <figure class="cart-img">
+                            <img src="/img/img_prod/medium-plant-pink-dragon-tree-rosewood-pot.jpg" alt="">
+                        </figure>
+                        <article class="t-description">
+                            <h3 class="cart-title">Pink Dragon</h3>
+                            <h5 class="cart-type">especie</h5>
+                        </article>
+                    </td>
+                    <td class="t-quantity">
+                        <input type="number" value="1" min="0" pattern="[0-9]*">
+                    </td>
+                    <td class="t-price"><h4 class="cart-price">$300</h4></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                      <td>
+                        <article class="product-scale">
+                            <section class="product-scale-centered">
+                                <picture class="product-scale-img"><img src="/img/hs.svg" alt=""></picture>
+                                <picture class="product-scale-img"><img src="/img/hsp1.svg" alt=""></picture>
+                                <picture class="product-scale-img"><img src="/img/hsp2.svg" alt=""></picture>
+                                <picture class="product-scale-img"><img src="/img/hsp1.svg" alt=""></picture>
+                                <picture class="product-scale-img"><img src="/img/hsp2.svg" alt=""></picture>
+                                <picture class="product-scale-img"><img src="/img/hsp2.svg" alt=""></picture>
+                            </section>
+                                <picture class ="line1"></picture>
+                                <picture class ="line2"></picture>
+                                <picture class ="line3"></picture>
+                         </article>
+                      </td>
+                      <td class="t-quantity">Total</td>
+                      <td class="t-price">$4800</td>
+                    </tr>
+                  </tfoot>
+            </table>
+                <article class="cart-shipping">
+                    <h3>Mi envío</h3>
+                    <picture class="cart-shipping-icon"><img src="/img/bolsa.svg" alt=""></picture>
+                    <picture class="cart-shipping-icon"><img src="/img/caja_s.svg" alt=""></picture>
+                    <picture class="cart-shipping-icon"><img src="/img/caja_b.svg" alt=""></picture>
+                    <div>
+                        <h4>+ de 4 productos</h4>
+                        <h5>caja 30x30x40cm</h5>
+                    </div>
+                    
+                    <form class="cart-action" action="#">
+                        <button class="checkout-non">Compra Anónima</button>
+                        <button class="checkout">Usuario Registrado</button>
+                    </form>
+                </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+        <section class="footer-logo">
+           <img src="/img/quboverde_logo.svg" alt="">
+         </section>
+
+         <section class="footer-section">
+            <h2>seccion 1</h2>
+            <a href=""><h3>subseccion 1</h3></a>
+            <a href=""><h3>subseccion 2</h3></a>
+            <a href=""><h3>subseccion 3</h3></a>
+            <a href=""><h3>subseccion 4</h3></a>
+         </section>
+
+        <section class="footer-section">
+            <h2>seccion 2</h2>
+            <a href=""><h3>subseccion 1</h3></a>
+            <a href=""><h3>subseccion 2</h3></a>
+            <a href=""><h3>subseccion 3</h3></a>
+            <a href=""><h3>subseccion 4</h3></a>
+         </section>
+
+         <section class="footer-section">
+            <h2>seccion 3</h2>
+            <a href=""><h3>subseccion 1</h3></a>
+            <a href=""><h3>subseccion 2</h3></a>
+            <a href=""><h3>subseccion 3</h3></a>
+            <a href=""><h3>subseccion 4</h3></a>
+         </section>
+
+         <section class="footer-social">
+            <h2>redes sociales</h2>
+            <h3>facebook</h3>
+            <h3>instagram</h3>
+            <h3>correo electronico</h3>
+         </section>
+
+    </footer>
+
+</body>
+</html>

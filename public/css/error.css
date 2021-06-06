@@ -1,0 +1,98 @@
+/* 
+verde: #BAC9C0
+rosa: #CB6565
+camel: #BB7F66
+arena:#D3A394;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    position:relative;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+body{
+    /* background-color:#F6F2ED; */
+    background-color:#F6ECE9;
+}
+
+/* .frame {
+    height: 85vh;
+    width: 85vw;
+    background-color: none;
+    border: solid 20px white;
+    display: inline-block;
+  } */
+
+
+section{
+    min-width: 90vw;
+    min-height: 90vh;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center;
+    padding-top: 25vh; */
+    font-size: 18px;
+    border: solid 20px white;
+}
+
+
+h1{
+    font-size: 250px;
+    margin:0;
+    color:#BB7F66;
+}
+
+h2{ 
+    margin-top: -30px;
+    margin-bottom: 20px;
+    color:#D3A394;
+}
+
+button{
+    padding: 10px 20px;
+}
+
+button:hover{
+    background-color: #BAC9C0;
+    border: solid #BAC9C0 2.5px;
+    color: black
+}
+
+#error-top{
+    height: 27%;
+    position: absolute;
+    top: -10%;
+}
+
+#error-left{
+    width: 35%;
+    position: absolute;
+    left: 0;
+    bottom:10%;
+}
+
+#error-topright{
+    width: 40%;
+    position: absolute;
+    top: -10%;
+    right: 0;
+}
+
+#error-bottom{
+    width: 55%;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    z-index: -10;
+}
