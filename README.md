@@ -64,6 +64,9 @@ https://github.com/kiaruh/grupo_7_quboVerde/tree/main/recursos_g7/Wireframes_Low
 ## Tablero (trello)
 https://trello.com/b/gVOnfqix/grupo-7
 
+## Heroku
+https://grupo7quboverde.herokuapp.com
+
 ## Rutas a Vistas actuales:
 
 * Home:'/'
@@ -78,8 +81,8 @@ https://trello.com/b/gVOnfqix/grupo-7
 
 * Página en construcción: '/error'
 
-> ## Rutas a Vistas (estructura a futuro):
 
+> ## Rutas a Vistas (estructura a futuro):
 >* Home:'/'
 >* Listado de productos: '/product'
 >* Detalle de producto:'/product/detail/:id'
