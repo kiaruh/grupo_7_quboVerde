@@ -45,7 +45,7 @@ body {
 .navbar-menu{
     display: none; 
     position: absolute;
-    top: 30px; /* antes estaba en 0px  y le puse left 0*/
+    top: 40px; /* antes estaba en 0px  y le puse left 0*/
     width: 180px;
     height: 100vh;
     background-color: #F4E7DE;
@@ -136,6 +136,8 @@ body {
     padding: 5px;
     height: 30px;
     margin: auto;
+
+    background-color: white;
 }
 
 .search-bar-container input{
@@ -181,11 +183,15 @@ body {
 
 .header-banner-mobile img{
     width: 100%;
-    min-width:400px;
+    min-width:580px; 
 
     position: relative;
-        top: 0px;
-        left: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+.header-banner-desktop img{
+    display: none;
 }
 
 /* main */
@@ -271,13 +277,16 @@ body {
     } */
 
     .header-banner-desktop img{
-        display: block;
-        min-width: 100vw;
-        /* min-width:400px; */
+        display: none;
     }
     
     .header-banner-mobile img{
-        display: none; 
+        height: 100%;
+        min-width:580px; 
+    
+        position: relative;
+        top: 0px;
+        left: 0px;
     }
 
     /*main */
@@ -296,7 +305,7 @@ body {
 
     /* footer */
     .footer{
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: nowrap;
         justify-content: space-between;
     
@@ -340,6 +349,16 @@ body {
         left: 0px;
     
         overflow: hidden;
+    }
+
+    .header-banner-desktop img{
+        display: block;
+        min-width: 100vw;
+        /* min-width:400px; */
+    }
+    
+    .header-banner-mobile img{
+        display: none; 
     }
 
     .navbar-menu{
@@ -416,6 +435,14 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
 
+    }
+
+    .footer{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    
+        line-height: 0.2em;
     }
 
 }
