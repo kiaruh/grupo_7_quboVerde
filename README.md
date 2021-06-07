@@ -64,24 +64,29 @@ https://github.com/kiaruh/grupo_7_quboVerde/tree/main/recursos_g7/Wireframes_Low
 ## Tablero (trello)
 https://trello.com/b/gVOnfqix/grupo-7
 
-## Rutas a Vistas:
+## Rutas a Vistas actuales:
 
 * Home:'/'
 
-* Listado de productos: '/product'
+* Detalle de producto: '/product'
 
-* Detalle de producto:'/product/detail/:id'
+* Carrito de compras:'/cart'
 
-* Form de carga de producto:'/product/load'
+* Formulario de registro:'/register'
 
-* Formulario de edición de producto: '/product/edit/:id'
+* Formulario de login: '/login'
 
-* Carrito de compras:'/user/cart'
+* Página en construcción: '/error'
 
-* Formulario de registro:'/user'
+> ## Rutas a Vistas (estructura a futuro):
 
-* Formulario de login: '/user/login'
-
-* Formulario de edicion de usuario: '/user/edit/:id'
-
-* Perfil de usuario: '/user/profile/:id'
+>* Home:'/'
+>* Listado de productos: '/product'
+>* Detalle de producto:'/product/detail/:id'
+>* Form de carga de producto:'/product/load'
+>* Formulario de edición de producto: '/product/edit/:id'
+>* Carrito de compras:'/user/cart'
+>* Formulario de registro:'/user'
+>* Formulario de login: '/user/login'
+>* Formulario de edicion de usuario: '/user/edit/:id'
+>* Perfil de usuario: '/user/profile/:id'
