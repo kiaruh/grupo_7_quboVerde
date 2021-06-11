@@ -1,0 +1,46 @@
+<!-- esta archivo esta armado solamente para el header de los formularios, vinculado a la hoja de estilos principal-->
+
+    <header>
+        <section class="main-header">
+            
+        <navbar>
+            <!-- boton del menu hamburguesa-->
+            <article class="burger">
+                <a href="#" onclick="burgerMenuAction()"><img src="/img/burger-menu.svg" alt=""></a>
+            </article>
+
+            <!-- barra de navegacion-->
+            <article class="navbar-menu" id="IDburgerMenu">
+            
+                <li> <a href="/products/product">Detalle de producto</a> </li>
+                <li> <a href="/users/login">Inicia sesión</a></li>
+                <li> <a href="/users/register">Crea tu cuenta</a></li>
+            
+            </article>
+        </navbar>
+
+        <!-- este article es solo el logo, para tenerlo mas controlado en caja-->
+        <article class="header-logo">
+            <a href="/"><img src="/img/quboverde_logo.svg" alt=""></a>
+        </article>
+
+        <!-- este article todo el carrito, que en la version web tendria mas contenidos-->
+        <article class="icon-navbar">
+            <a href="#"><img class ="icons" src="/img/search.svg" alt=""></a>
+            <a href="/users/login"><img class ="icons" src="/img/user.svg" alt=""></a>
+            <a href="/checkout/cart"><img src="/img/cart.svg" alt=""></a>
+        </article>
+
+    </section>
+
+    <section class="search-bar">
+        <article>
+        <form action="/" class="search-bar-container">
+            <input type="text" placeholder="¿Qué estás buscando?">
+            <button><img src="/img/search.svg" alt=""></button>
+        </form>
+        </article>
+           
+    </section>
+
+    </header>

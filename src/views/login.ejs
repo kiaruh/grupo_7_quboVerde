@@ -1,0 +1,57 @@
+<!-- esta archivo esta armado solamente para el header y el footer, vinculado a la hoja de estilos principal-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+    <title>quboverde Ingresar</title>
+</head>
+<body>
+    <%- include("./includes/header_form") %>
+
+    <main class="main-login">
+        <section class="login-fondo">
+            <picture class="header-banner-mobile"><img src="/img/IMG_8509-i.png" alt=""></picture>
+            <picture class="header-banner-desktop"><img src="/img/banner-d.jpg" alt=""></picture>
+        </section>
+
+
+        <div class="side-banner"><img src="/img/banner-vertical.jpg" alt=""></div>
+
+        <form class="form-login" action="#">
+           
+                <h1 class="titulo-login">Bienvenido</h1>
+                  
+
+                <fieldset class="login">
+                                  
+                  <input class="login-input" type="text" id="usuario" placeholder="Usuario" name="user" minlength="2" required> 
+                  <input class="login-input"  type="password" id="psw" placeholder="Contraseña" name="psw" required>
+
+                  <fieldset class="recordar">
+                    <input type="checkbox" id="check" class="check" checked>
+                    <label for="check">Recordar mi sesion</label> 
+                  </fieldset>
+                  
+            
+                  <button type="submit" class="login-btn btn-main btn" >Ingresar</button> 
+                  
+                  <hr>
+
+                  <a class="olvide-psw" href="#">Me olvidé la Contraseña</a>
+                </fieldset>
+    
+            </form> 
+    </main>
+
+    <%- include("./includes/footer") %> 
+</body>
+</html>
