@@ -36,3 +36,7 @@ app.get("/error", (req, res) => {
 app.get("/cart", (req, res) => {
     res.sendFile(path.join(__dirname, "view", "cart.html")); // get cart
 });
+
+app.get("/newprod", (req, res) => {
+    res.sendFile(path.join(__dirname, "view", "product_new.html")); // get cart
+});

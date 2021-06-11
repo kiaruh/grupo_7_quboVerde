@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/addprod.css">
+    <title>Ingresar producto</title>
+</head>
+<body>
+    <form action="" class="form-add-prod">
+    <fieldset>
+        <label for="nombre">Nombre Producto</label>
+        <input type="text" name="" id="nombre">
+
+        <label for="precio">Precio</label>
+        <input type="number" name="" id="precio" min="0">
+    </fieldset>
+
+    <fieldset>
+        <label for="img">Imagen Producto</label>
+        <input type="file" name="" id="img">
+    </fieldset>
+
+    <fieldset class="one-line">
+        <h2>Escala</h2>
+        <input type="radio" name="scale" id="chico">
+        <label for="chico">chico</label>
+        <input type="radio" name="scale" id="mediano">
+        <label for="mediano">mediano</label>
+        <input type="radio" name="scale" id="grande">
+        <label for="grande">grande</label>
+    </fieldset>
+
+    <fieldset>
+        <h2>riego</h2>
+        <input type="range" min="0" max="5" name="riego-range">
+
+        <h2>luz</h2>
+    <section class="luz">
+    <article>
+        <h3>tipo</h3>
+        <input type="radio" name="light" id="directa">
+        <label for="directa">mucha luz</label>
+        
+        <input type="radio" name="light" id="semid">
+        <label for="semid">poca luz</label>
+        
+        <input type="radio" name="light" id="int">
+        <label for="int">interior</label>
+    </article>
+
+    <article>
+        <h3>cantidad</h3>
+        <input type="range" min="0" max="5" name="luz-range">
+    </article>
+</section>
+
+        <h2>apto mascotas</h2>
+        
+        <input type="radio" name="scale" id="m-si">
+        <label for="m-si">SI</label>
+        <input type="radio" name="scale" id="m-no">
+        <label for="m-no">NO</label>
+        <input type="radio" name="scale" id="m-danger">
+        <label for="m-danger">peligrosa para mascotas</label>
+    </fieldset>
+
+    <fieldset id="buttons">
+    <button type="submit">GUARDAR CAMBIOS</button>
+    <button type="submit">AGREGAR PRODUCTO</button>
+    <button type="reset">BORRAR</button>
+    </fieldset>
+    </form>
+    
+</body>
+</html>

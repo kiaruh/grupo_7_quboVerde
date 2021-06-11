@@ -1,0 +1,71 @@
+.form-add-prod{
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+
+    width: 80vw;
+    margin: auto;
+}
+
+.form-add-prod fieldset{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    background-color: salmon;
+    color: white;
+
+    font-family: sans-serif;
+}
+
+.form-add-prod fieldset h2{
+    display: block;
+    width: 100%;
+}
+
+.form-add-prod fieldset label{
+    margin: 10px;
+}
+
+.form-add-prod button{
+    width: 25%;
+    padding: 5px;
+    margin: 5px;
+    border: 0px;
+    background-color: salmon;
+    color: white;
+}
+
+.one-line{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+h3{
+    padding: 10px;
+    margin: 5px;
+}
+
+.luz{
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons{
+    background-color: white;
+}
+
+#buttons button{
+    width: 25%;
+    padding: 5px;
+    margin: 5px;
+    border: 0px;
+    background-color: salmon;
+    color: white;
+}
