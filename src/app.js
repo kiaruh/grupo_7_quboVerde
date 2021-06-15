@@ -15,7 +15,7 @@ app.use(express.static(path.resolve(__dirname,"../public"))); //igual que antes 
 
 //View Engine
 app.set("view engine","ejs");
-app.set("views",path.resolve(__dirname,"./views"));
+app.set("views",path.resolve(__dirname,"views"));
 
 
 //Routes
