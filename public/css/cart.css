@@ -131,7 +131,8 @@ form{
     margin-top: 3vh;
 }
 
-.checkout-non{
+/* Estilo general de botones primarios y secundarios trasladados a style.css */
+/* .checkout-non{
     border: solid 1px #51505D;
     background-color: #fff;
     padding: 10px;
@@ -158,7 +159,7 @@ border: none;
 
 .checkout:hover{
     background-color: #bb7f66;
-}
+} */
 
 .product-scale{
     visibility: hidden;

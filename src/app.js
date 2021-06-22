@@ -31,6 +31,7 @@ app.use('/products',rutasProducts);
 app.use('/users',rutasUsers);
 app.use('/checkout',rutasCheckout);
 
-app.get("/newprod", (req, res) => {
-    res.sendFile(path.join(__dirname, "../view", "product_new.html")); // get cart
-});
+
+// app.get("/newprod", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../view", "product_new.html")); // get cart
+// });
