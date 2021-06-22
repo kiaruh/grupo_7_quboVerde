@@ -7,6 +7,8 @@ const controller = require('../controllers/productController');
 
 
 router.get("/detail", controller.detail);
+router.get("/newprod", controller.newprod);
+router.get("/mod", controller.modprod);
 
 
 module.exports = router;
