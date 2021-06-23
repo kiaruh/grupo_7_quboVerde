@@ -9,3 +9,29 @@
 * Less of: Trabarse en detalles menores. Es más valioso enfocarse en lo macro para luego agregar funcionalidades.
 
 * Stop doing: Mandar archivos por otros medios que no sean los tableros mencionados.
+
+
+## Retro - Sprint 2:
+
+* Start Doing: Organizar mejor los alcances de las tareas, para no pasarnos en algunas cosas y que falten en otras.
+
+* More of: Seguir usando el talero.
+
+* Keep doing: Mantener la buena comunicación en general y particular.
+
+* Less of: Trabarse en detalles menores.!
+
+* Stop doing: Pushear los mismos cambios muchas veces seguiras en Github.
+
+
+## Retro - Sprint 3:
+
+* Start Doing: Separar las tareas de manera tal que sean entendibles por todos.
+
+* More of: Probar diferentes maneras de hacer lo mismo.
+
+* Keep doing: Seguir usando el tablero y seguir trabajando con Github como hasta ahora, de manera ordenada y clara.
+
+* Less of: Trabarse con pruebas de secciones o ejercicios no-pedidos hasta ahora.
+
+* Stop doing: Volver atras con pequeños detalles de otros sprint.
