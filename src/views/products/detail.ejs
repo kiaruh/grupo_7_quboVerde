@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/product.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
 
     <title>quboverde</title>
 </head>
@@ -17,17 +18,17 @@
         <section class="product">
 
             <picture class="product-img">
-                <img src="/img/img_prod/large-plant-rojo-congo-black-pot.jpg" alt="">
+                <img src="<%= catalogo[0].link %>" alt="">
             </picture>
 
             <article class="product-desc">
                 <section class="desc-name">
-                    <h2>Nombre</h2>
-                    <h3>$999</h3>
+                    <h2><%= catalogo[0].name%></h2>
+                    <h3>$ <%= catalogo[0].price %></h3>
                 </section>
 
                 <section class="desc-text">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consectetur minus soluta vitae corrupti, hic, ullam odit voluptatem distinctio dolore sint unde aliquid totam recusandae voluptate molestiae, quo eveniet magni.</h4>
+                    <h4><%= catalogo[0].description %></h4>
                 </section>
 
                 <section class="desc-care">
@@ -53,7 +54,7 @@
                 </section>
 
                 <form class="prod-action" action="#">
-                    <input type="text" class="fav">
+                    <input type="number" min="1" class="fav">
                     <button class="add-cart">agregar</button>
                     <button class="fav"><img src="/img/fav.svg" alt=""></button>
                 </form>

@@ -8,7 +8,6 @@ const controller = require('../controllers/userController');
 //Route
 router.get("/register", controller.register);
 router.get("/login", controller.login);
-router.get("/new", controller.newprod);
-router.get("/mod", controller.modprod);
+
 
 module.exports = router;

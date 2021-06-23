@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
 
     <title>quboverde</title>
 </head>
@@ -14,176 +15,36 @@
     <%- include("./includes/header") %> 
 
     <main class="main">
-     <section class="prod-container">
-         <article class="prod">
-             <picture class="prod-img">
-                 <img src="/img/img_prod/large-plant-rojo-congo-black-pot.jpg" alt="">
-                </picture>
-             <div class="prod-box">
-                <h3 class="prod-title">Rojo Congo</h3>
-                <h4 class="prod-price">$1.000</h4>
-                <h5 class="prod-type">especie uno</h5>
-                <form class="prod-action" action="#">
-                    <button class="add-cart">agregar</button>
-                    <button class="fav"><img src="/img/fav.svg" alt=""></button>
-                </form>
-            </div>
-         </article>
-        
-         <article class="prod">
-            <picture class="prod-img">
-                <img src="/img/img_prod/large-plant-umbrella-black-pot.jpg" alt="">
-            </picture>
-            <div class="prod-box">
-            <h3 class="prod-title">Umbrella</h3>
-            <h4 class="prod-price">$1.800</h4>
-            <h5 class="prod-type">especie dos</h5>
-            <form class="prod-action" action="#">
-               <button class="add-cart">agregar</button>
-               <button class="fav"><img src="/img/fav.svg" alt=""></button>
-            </form>
-           </div>
-        </article>
-    
-        <article class="prod caja-centro">
-            <picture class="prod-img"><img src="/img/img_prod/medium-plant-brasil-philodendron-home.jpg" alt=""></picture>
-            <div class="prod-box">
-            <h3 class="prod-title">Philodendron</h3>
-            <h4 class="prod-price">$700</h4>
-            <h5 class="prod-type">especie de brasil</h5>
-            <form class="prod-action" action="#">
-               <button class="add-cart">agregar</button>
-               <button class="fav"><img src="/img/fav.svg" alt=""></button>
-            </form>
-           </div>
-        </article>
+      <h1>Los más vendidos</h1>
+      <section class="prod-container">
+         
+               <% for (let i=0; i < 6; i++){ %>
+                  
+                     <article class="prod">
+                     
+                     <picture class="prod-img">
+                        <a href="/products/detail/<%= catalogo[i].id%>">
+                           <img src="<%= catalogo[i].link %>" alt="">
+                        </a>
+                     </picture>
+                     
+                     <div class="prod-box">
+                        <h3 class="prod-title"><%= catalogo[i].name %></h3>
+                        <h4 class="prod-price">$ <%= parseFloat(catalogo[i].price).toFixed(0) %></h4>
+                        <h5 class="prod-type"><%= catalogo[i].species %></h5>
 
-        <article class="prod">
-            <picture class="prod-img"><img src="/img/img_prod/medium-plant-brasil-philodendron-white-pot.jpg" alt=""></picture>
-            <div class="prod-box">
-                <h3 class="prod-title">Philodendron blanca</h3>
-                <h4 class="prod-price">$700</h4>
-                <h5 class="prod-type">especie de brasil</h5>
-            <form class="prod-action" action="#">
-               <button class="add-cart">agregar</button>
-               <button class="fav"><img src="/img/fav.svg" alt=""></button>
-            </form>
-           </div>
-        </article>
+                        <form class="prod-action" action="#">
+                           <button class="add-cart">agregar</button>
+                           <button class="fav"><img src="/img/fav.svg" alt=""></button>
+                        </form>
+                     </div>
+                  </article>
+               
+               <% } %>
+            
+      </section>
 
-        <article class="prod">
-            <picture class="prod-img"><img src="/img/img_prod/medium-plant-cornstalk-dracaena-seafoam-pot.jpg" alt=""></picture>
-            <div class="prod-box">
-            <h3 class="prod-title">Cornstalk</h3>
-            <h4 class="prod-price">$1.000</h4>
-            <h5 class="prod-type">dracaena</h5>
-            <form class="prod-action" action="#">
-               <button class="add-cart">agregar</button>
-               <button class="fav"><img src="/img/fav.svg" alt=""></button>
-            </form>
-           </div>
-        </article>
-
-        <article class="prod">
-            <picture class="prod-img"><img src="/img/img_prod/medium-plant-dragon-tree-black-pot.jpg" alt=""></picture>
-            <div class="prod-box">
-            <h3 class="prod-title">Dragon tree</h3>
-            <h4 class="prod-price">$7.000</h4>
-            <h5 class="prod-type">especie random</h5>
-            <form class="prod-action" action="#">
-               <button class="add-cart">agregar</button>
-               <button class="fav"><img src="/img/fav.svg" alt=""></button>
-            </form>
-           </div>
-        </article>
-
-        <article class="prod">
-            <picture class="prod-img"><img src="/img/img_prod/medium-plant-grey-star-calathea-black-pot.jpg" alt=""></picture>
-            <div class="prod-box">
-            <h3 class="prod-title">Calathea</h3>
-            <h4 class="prod-price">$1.000</h4>
-            <h5 class="prod-type">especie</h5>
-            <form class="prod-action" action="#">
-               <button class="add-cart">agregar</button>
-               <button class="fav"><img src="/img/fav.svg" alt=""></button>
-            </form>
-           </div>
-        </article>
-
-        <article class="prod">
-            <picture class="prod-img"><img src="/img/img_prod/medium-plant-pink-dragon-tree-rosewood-pot.jpg" alt=""></picture>
-            <div class="prod-box">
-            <h3 class="prod-title">Pink Dragon</h3>
-            <h4 class="prod-price">$300</h4>
-            <h5 class="prod-type">especie</h5>
-            <form class="prod-action" action="#">
-               <button class="add-cart">agregar</button>
-               <button class="fav"><img src="/img/fav.svg" alt=""></button>
-            </form>
-           </div>
-        </article>
-
-        <article class="prod">
-            <picture class="prod-img">
-                <img src="/img/img_prod/large-plant-rojo-congo-black-pot.jpg" alt="">
-               </picture>
-            <div class="prod-box">
-               <h3 class="prod-title">Rojo Congo</h3>
-               <h4 class="prod-price">$1.000</h4>
-               <h5 class="prod-type">especie uno</h5>
-               <form class="prod-action" action="#">
-                   <button class="add-cart">agregar</button>
-                   <button class="fav"><img src="/img/fav.svg" alt=""></button>
-               </form>
-           </div>
-        </article>
-       
-        <article class="prod">
-           <picture class="prod-img">
-               <img src="/img/img_prod/large-plant-umbrella-black-pot.jpg" alt="">
-           </picture>
-           <div class="prod-box">
-           <h3 class="prod-title">Umbrella</h3>
-           <h4 class="prod-price">$1.800</h4>
-           <h5 class="prod-type">especie dos</h5>
-           <form class="prod-action" action="#">
-              <button class="add-cart">agregar</button>
-              <button class="fav"><img src="/img/fav.svg" alt=""></button>
-           </form>
-          </div>
-       </article>
-   
-       <article class="prod caja-centro">
-           <picture class="prod-img"><img src="/img/img_prod/medium-plant-brasil-philodendron-home.jpg" alt=""></picture>
-           <div class="prod-box">
-           <h3 class="prod-title">Philodendron</h3>
-           <h4 class="prod-price">$700</h4>
-           <h5 class="prod-type">especie de brasil</h5>
-           <form class="prod-action" action="#">
-              <button class="add-cart">agregar</button>
-              <button class="fav"><img src="/img/fav.svg" alt=""></button>
-           </form>
-          </div>
-       </article>
-
-       <article class="prod">
-           <picture class="prod-img"><img src="/img/img_prod/medium-plant-brasil-philodendron-white-pot.jpg" alt=""></picture>
-           <div class="prod-box">
-               <h3 class="prod-title">Philodendron blanca</h3>
-               <h4 class="prod-price">$700</h4>
-               <h5 class="prod-type">especie de brasil</h5>
-           <form class="prod-action" action="#">
-              <button class="add-cart">agregar</button>
-              <button class="fav"><img src="/img/fav.svg" alt=""></button>
-           </form>
-          </div>
-       </article>
-
-
-
-     </section>
-
-    </main>
+   </main>
 
     <%- include("./includes/footer") %> 
 </body>

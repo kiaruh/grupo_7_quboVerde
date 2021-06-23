@@ -1,7 +1,8 @@
-const path = require('path'); //ok
+const express = require('express');
+const path = require('path'); 
+const method = require('method-override');
 
-const express = require('express'); //ok
-const app = express(); //ok
+const app = express();
 
 const { send } = require('process');
 
@@ -16,6 +17,10 @@ app.use(express.static(path.resolve(__dirname,"../public"))); //igual que antes 
 //View Engine
 app.set("view engine","ejs");
 app.set("views",path.resolve(__dirname,"views"));
+
+//Data configuration (Importante: debe estar antes de las rutas)
+app.use(express.urlencoded({extended:false})) //permite procesar info de un formulario
+app.use(method("_method")) //parámetro debe coincidir con la ruta en el formulario ?_method=PUT/PATCH/DELETE
 
 
 //Routes
@@ -35,3 +40,6 @@ app.use('/checkout',rutasCheckout);
 // app.get("/newprod", (req, res) => {
 //     res.sendFile(path.join(__dirname, "../view", "product_new.html")); // get cart
 // });
+
+//Para los formularios
+//npm i method-override
