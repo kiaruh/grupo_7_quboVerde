@@ -257,7 +257,7 @@ border: none;
     flex-direction: column;
     flex-wrap: nowrap;
 
-    line-height: 0.2em;
+    line-height: 3px;
 }
 
 .footer section{
@@ -289,6 +289,10 @@ border: none;
 .footer h3{
     font-size: 14px;
     font-weight: 100;
+}
+
+.footer i{
+    padding-right: 5px;
 }
 
 .footer-logo{
@@ -353,7 +357,7 @@ border: none;
         flex-wrap: nowrap;
         justify-content: space-between;
     
-        line-height: 0.2em;
+        line-height: 3px;
     }
 
     .footer-logo{
@@ -486,7 +490,7 @@ border: none;
         flex-wrap: nowrap;
         justify-content: space-between;
     
-        line-height: 0.2em;
+        line-height: 3px;
     }
 
 }

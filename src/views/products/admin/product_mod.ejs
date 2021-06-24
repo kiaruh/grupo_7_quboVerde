@@ -4,20 +4,145 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/addprod.css">
+    <link rel="stylesheet" href="/css/edit.css">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     
     <title>Modificar producto</title>
 </head>
 <body>
     <%- include("../../includes/header_form") %>
-    <%- include("../../includes/form_prod") %>
     
-        <div id="buttons">
-            <button type="reset" class="button_secondary">BORRAR</button>
-            <button type="submit"class="button_primary">GUARDAR CAMBIOS</button>
-        </div>
-    </form>
+    <main class="register-main">
+
+        <form class="register-registro" action="/#" method="POST">
+            <div class="register-titulo">
+                <h3 class="register-titulo">Ficha de producto</h3>
+            </div>
+            
+            <fieldset class="register-form1">
+                <legend><h5>Información general</h5></legend>
+                <div>
+                    <label class="register-labe1">Producto</label>
+                    <input class="register-input1" type="text" name="producto" minlength="1" placeholder="Nombre del producto" required>
+                </div>
+
+                <div>
+                    <label class="register-labe1">Precio</label>
+                    <input class="register-input1" type="number" name="precio" min="0" placeholder="Ingresá únicamente valores numéricos" required>
+                </div>
+
+                <div>
+                    <label class="register-labe1">Foto de producto</label>
+                    <input class="input-photo" type="file" accept=".jpg, .png" name="img">
+                </div>
+
+                <div>
+                    <label class="register-labe1">Especie</label>
+                    <br>
+                    <select class="register-input1">
+                        <option value="" selected>Seleccioná de la lista</option>
+                        <option value="Philodendron">Philodendron</option>
+                        <option value="Dracaena">Dracaena</option>
+                        <option value="Calathea">Calathea</option>
+                        <option value="Ficus">Ficus</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="register-labe1">Descripción</label>
+                    <input class="register-inputbig" type="text" name="species" maxlength="200" placeholder="Escribí acá la descripción de tu producto">
+                </div>
+            </fieldset>
+
+            <fieldset class="register-perfilusuario">
+                <h5>Escala</h5>
+
+                <div class="checklist">
+                    <input type="radio" id="chico" name="escala" value="1">
+                    <label for="chico">Chico</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="mediano" name="escala" value="2">
+                    <label for="mediano">Mediano</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="grande" name="escala" value="3">
+                    <label for="grande">Grande</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="register-perfilusuario">
+                <h5>Riego</h5>
+                <p>De menor a mayor (Poco riego a Riego abundante)</p>
+                <datalist id="riego-range">
+                    <option value="0"></option>
+                    <option value="1"></option>
+                    <option value="2"></option>
+                    <option value="3"></option>
+                    <option value="4"></option>
+                    <option value="5"></option>
+                </datalist>
+                <input class="range" type="range" min="0" max="5" name="riego-range">
+            </fieldset>
+
+            <fieldset class="register-perfilusuario">
+                <h5>Asoleamiento</h5>
+                <p>Tipo y cantidad de luz</p>
+
+                <div class="checklist">
+                    <input type="radio" id="sombra" name="luz" value="1">
+                    <label for="sombra">Sombra</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="artificial" name="luz" value="2">
+                    <label for="artificial">Luz artificial o poca luz</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="indirecta" name="luz" value="3">
+                    <label for="indirecta">Luz indirecta</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="moderada" name="luz" value="4">
+                    <label for="moderada">Luz directa moderada</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="abundante" name="luz" value="5">
+                    <label for="abundante">Abundante luz directa</label>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="register-perfilusuario">
+                <h5>Apto Mascotas</h5>
+                <p>Apta para mascotas = Toda planta cuya ingestión no sea peligrosa</p>
+
+                <div class="checklist">
+                    <input type="radio" id="si" name="aptomascotas" value=true>
+                    <label for="si">Si</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="no" name="aptomascotas" value=false>
+                    <label for="no">No</label>
+                </div>
+            </fieldset>
+
+            <div class="botonx2">
+                <button class="cta-sq" type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button>
+                <button class="cta-cancel" type="reset"> Borrar </button>
+            </div>
+        </form>
+
+    </main>
+    <script src="/js/script.js"></script>
 </body>
 </html>
