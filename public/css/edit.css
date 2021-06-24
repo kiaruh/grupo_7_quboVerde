@@ -76,14 +76,14 @@ border: none;
 input[type='range'] {
     overflow: hidden;
     -webkit-appearance: none;
-  }
+}
   
-  input[type='range']::-webkit-slider-thumb {
-    width: 50px;
-    -webkit-appearance: none;
-    cursor: pointer;
-    box-shadow: -175px 0 0 175px #CB6565;
-  }
+input[type='range']::-webkit-slider-thumb {
+width: 50px;
+-webkit-appearance: none;
+cursor: ew-resize;
+box-shadow: -175px 0 0 175px #CB6565;
+}
 
 /* ------------------------------------ Formulario 1  ------------------------------------*/
 
@@ -109,9 +109,9 @@ input[type='range'] {
 
 .register-inputbig{
     display: block;
-    min-width: 280px;
+    /* min-width: 280px; */
     margin: 10px 30px 30px 0px;
-    min-height: 80px;
+    /* min-height: 80px; */
 }
 
 .container {
@@ -192,6 +192,9 @@ h5{
     margin: 3px;
 }
 
+textarea {
+    padding: 10px;
+}
 
 /* ------------------------------------ Botones CTA ------------------------------------*/
 
@@ -253,7 +256,10 @@ form{
     font-weight: 300;
 }
 
-
+#comment ::placeholder{
+    padding: 0px;
+    padding-top: 3px;
+}
 
 /* ------------------------------------ Media Query ------------------------------------*/
 
