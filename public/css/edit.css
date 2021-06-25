@@ -12,6 +12,18 @@ main input{
     border: solid rgb(179, 179, 179) 1px;
 }
 
+input.input-photo{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/* Para cambiar los estilos del botón de Choose File */
+input.input-photo::file-selector-button{
+    /* border: none;
+    background-color: #F4E7DE; */
+}
+
 fieldset{
 border: none;
 }
@@ -107,11 +119,24 @@ box-shadow: -175px 0 0 175px #CB6565;
     margin: 10px 30px 30px 0px
 }
 
+select.register-input1{
+    padding: 5px 9px;
+    font-size: 14px;
+    font-weight: 300;
+    border: solid rgb(179, 179, 179) 1px;
+    border-radius: 5px;
+}
+
 .register-inputbig{
     display: block;
     /* min-width: 280px; */
     margin: 10px 30px 30px 0px;
     /* min-height: 80px; */
+}
+
+textarea.register-inputbig{
+    border: solid rgb(179, 179, 179) 1px;
+    border-radius: 5px;
 }
 
 .container {
