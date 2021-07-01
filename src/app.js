@@ -1,11 +1,23 @@
 const express = require('express');
 const path = require('path'); 
 const method = require('method-override');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const app = express();
 
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
 const { send } = require('process');
 
+
+//session
+app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
+
+//middlewares
+app.use(userLoggedMiddleware)
+app.use(express.urlencoded({ extended: false }))
+app.use(cookies())
 
 //Server Start
 app.set('port',process.env.PORT || 3000) //establece el puerto que nos da el server o el 3000
