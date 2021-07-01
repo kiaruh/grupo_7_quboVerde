@@ -2,12 +2,14 @@
     "email":"hola@gmail.com",
     "name": "holahola",
     "password:": "hola1234",
+    "avatar":"",
     "admin": true
 },
 {
     "email":"chau@gmail.com",
     "name": "chauchau",
     "password:": "chau1234",
+    "avatar":"",
     "admin": false
 
 }
