@@ -1,13 +1,21 @@
 [{
+    "id": 1,
+    "usuario":"userhola",
+    "birth_date": "1900-12-01",
     "email":"hola@gmail.com",
-    "name": "holahola",
+    "first_name": "holahola",
+    "last_name": "hello",
     "password:": "hola1234",
     "avatar":"",
     "admin": true
 },
 {
+    "id":2,
+    "usuario":"userchau",
+    "birth_date": "1900-01-12",
     "email":"chau@gmail.com",
-    "name": "chauchau",
+    "first_name": "chauchau",
+    "last_name": "byebye",
     "password:": "chau1234",
     "avatar":"",
     "admin": false

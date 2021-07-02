@@ -15,7 +15,7 @@ const { send } = require('process');
 app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 
 //middlewares
-app.use(userLoggedMiddleware)
+//app.use(userLoggedMiddleware)
 app.use(express.urlencoded({ extended: false }))
 app.use(cookies())
 
