@@ -15,7 +15,7 @@ const { send } = require('process');
 app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 
 //middlewares
-app.use(userLoggedMiddleware)
+// app.use(userLoggedMiddleware)
 app.use(express.urlencoded({ extended: false }))
 app.use(cookies())
 
@@ -31,7 +31,7 @@ app.set("view engine","ejs");
 app.set("views",path.resolve(__dirname,"views"));
 
 //Data configuration (Importante: debe estar antes de las rutas)
-app.use(express.urlencoded({extended:false})) //permite procesar info de un formulario
+app.use(express.urlencoded({extended:false})) //permite procesar info de un formulario (esta dos veces, despues sacamos uno)
 app.use(method("_method")) //parámetro debe coincidir con la ruta en el formulario ?_method=PUT/PATCH/DELETE
 
 

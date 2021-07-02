@@ -16,7 +16,7 @@
     <%- include("../../includes/header_form") %>
     <main class="register-main">
 
-        <form class="register-registro" action="/#" method="POST">
+        <form class="register-registro" action="/products/new?_method=POST" method="POST">
             <div class="register-titulo">
                 <h3 class="register-titulo">Ficha de producto</h3>
             </div>
@@ -41,7 +41,7 @@
                 <div>
                     <label class="register-labe1">Especie</label>
                     <br>
-                    <select class="register-input1">
+                    <select class="register-input1" name="especie">
                         <option value="" selected>Seleccioná de la lista</option>
                         <option value="Philodendron">Philodendron</option>
                         <option value="Dracaena">Dracaena</option>
@@ -52,7 +52,7 @@
 
                 <div id="comment">
                     <label class="register-labe1">Descripción</label>
-                    <textarea class="register-inputbig" rows="6" cols="34" name="comment" form="product-info" placeholder="Escribí acá la descripción de tu producto"></textarea>
+                    <textarea class="register-inputbig" rows="6" cols="34" name="descripcion" id="descripcion" placeholder="Escribí acá la descripción de tu producto"></textarea>
                 </div>
             </fieldset>
 
@@ -86,7 +86,7 @@
                     <option value="4"></option>
                     <option value="5"></option>
                 </datalist>
-                <input class="range" type="range" min="0" max="5" name="riego-range">
+                <input class="range" type="range" min="0" max="5" name="riego">
             </fieldset>
 
             <fieldset class="register-perfilusuario">

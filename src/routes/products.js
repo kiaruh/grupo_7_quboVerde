@@ -7,8 +7,17 @@ const controller = require('../controllers/productController');
 
 router.get("/all", controller.list);
 router.get("/detail/:id", controller.detail);
+
+// rutas para agregar producto
 router.get("/newprod", controller.newprod);
-router.get("/mod", controller.modprod);
+router.post("/new", controller.addProd);
+
+// rutas para modificar producto
+router.get("/mod/:id", controller.mDetail);
+router.put("/mod/:id", controller.setProd);
+
+// ruta para eliminar el producto desde edit
+router.delete("/mod/del/:id", controller.delProd);
 
 
 module.exports = router;

@@ -17,7 +17,7 @@
     
     <main class="register-main">
 
-        <form class="register-registro" action="/#" method="POST" id="product-info">
+        <form class="register-registro" action="/products/mod/<%= datos.id%>?_method=PUT" method="POST" id="product-info">
             <div class="register-titulo">
                 <h3 class="register-titulo">Ficha de producto</h3>
             </div>
@@ -26,12 +26,12 @@
                 <legend><h5>Información general</h5></legend>
                 <div>
                     <label class="register-labe1">Producto</label>
-                    <input class="register-input1" type="text" name="producto" minlength="1" placeholder="Nombre del producto" required>
+                    <input class="register-input1" type="text" name="producto" value="<%=datos.name %>" required>
                 </div>
 
                 <div>
                     <label class="register-labe1">Precio</label>
-                    <input class="register-input1" type="number" name="precio" min="0" placeholder="Ingresá únicamente valores numéricos" required>
+                    <input class="register-input1" type="number" name="precio" min="0" value="<%=datos.price%>" required>
                 </div>
 
                 <div>
@@ -44,16 +44,21 @@
                     <br>
                     <select class="register-input1">
                         <option value="" selected>Seleccioná de la lista</option>
-                        <option value="Philodendron">Philodendron</option>
-                        <option value="Dracaena">Dracaena</option>
-                        <option value="Calathea">Calathea</option>
-                        <option value="Ficus">Ficus</option>
+                      
+                        <option value="Philodendron" <% if(datos.species == "Philodendron"){  %> <%="selected"%> <%}%> >Philodendron</option>
+                        
+                        <option value="Dracaena" <% if(datos.species == "Dracaena"){  %> <%="selected"%> <%}%>>Dracaena</option>
+                        
+                        <option value="Calathea" <% if(datos.species == "Calathea"){  %> <%="selected"%> <%}%>>Calathea</option>
+                        
+                        <option value="Ficus" <% if(datos.species == "Ficus"){  %> <%="selected"%> <%}%> >Ficus</option>
+                        
                     </select>
                 </div>
 
                 <div id="comment">
                     <label class="register-labe1">Descripción</label>
-                    <textarea class="register-inputbig" rows="6" cols="34" name="comment" form="product-info" placeholder="Escribí acá la descripción de tu producto"></textarea>
+                    <textarea class="register-inputbig" rows="6" cols="34" name="descripcion" form="product-info"><%=datos.desc %></textarea>
                 </div>
             </fieldset>
 
@@ -61,17 +66,17 @@
                 <h5>Escala</h5>
 
                 <div class="checklist">
-                    <input type="radio" id="chico" name="escala" value="1">
+                    <input type="radio" id="chico" name="escala" value="1" <% if(datos.scale == 1){  %> <%="checked"%> <%}%>>
                     <label for="chico">Chico</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="mediano" name="escala" value="2">
+                    <input type="radio" id="mediano" name="escala" value="2" <% if(datos.scale == 2){  %> <%="checked"%> <%}%>>
                     <label for="mediano">Mediano</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="grande" name="escala" value="3">
+                    <input type="radio" id="grande" name="escala" value="3"  <% if(datos.scale == 3){  %> <%="checked"%> <%}%>>
                     <label for="grande">Grande</label>
                 </div>
             </fieldset>
@@ -87,7 +92,7 @@
                     <option value="4"></option>
                     <option value="5"></option>
                 </datalist>
-                <input class="range" type="range" min="0" max="5" name="riego-range">
+                <input class="range" type="range" min="0" max="5" name="riego" value= <%= datos.irr %>>
             </fieldset>
 
             <fieldset class="register-perfilusuario">
@@ -95,30 +100,39 @@
                 <p>Tipo y cantidad de luz</p>
 
                 <div class="checklist">
-                    <input type="radio" id="sombra" name="luz" value="1">
+                    <input type="radio" id="sombra" name="luz" value="1" <% if(datos.light == 1){  %> <%="checked"%> <%}%>>
                     <label for="sombra">Sombra</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="artificial" name="luz" value="2">
+                    <input type="radio" id="artificial" name="luz" value="2" <% if(datos.light == 2){  %> <%="checked"%> <%}%> >
                     <label for="artificial">Luz artificial o poca luz</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="indirecta" name="luz" value="3">
+                    <input type="radio" id="indirecta" name="luz" value="3" <% if(datos.light == 3){  %> <%="checked"%> <%}%>>
                     <label for="indirecta">Luz indirecta</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="moderada" name="luz" value="4">
+                    <input type="radio" id="moderada" name="luz" value="4" <% if(datos.light == 4){  %> <%="checked"%> <%}%>>
                     <label for="moderada">Luz directa moderada</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="abundante" name="luz" value="5">
+                    <input type="radio" id="abundante" name="luz" value="5" <% if(datos.light == 5){  %> <%="checked"%> <%}%>>
                     <label for="abundante">Abundante luz directa</label>
                 </div>
 
+            </fieldset>
+
+            <fieldset class="register-perfilusuario">
+                <h5>Dificultad de mantenimiento</h5>
+                <p>Calculado automaticamente en base a los valores riego/luz</p>
+               
+                <input class="range2" id ="range2" type="range" min="0" max="5" name="irr" value= <%= datos.dif %> disabled><br>
+                <p> dificultad total: <%=datos.dif%>/5</p>
+                
             </fieldset>
 
             <fieldset class="register-perfilusuario">
@@ -126,18 +140,19 @@
                 <p>Apta para mascotas = Toda planta cuya ingestión no sea peligrosa</p>
 
                 <div class="checklist">
-                    <input type="radio" id="si" name="aptomascotas" value=true>
+                    <input type="radio" id="si" name="aptomascotas" value=true <% if(datos.pet == "true"){  %> <%="checked"%> <%}%>>
                     <label for="si">Si</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="no" name="aptomascotas" value=false>
+                    <input type="radio" id="no" name="aptomascotas" value=false <% if(datos.pet == "false"){  %> <%="checked"%> <%}%>>
                     <label for="no">No</label>
                 </div>
             </fieldset>
 
             <div class="botonx2">
                 <button class="cta-sq" type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button>
+                <button class="cta-sq" type="submit" formaction="/products/mod/del/<%= datos.id%>?_method=DELETE" onclick="alert('Entrada eliminada')"> Eliminar producto </button>
                 <button class="cta-cancel" type="reset"> Borrar </button>
             </div>
         </form>

@@ -97,6 +97,21 @@ cursor: ew-resize;
 box-shadow: -175px 0 0 175px #CB6565;
 }
 
+/* range modificado para mostrar la dificultad */
+
+.range2[type='range']::-webkit-slider-thumb {
+    width: 50px;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    box-shadow: -175px 0 0 175px #4d4b4b;
+    }
+
+.range2{
+    width: 250px;
+    padding: 0 !important;
+    display: inline;
+}
+
 /* ------------------------------------ Formulario 1  ------------------------------------*/
 
 .register-form1{
@@ -238,7 +253,7 @@ textarea {
     display: block;
     margin: auto;
     border-radius: 6px;
-    width: 40%;
+    width: 25%;
     height: 2.5em;
     border: none;
     text-align: center;
@@ -255,7 +270,7 @@ textarea {
     display: block;
     margin: auto;
     border-radius: 6px;
-    width: 40%;
+    width: 25%;
     height: 2.5em;
     border: solid 1px rgb(192, 192, 192);
     text-align: center;

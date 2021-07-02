@@ -1,98 +1,102 @@
 [
-    {
-        "id": 1,
-        "name": "Rojo Congo",
-        "species":"Rojo Congo Philodendron",
-        "description": "Esta belleza es un sueño de bajo mantenimiento. Su follaje comienza siendo de color rojo cobrizo, y luego se convierte en un profundo verde esmeralda con el tiempo.",
-        "price": 1000,
-        "link": "/img/img_prod/large-plant-rojo-congo-black-pot.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Umbrella",
-        "species":"Schefflera arboricola",
-        "description": "La Schefflera arboricola es una de las plantas de interior más agradables que se pueden encontrar. Sus hojas verdes ovaladas caen con gracia desde un tallo central, como pequeñas sombrillas.",
-        "price": 1500,
-        "link": "/img/img_prod/large-plant-umbrella-black-pot.jpg"
-    },
-    {
-        "id": 3,
-        "name": "Philodendron",
-        "species":"Philodendron hederaceum",
-        "description": "Esta clásica planta trepadora de fácil cuidado añadirá un toque de color a su espacio con sus hojas en forma de corazón de color chartreuse y verde.",
-        "price": 700,
-        "link": "/img/img_prod/medium-plant-brasil-philodendron-white-pot.jpg"
-    },
-    {
-        "id": 4,
-        "name": "Cornstalk",
-        "species":"Dracaena fragrans",
-        "description": "Tener esta exuberante belleza tropical en tu living es lo más parecido a estar de vacaciones. Tip: Mantenerla en clima cálido y húmedo que tanto le gusta.",
-        "price": 1100,
-        "link": "/img/img_prod/medium-plant-cornstalk-dracaena-seafoam-pot.jpg"
-    },
-    {
-        "id": 5,
-        "name": "Dragon Tree",
-        "species":"Dracaena marginata",
-        "description": "Las hojas multicolores de esta planta pueden parecer delicadas, pero es una de las plantas de interior más resistentes que se pueden encontrar.",
-        "price": 1200,
-        "link": "/img/img_prod/medium-plant-dragon-tree-black-pot.jpg"
-    },
-    {
-        "id": 6,
-        "name": "Calathea",
-        "species":"Calathea setosa",
-        "description": "Sus hojas ovaladas de color verde salvia tienen una parte inferior de color púrpura mate que captará miradas en cualquier espacio.",
-        "price": 1000,
-        "link": "/img/img_prod/medium-plant-grey-star-calathea-black-pot.jpg"
-    },
-    {
-        "id": 7,
-        "name": "Pink Dragon",
-        "species":"Dracaena marginata",
-        "description": "Las hojas puntiagudas y levemente rosadas de la Dracaena marginata exigirán tu atención cuando entres en una habitación.",
-        "price": 800,
-        "link": "/img/img_prod/medium-plant-pink-dragon-tree-rosewood-pot.jpg"
-    },
-    {
-        "id": 8,
-        "name": "Staghorn Fern",
-        "species":"Platycerium veitchii",
-        "description": "Pet-friendly y purificadora de aire,¿qué más se puede pedir?",
-        "price": 600,
-        "link": "/img/img_prod/medium-plant-staghorn-fern-seafoam-pot.jpg"
-    },
-    {
-        "id": 9,
-        "name": "Velvet Calathea",
-        "species":"Calathea rufibarba",
-        "description": "Su follaje ondulado es liso y verde en la parte superior, con una parte inferior esponjosa y aterciopelada en un tono ciruela.",
-        "price": 1100,
-        "link": "/img/img_prod/medium-plant-velvet-calathea-black-pot.jpg"
-    },
-    {
-        "id": 10,
-        "name": "Red Anthurium",
-        "species":"Anthurium",
-        "description": "Esta planta de interior con hojas en forma de corazón crecerá y florecerá durante años. Ideal para acomparñarte todo el año.",
-        "price": 900,
-        "link": "/img/img_prod/small-plant-anthurium-rosewood-pot.jpg"
-    },
-    {
-        "id": 11,
-        "name": "Pilea",
-        "species":"Pilea peperomioides",
-        "description": "Sus hojas brillantes en forma de moneda le dan el apodo de Planta del dinero. Es conocida por traer buena suerte y fortuna, es decir, es el regalo perfecto para la inauguración de una casa.",
-        "price": 1200,
-        "link": "/img/img_prod/small-plant-pilea-seafoam-pot.jpg"
-    },
-    {
-        "id": 12,
-        "name": "Gomero",
-        "species":"Ficus elastica",
-        "description": "Oscura y atemporal, la mejor de las plantas de interior. Ubicar cerca de una ventana con luz indirecta y verás cómo brilla.",
-        "price": 1600,
-        "link": "/img/img_prod/small-plant-ficus-black-pot.jpg"
-    }
+  {
+    "id": 1,
+    "name": "Rojo Congo",
+    "species": "Rojo Congo Philodendron",
+    "description": "Esta belleza es un sueño de bajo mantenimiento. Su follaje comienza siendo de color rojo cobrizo, y luego se convierte en un profundo verde esmeralda con el tiempo.",
+    "price": 1000,
+    "link": "/img/img_prod/large-plant-rojo-congo-black-pot.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Umbrella",
+    "species": "Schefflera arboricola",
+    "description": "La Schefflera arboricola es una de las plantas de interior más agradables que se pueden encontrar. Sus hojas verdes ovaladas caen con gracia desde un tallo central, como pequeñas sombrillas.",
+    "price": 1500,
+    "link": "/img/img_prod/large-plant-umbrella-black-pot.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Philodendron",
+    "species": "Philodendron hederaceum",
+    "description": "Esta clásica planta trepadora de fácil cuidado añadirá un toque de color a su espacio con sus hojas en forma de corazón de color chartreuse y verde.",
+    "price": 700,
+    "link": "/img/img_prod/medium-plant-brasil-philodendron-white-pot.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Cornstalk",
+    "species": "Dracaena fragrans",
+    "description": "Tener esta exuberante belleza tropical en tu living es lo más parecido a estar de vacaciones. Tip: Mantenerla en clima cálido y húmedo que tanto le gusta.",
+    "price": 1100,
+    "link": "/img/img_prod/medium-plant-cornstalk-dracaena-seafoam-pot.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Calathea",
+    "species": "Calathea setosa",
+    "description": "Sus hojas ovaladas de color verde salvia tienen una parte inferior de color púrpura mate que captará miradas en cualquier espacio.",
+    "price": 1000,
+    "link": "/img/img_prod/medium-plant-grey-star-calathea-black-pot.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Pink Dragon",
+    "species": "Dracaena marginata",
+    "description": "Las hojas puntiagudas y levemente rosadas de la Dracaena marginata exigirán tu atención cuando entres en una habitación.",
+    "price": 800,
+    "link": "/img/img_prod/medium-plant-pink-dragon-tree-rosewood-pot.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Staghorn Fern",
+    "species": "Platycerium veitchii",
+    "description": "Pet-friendly y purificadora de aire,¿qué más se puede pedir?",
+    "price": 600,
+    "link": "/img/img_prod/medium-plant-staghorn-fern-seafoam-pot.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Velvet Calathea",
+    "species": "Calathea rufibarba",
+    "description": "Su follaje ondulado es liso y verde en la parte superior, con una parte inferior esponjosa y aterciopelada en un tono ciruela.",
+    "price": 1100,
+    "link": "/img/img_prod/medium-plant-velvet-calathea-black-pot.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Red Anthurium",
+    "species": "Anthurium",
+    "description": "Esta planta de interior con hojas en forma de corazón crecerá y florecerá durante años. Ideal para acomparñarte todo el año.",
+    "price": 900,
+    "link": "/img/img_prod/small-plant-anthurium-rosewood-pot.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Pilea",
+    "species": "Pilea peperomioides",
+    "description": "Sus hojas brillantes en forma de moneda le dan el apodo de Planta del dinero. Es conocida por traer buena suerte y fortuna, es decir, es el regalo perfecto para la inauguración de una casa.",
+    "price": 1200,
+    "link": "/img/img_prod/small-plant-pilea-seafoam-pot.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Gomero",
+    "species": "Ficus elastica",
+    "description": "Oscura y atemporal, la mejor de las plantas de interior. Ubicar cerca de una ventana con luz indirecta y verás cómo brilla.",
+    "price": 1600,
+    "link": "/img/img_prod/small-plant-ficus-black-pot.jpg"
+  },
+  {
+    "id": "15",
+    "price": "1234",
+    "name": "prod de prueba epsilon",
+    "img": "TMScreenshot_2021.05.26-18.08.08.png",
+    "scale": "1",
+    "irr": "5",
+    "light": "5",
+    "pet": "false",
+    "dif": 5,
+    "desc": "product.add(newProduct);\r\n       "
+  }
 ]
