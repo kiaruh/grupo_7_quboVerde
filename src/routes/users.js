@@ -1,13 +1,21 @@
 //Express
-const express = require('express');
+const express = require('express')
 const router = express.Router()
 
 //Controller require
-const controller = require('../controllers/userController');
+const controller = require('../controllers/userController')
+
+//Middlewares
+const validations = require('../middlewares/validationRegisterMiddleware')
+
+
+
 
 //Route
-router.get("/register", controller.register);
-router.get("/login", controller.login);
+router.get("/register", controller.register)
+router.post("/login", controller.processRegister)
+router.get("/login", controller.login)
 
 
-module.exports = router;
+
+module.exports = router
