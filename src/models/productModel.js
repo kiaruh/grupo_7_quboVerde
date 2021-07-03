@@ -43,7 +43,7 @@ const model = {
 
     mod: function(id, data){
         let allProd = this.all();
-        let modIndex = id -1;
+        let modIndex = id;
 
         allProd[modIndex] = data;
 

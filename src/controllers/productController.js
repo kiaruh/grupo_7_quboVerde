@@ -48,9 +48,13 @@ const productController = {
     },
 
     mDetail: function(req, res){
-        let detId = req.params.id-1;
-        let prod = product.all();
-        let datos = prod[detId];
+        let detId = req.params.id;
+
+        let list = product.all();
+
+        let detIndex = list.findIndex(prod => prod.id == detId)
+
+        let datos = list[detIndex];
 
         res.render ("products/admin/product_mod", {datos: datos});
         console.log(datos);
@@ -58,6 +62,11 @@ const productController = {
 
     setProd: function(req, res){
         let setId = req.params.id;
+        let list = product.all();
+        
+
+        let modIndex = list.findIndex(prod => prod.id == setId)
+
         let setProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
        
         let setMod = {
@@ -74,7 +83,7 @@ const productController = {
             desc: req.body.descripcion,
         }
 
-        product.mod(setId, setMod);
+        product.mod(modIndex, setMod);
         res.redirect("/products/all");
         console.log(setMod);
     },
