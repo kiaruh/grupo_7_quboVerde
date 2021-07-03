@@ -32,7 +32,7 @@ const productController = {
             id: newProductId,
             price: String(req.body.precio),
             name: req.body.producto,
-            img: req.body.img,
+            img: req.file.filename,
             species: req.body.especie,
             scale: req.body.escala,
             irr: req.body.riego,
@@ -44,7 +44,6 @@ const productController = {
 
         product.add(newProduct);
         res.redirect("/products/all");
-        console.log(descripcion);
     },
 
     mDetail: function(req, res){
@@ -55,6 +54,7 @@ const productController = {
         let detIndex = list.findIndex(prod => prod.id == detId)
 
         let datos = list[detIndex];
+
 
         res.render ("products/admin/product_mod", {datos: datos});
         console.log(datos);
@@ -73,7 +73,7 @@ const productController = {
             id: setId,
             price: String(req.body.precio),
             name: req.body.producto,
-            img: req.body.img,
+            img: req.file.filename,
             species: req.body.especie,
             scale: req.body.escala,
             irr: req.body.riego,
@@ -93,6 +93,12 @@ const productController = {
         product.delete(setId);
 
         res.redirect("/products/all");
+    },
+
+    searchProd: function (req, res){
+        let search = req.params.search;
+
+        let data = product.all();
     }
 }
 
