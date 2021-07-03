@@ -97,8 +97,22 @@ const productController = {
 
     searchProd: function (req, res){
         let search = req.params.search;
-
         let data = product.all();
+
+        // arma el array vacio de respuesta
+        let query = [];
+
+        // arma el loop que busca las respuestas. Pordria ser un forEach, pero lo arme asi para ir toqueteando.
+
+        for (i=0; i < data.lenght; i++) {
+            if (data[i].name.contains(search)){
+                query.push(data[i]);
+            }
+        }
+
+        res.render("products/all",{catalogo: query})
+        console.log(search);
+
     }
 }
 
