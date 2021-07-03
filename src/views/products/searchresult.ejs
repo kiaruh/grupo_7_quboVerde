@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <title>quboverde</title>
+</head>
+<body>
+    <%- include("../includes/header") %> 
+
+    <main class="main">
+      <h1>Resultados de la busqueda: <i> <%=search %></i> </h1>
+      <section class="prod-container">
+        
+            <% for (let i=0; i < catalogo.length; i++){ %>
+               <article class="prod">
+                  <picture class="prod-img">
+                     <a href="/products/detail/<%= catalogo[i].id%>">
+                        <img src="/img/img_products/<%= catalogo[i].img %>" alt="">
+                     </a>
+                  </picture>
+                  
+                  <div class="prod-box">
+                     <h3 class="prod-title"><%= catalogo[i].name %></h3>
+                     <h4 class="prod-price">$ <%= parseFloat(catalogo[i].price).toFixed(0) %></h4>
+                     <h5 class="prod-type"><%= catalogo[i].species %></h5>
+
+                     <form class="prod-action" action="#">
+                        <button class="add-cart">agregar</button>
+                        <button class="fav"><img src="/img/fav.svg" alt=""></button>
+                     </form>
+                  </div>
+               </article>
+            <% } %>
+         
+  </section>
+
+    </main>
+
+    <%- include("../includes/footer") %> 
+</body>
+</html>

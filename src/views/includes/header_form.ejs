@@ -37,9 +37,9 @@
 
     <section class="search-bar">
         <article>
-        <form action="/products/search/?_method=POST" method="POST" class="search-bar-container">
-            <input type="text" placeholder="¿Qué estás buscando?" name="searchContent">
-            <button><img src="/img/search.svg" alt=""></button>
+        <form method="GET" class="search-bar-container" >
+            <input type="text" placeholder="¿Qué estás buscando?" name="search">
+            <button type="submit" value="Search" formaction="/products/search/"><img src="/img/search.svg" alt=""></button>
         </form>
         </article>
            

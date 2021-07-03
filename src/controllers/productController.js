@@ -96,7 +96,7 @@ const productController = {
     },
 
     searchProd: function (req, res){
-        let search = req.params.search;
+        let search = req.query.search.toLowerCase();
         let data = product.all();
 
         // arma el array vacio de respuesta
@@ -104,14 +104,14 @@ const productController = {
 
         // arma el loop que busca las respuestas. Pordria ser un forEach, pero lo arme asi para ir toqueteando.
 
-        for (i=0; i < data.lenght; i++) {
-            if (data[i].name.contains(search)){
+        for (let i=0; i < data.length; i++) {
+            if (data[i].name.toLowerCase().includes(search)){
                 query.push(data[i]);
             }
         }
 
-        res.render("products/all",{catalogo: query})
-        console.log(search);
+        res.render("products/searchresult",{catalogo: query, search: search})
+        console.log(query);
 
     }
 }

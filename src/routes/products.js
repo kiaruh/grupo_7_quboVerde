@@ -41,7 +41,7 @@ router.put("/mod/:id", fileUpload.single('img'), controller.setProd);
 router.delete("/mod/del/:id", controller.delProd);
 
 // ruta para search
-router.post("/search/", controller.searchProd);
+router.get("/search", controller.searchProd);
 
 
 module.exports = router;
