@@ -37,19 +37,67 @@
                     <section class="desc-care-box">
                         <picture><img src="/img/gota.svg" alt=""></picture>
                         <h2>riego</h2>
-                        <h3>cada 3 dias</h3>
+                        <% switch (catalogo[0].irr) {
+                            case "0": 
+                            %> <h3>Semanal</h3> <%
+                            break;
+                            
+                            case "1": 
+                            %> <h3>cada 3 dias</h3> <%
+                            break;
+
+                            case "2": 
+                            %> <h3>Leve</h3><%
+                            break;
+
+                            case "3": 
+                            %> <h3>Moderado</h3> <%
+                            break;
+
+                            case "4": 
+                            %><h3>Abundante</h3> <%
+                            break;
+
+                            case "5":
+                            %><h3>Abundante <b>+</b></h3> <%
+                            break;
+                        } %>
                     </section>
 
                     <section class="desc-care-box">
                         <picture><img src="/img/sol.svg" alt=""></picture>
                         <h2>Luz</h2>
-                        <h3>indirecta</h3>
+                        <% switch (catalogo[0].light) {
+                            case "1": 
+                            %> <h3>Sombra</h3> <%
+                            break;
+                            
+                            case "2": 
+                            %> <h3>Artificial</h3> <%
+                            break;
+
+                            case "3": 
+                            %> <h3>indirecta</h3><%
+                            break;
+
+                            case "4": 
+                            %> <h3>Moderada</h3> <%
+                            break;
+
+                            case "5": 
+                            %><h3>Abundante</h3> <%
+                            break;
+                        } %>
                     </section>
 
                     <section class="desc-care-box">
                         <picture><img src="/img/mascota.svg" alt=""></picture>
                         <h2>mascotas</h2>
+                        <% if(catalogo[0].pet == "true"){ %> 
                         <h3>apta mascotas</h3>
+                        <% } else { %>
+                        <h3><b>NO</b> apto</h3>
+                        <% } %>
                     </section>
                     
                 </section>
@@ -69,23 +117,23 @@
                     <form action="#" class="care-bar-r care-bar">
                         <picture class="bar-img"><img src="/img/gotita.svg" alt=""></picture>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].irr == 1 || catalogo[0].irr == 0 || catalogo[0].irr > 1) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].irr == 2 || catalogo[0].irr > 2 ) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].irr == 3 || catalogo[0].irr > 3 ) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled>
+                            <input type="checkbox" disabled <% if(catalogo[0].irr == 4 || catalogo[0].irr > 4 ) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled>
+                            <input type="checkbox" disabled <% if(catalogo[0].irr == 5) { %> checked <% } %>>
                             <div></div>
                         </label>
                     </form>
@@ -96,23 +144,23 @@
                     <form action="#" class="care-bar-l care-bar">
                         <picture class="bar-img"><img src="/img/solcito.svg" alt=""></picture>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].light == 1 || catalogo[0].light > 1) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].light == 2 || catalogo[0].light > 2) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].light == 3 || catalogo[0].light > 3) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].light == 4 || catalogo[0].light > 4) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled>
+                            <input type="checkbox" disabled <% if(catalogo[0].light == 5) { %> checked <% } %>>
                             <div></div>
                         </label>
                     </form>
@@ -123,23 +171,23 @@
                     <form action="#" class="care-bar-m care-bar">
                         <picture class="bar-img"><img src="/img/palita.svg" alt=""></picture>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].dif == 1 || catalogo[0].dif > 1) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled checked>
+                            <input type="checkbox" disabled <% if(catalogo[0].dif == 2 || catalogo[0].dif > 2) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled>
+                            <input type="checkbox" disabled <% if(catalogo[0].dif == 3 || catalogo[0].dif > 3) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled>
+                            <input type="checkbox" disabled <% if(catalogo[0].dif == 4 || catalogo[0].dif > 4) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled>
+                            <input type="checkbox" disabled <% if(catalogo[0].dif == 5) { %> checked <% } %>>
                             <div></div>
                         </label>
                     </form>
