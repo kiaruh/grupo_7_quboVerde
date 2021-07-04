@@ -41,8 +41,8 @@ const productController = {
         }
 
         let newProduct = {
-            id: newProductId,
-            price: req.body.precio,
+            id: Number(newProductId),
+            price: Number(req.body.precio),
             name: req.body.producto,
             img: newImg,
             species: req.body.especie,
@@ -93,7 +93,7 @@ const productController = {
 
         let setMod = {
             id: Number(setId),
-            price: String(req.body.precio),
+            price: Number(req.body.precio),
             name: req.body.producto,
             img: modImg,
             species: req.body.especie,
