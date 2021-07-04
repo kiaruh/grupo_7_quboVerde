@@ -52,11 +52,10 @@
     "desc": "Tener esta exuberante belleza tropical en tu living es lo más parecido a estar de vacaciones. Tip: Mantenerla en clima cálido y húmedo que tanto le gusta."
   },
   {
-    "id": 21,
+    "id": "21",
     "price": "1000",
-    "name": "Calathea",
-    "img": "Calathea-1625326152817.jpg",
-    "species": "Calathea",
+    "name": "Calathea foto modificada",
+    "img": "Calathea_foto_modificada-1625422304403.jpg",
     "scale": "1",
     "irr": "0",
     "light": "3",
@@ -141,5 +140,18 @@
     "pet": "false",
     "dif": 2,
     "desc": "Oscura y atemporal, la mejor de las plantas de interior. Ubicar cerca de una ventana con luz indirecta y verás cómo brilla."
+  },
+  {
+    "id": 28,
+    "price": "1200",
+    "name": "Sin Foto",
+    "img": "default.jpg",
+    "species": "Dracaena",
+    "scale": "2",
+    "irr": "5",
+    "light": "1",
+    "pet": "false",
+    "dif": 3,
+    "desc": "sin foto"
   }
 ]

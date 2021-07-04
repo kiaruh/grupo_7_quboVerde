@@ -1,5 +1,6 @@
 const express = require('express');
 const product = require("../models/productModel")
+const imgController = require('../models/imgModel')
 const path = require('path'); 
 const fs = require('fs');
 
@@ -15,10 +16,15 @@ const productController = {
     },
 
     addProd: function(req, res){
-        let newProductId = product.all().length + 1;
+        let list = product.all();
+        let lastIndex = list.length - 1;
+
+        let newProductId = list[lastIndex].id + 1;
+
         let newProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
 
         let descripcion = req.body.descripcion;
+        let newImg;
 
         if (req.body.img == ""){
             req.body.img = "null.jpg"
@@ -28,11 +34,17 @@ const productController = {
             req.body.descripcion = "Producto sin descripción."
         }
 
+        if (req.file){
+            newImg = req.file.filename;
+        } else {
+            newImg = "default.jpg"
+        }
+
         let newProduct = {
             id: newProductId,
-            price: String(req.body.precio),
+            price: req.body.precio,
             name: req.body.producto,
-            img: req.file.filename,
+            img: newImg,
             species: req.body.especie,
             scale: req.body.escala,
             irr: req.body.riego,
@@ -63,12 +75,18 @@ const productController = {
     setProd: function(req, res){
         let setId = req.params.id;
         let list = product.all();
-        
 
-        let modIndex = list.findIndex(prod => prod.id == setId)
+        let modIndex = list.findIndex(prod => prod.id == setId);
+        console.log(modIndex);
 
         let setProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
-       
+
+        // verifica si cambio la imagen, si cambio elimina la anterior
+        if (req.body.img == ""){  
+        } else {
+            imgController.deleteImg(list[modIndex].img);
+        }
+
         let setMod = {
             id: setId,
             price: String(req.body.precio),
@@ -85,14 +103,21 @@ const productController = {
 
         product.mod(modIndex, setMod);
         res.redirect("/products/all");
-        console.log(setMod);
     },
 
     delProd: function(req, res){
         let setId = req.params.id;
+        let list = product.all();
+
+        let delIndex = list.findIndex(prod => prod.id == setId)
+        let deleteImg = list[delIndex].img;
+
+        imgController.deleteImg(deleteImg);
         product.delete(setId);
 
         res.redirect("/products/all");
+
+        console.log(deleteImg);
     },
 
     searchProd: function (req, res){
