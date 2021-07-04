@@ -49,6 +49,18 @@ const model = {
 
         let modProdJson = JSON.stringify(allProd,null,2);
         fs.writeFileSync(directory, modProdJson);
+    },
+
+    listByField: function(field, value){
+        let productos = this.all();
+        let filter = productos.filter(producto => producto[field] === value)
+        return filter
+    },
+
+    listByRelative: function(field, value){
+        let productos = this.all();
+        let filter = productos.filter(producto => producto[field] <= value)
+        return filter
     }
 }
 

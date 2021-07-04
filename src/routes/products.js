@@ -9,7 +9,7 @@ const multer = require('multer');
 //Controller require
 const controller = require('../controllers/productController');
 
-// configuracion de multer
+// configuracion de multer (que despues tendria que armarla directo como middleware aparte para limpiar esto un poco)
 
 const mds = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -42,6 +42,11 @@ router.delete("/mod/del/:id", controller.delProd);
 
 // ruta para search
 router.get("/search", controller.searchProd);
+
+// rutas para mascotas, mas vendidos, bajo manenimiento
+router.get("/pet", controller.pet);
+router.get("/bestseller", controller.bestseller);
+router.get("/easymode", controller.easymode);
 
 
 module.exports = router;

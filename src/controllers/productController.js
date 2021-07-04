@@ -128,20 +128,34 @@ const productController = {
     searchProd: function (req, res){
         let search = req.query.search.toLowerCase();
         let data = product.all();
-
         // arma el array vacio de respuesta
         let query = [];
-
         // arma el loop que busca las respuestas. Pordria ser un forEach, pero lo arme asi para ir toqueteando.
-
         for (let i=0; i < data.length; i++) {
             if (data[i].name.toLowerCase().includes(search)){
                 query.push(data[i]);
             }
         }
-
         res.render("products/searchresult",{catalogo: query, search: search})
-        console.log(query);
+    },
+
+    pet: function (req, res){
+        let list = product.listByField("pet", "true");
+        res.render("products/searchresult",{catalogo: list, search: "Productos Aptos para Mascotas"})
+    },
+
+    bestseller: function (req, res){
+        let list = product.listByRelative("price", 1000);
+        res.render("products/searchresult",{catalogo: list, search: "Los mas vendidos!"});
+
+    },
+
+    easymode: function (req, res){
+        let list1 = product.listByField("dif", 1);
+        let list2 = product.listByField("dif", 2);
+        let list = list1.concat(list2);
+        res.render("products/searchresult",{catalogo: list, search: "Plantas fáciles de mantenes (easymode!)"})
+
 
     }
 }
