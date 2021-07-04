@@ -77,21 +77,23 @@ const productController = {
         let list = product.all();
 
         let modIndex = list.findIndex(prod => prod.id == setId);
-        console.log(modIndex);
+        let modImg;
 
         let setProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
 
-        // verifica si cambio la imagen, si cambio elimina la anterior
-        if (req.body.img == ""){  
+        // verifica si cambio la imagen, si cambio elimina la anterior y carga la nueva en el json, si no cambio pone en el json la imagen que ya estaba.
+        if (req.body.img == undefined){  
+            modImg = list[modIndex].img;
         } else {
             imgController.deleteImg(list[modIndex].img);
+            modImg = req.file.filename;
         }
 
         let setMod = {
             id: setId,
             price: String(req.body.precio),
             name: req.body.producto,
-            img: req.file.filename,
+            img: modImg,
             species: req.body.especie,
             scale: req.body.escala,
             irr: req.body.riego,
