@@ -26,11 +26,10 @@
     "desc": "La Schefflera arboricola es una de las plantas de interior más agradables que se pueden encontrar. Sus hojas verdes ovaladas caen con gracia desde un tallo central, como pequeñas sombrillas.\r\n"
   },
   {
-    "id": 19,
+    "id": "19",
     "price": "700",
     "name": "Philodendron",
     "img": "Philodendron-1625325222533.jpg",
-    "species": "Philodendron",
     "scale": "2",
     "irr": "2",
     "light": "3",
@@ -52,10 +51,10 @@
     "desc": "Tener esta exuberante belleza tropical en tu living es lo más parecido a estar de vacaciones. Tip: Mantenerla en clima cálido y húmedo que tanto le gusta."
   },
   {
-    "id": "21",
+    "id": 21,
     "price": "1000",
-    "name": "Calathea ",
-    "img": "Calathea_foto_modificada-1625422304403.jpg",
+    "name": "Calathea R",
+    "img": "Calathea_R-1625428228027.jpg",
     "scale": "1",
     "irr": "0",
     "light": "3",

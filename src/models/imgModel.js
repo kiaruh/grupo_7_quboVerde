@@ -6,7 +6,7 @@ const directory = path.resolve(__dirname, "../" , "../public", "img", "img_produ
 const model = {
     deleteImg: function(img){
         if (img == "default.jpg"){
-            break;
+            
         } else {
 
         let imgToDelete = path.resolve(directory, img);
