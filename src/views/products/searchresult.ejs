@@ -16,7 +16,8 @@
     <%- include("../includes/header") %> 
 
     <main class="main">
-      <h1>Resultados de la busqueda: <i> <%=search %></i> </h1>
+      <h1>Resultados de la busqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultados</h1> 
+      
       <section class="prod-container">
         
             <% for (let i=0; i < catalogo.length; i++){ %>
