@@ -38,9 +38,17 @@
     <section class="search-bar">
         <article>
         <form action="/" class="search-bar-container">
-            <input type="text" placeholder="¿Qué estás buscando?" name="search">
+            <input type="search" placeholder="¿Qué estás buscando?" name="search" list="listaproductos" autocomplete="off">
             <button type="submit" value="Search" formaction="/products/search/"><img src="/img/search.svg" alt=""></button>
         </form>
+
+        <% if(prod){ %>
+        <datalist id="listaproductos">
+            <% for (let i=0; i < prod.length; i++){ %>
+                <option value="<%=prod[i].name%>">
+             <% } %>
+            </datalist>
+             <% } %>
         </article>     
     </section>
 
