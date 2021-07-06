@@ -1,24 +1,51 @@
-[{
+[
+  {
     "id": 1,
-    "usuario":"userhola",
+    "user": "userhola",
     "birth_date": "1900-12-01",
-    "email":"hola@gmail.com",
+    "email": "hola@gmail.com",
     "first_name": "holahola",
     "last_name": "hello",
     "password:": "hola1234",
-    "avatar":"",
+    "avatar": "",
     "admin": true
-},
-{
-    "id":2,
-    "usuario":"userchau",
+  },
+  {
+    "id": 2,
+    "user": "userchau",
     "birth_date": "1900-01-12",
-    "email":"chau@gmail.com",
+    "email": "chau@gmail.com",
     "first_name": "chauchau",
     "last_name": "byebye",
     "password:": "chau1234",
-    "avatar":"",
+    "avatar": "",
     "admin": false
-
-}
+  },
+  {
+    "id": 3,
+    "user": "testuser",
+    "birth_date": "2021-07-05",
+    "firstname": "testname",
+    "lastname": "testapellido",
+    "email": "test@email.com",
+    "password": "$2a$10$uwVv2rQ.n9cWMAnxOmhZDeYA/cQ9hn4t1MpZtZZ5frlTpGhlEyn.y"
+  },
+  {
+    "id": 4,
+    "user": "test1",
+    "birth_date": "2021-07-04",
+    "firstname": "testname1",
+    "lastname": "testapellido1",
+    "email": "test@email.com1",
+    "password": "$2a$10$7Y.MUoTPwvG/Zw6LvxuBx.xB39Wmc50/GM2sWjs/UHrnaAApq8X0m"
+  },
+  {
+    "id": 5,
+    "user": "test2",
+    "birth_date": "2021-02-11",
+    "firstname": "testname2",
+    "lastname": "testapellido2",
+    "email": "test@mail.com2",
+    "password": "$2a$10$zQR3WzYCfVL4yWDtuu6arOqjKoKpvTkurOQwiKacVBY2s5aIy0/Fa"
+  }
 ]
