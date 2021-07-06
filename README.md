@@ -71,25 +71,25 @@ https://grupo7quboverde.herokuapp.com
 
 * Home:'/'
 
-* Detalle de producto: '/product'
+* Listato total de productos: '/products/all' 
 
-* Carrito de compras:'/cart'
+* Detalle de producto: '/products/detail/:id'
 
-* Formulario de registro:'/register'
+* Modificar un producto: '/products/mod/:id' 
 
-* Formulario de login: '/login'
+* Crear un producto: '/products/newprod' 
+
+* Filtros generales
+  pet friendly: '/products/pet' 
+  mas vendidos: '/products/bestseller' 
+  easymode (fáciles de mantener): '/products/easymode' 
+
+* Busqueda de productos (barra visible en formato movil) '/products/search/?query'
+
+* Carrito de compras:'/checkout/cart'
+
+* Formulario de registro:'/users/register'
+
+* Formulario de login: '/users/login'
 
 * Página en construcción: '/error'
-
-
-> ## Rutas a Vistas (estructura a futuro):
->* Home:'/'
->* Listado de productos: '/product'
->* Detalle de producto:'/product/detail/:id'
->* Form de carga de producto:'/product/load'
->* Formulario de edición de producto: '/product/edit/:id'
->* Carrito de compras:'/user/cart'
->* Formulario de registro:'/user'
->* Formulario de login: '/user/login'
->* Formulario de edicion de usuario: '/user/edit/:id'
->* Perfil de usuario: '/user/profile/:id'
