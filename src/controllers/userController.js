@@ -19,20 +19,45 @@ const usercontroller = {
         // if(userInDB) {
         //     return res.render("users/register", {errors: { email: { msg: "Este mail ya fue utilizado" } }, oldData: req.body})
         // }
-
-       
-
-    
-    let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10)};
-
-        
+    let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10)};       
     let newUser =  User.create(userTocreate);
     return res.redirect("/users/login")
-   
-
     },
 
     login: (req,res) => res.render("users/login"), // get login
+
+    loginProcess: (req, res) => {
+		let userToLogin = User.findByField('email', req.body.email);
+		
+		if(userToLogin) {
+			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+			if (isOkThePassword) {
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin;
+
+				if(req.body.remember_user) {
+					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+				}
+
+				return res.redirect('/user/profile');
+			} 
+			return res.render('userLoginForm', {
+				errors: {
+					email: {
+						msg: 'Las credenciales son inválidas'
+					}
+				}
+			});
+		}
+
+		return res.render('userLoginForm', {
+			errors: {
+				email: {
+					msg: 'No se encuentra este email en nuestra base de datos'
+				}
+			}
+		});
+	}
     
 
 }
