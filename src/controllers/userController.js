@@ -39,9 +39,9 @@ const usercontroller = {
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
 				}
 
-				return res.redirect('/user/profile');
+				return res.redirect('/');
 			} 
-			return res.render('userLoginForm', {
+			return res.render('users/login', {
 				errors: {
 					email: {
 						msg: 'Las credenciales son inválidas'
@@ -50,7 +50,7 @@ const usercontroller = {
 			});
 		}
 
-		return res.render('userLoginForm', {
+		return res.render('users/login', {
 			errors: {
 				email: {
 					msg: 'No se encuentra este email en nuestra base de datos'
