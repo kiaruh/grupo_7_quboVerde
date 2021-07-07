@@ -38,7 +38,7 @@
 
 ## Retro - Sprint 4:
 
-* Start Doing: Entender mejor los alcances de los sprints.
+* Start Doing: Entender mejor los alcances de los sprints y empezar a registrar los trabajos semanales (nos cuesta escribir el weekly, aunque trabajamos bastante ordenados en el tiempo).
 
 * More of: Probar diferentes maneras de hacer lo mismo y seguir avanzando por fuera de lo requerido, adelantando lo queya sabemos hacer.
 
