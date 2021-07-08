@@ -27,9 +27,12 @@
 
     <!-- este article todo el carrito, que en la version web tendria mas contenidos-->
     <article class="icon-navbar">
-        <a href="#"><img class ="icons" src="/img/search.svg" alt=""></a>
+        <form action="/" class="search-bar-container-2">
+            <input type="search" placeholder="¿Buscás algo?" name="search" list="listaproductos" autocomplete="off">
+            <button type="submit" value="Search" formaction="/products/search/"><img class ="icons" src="/img/search.svg" alt=""></button>
+        </form>
         <a href="/users/profile"><img class ="icons" src="/img/user.svg" alt=""></a>
-        <a href="/checkout/cart"><img src="/img/cart.svg" alt=""></a>
+        <a href="/checkout/cart"><img class ="icons" src="/img/cart.svg" alt=""></a>
     </article>
 
     </section>
