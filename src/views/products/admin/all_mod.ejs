@@ -34,11 +34,17 @@
                      <h4 class="prod-price">$ <%= parseFloat(catalogo[i].price).toFixed(0) %></h4>
                      <h5 class="prod-type"><%= catalogo[i].species %></h5>
 
-                     <form class="prod-action" action="">
-                        <button class="add-cart">Editar</button>
-
-                        <button class="fav" type="submit" form action="/products/mod/del/<%= catalogo.id%>?_method=DELETE" onclick="alert('Producto eliminado')"> <img src="/img/trash.svg" alt=""> </button>
+                     <!-- <form  action=""> -->
+                        <div class="prod-action">
+                     
+                           <button class="add-cart" ><a href="/products/mod/<%= catalogo[i].id%>">Editar</a></button>
+                     
+                     <!-- </form> -->
+                     <form method="POST" action="/products/mod/del/<%= catalogo[i].id%>?_method=DELETE">
+                        <button class="fav" type="submit" onclick="alert('Producto eliminado')"> <img src="/img/trash.svg" alt=""> </button>
                      </form>
+                     </div>
+                    
                   </div>
                </article>
             <% } %>
