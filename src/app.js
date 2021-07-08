@@ -20,6 +20,16 @@ app.use(session({secret: "quboverde",resave: false,saveUninitialized: false,}))
 app.use(cookies())
 app.use(express.urlencoded({ extended: false }))
 
+// micro-middleware para enviar los datos de productos al formulario de busqueda en todas las vistas 
+const product = require("./models/productModel")
+let dataSearch = function(req, res, next) {
+    let data = product.all();
+    res.locals.produ = data;
+    next();
+}
+
+app.use(dataSearch);
+
 //Public Access
 app.use(express.static(path.resolve(__dirname,"../public"))); //igual que antes pero con un . adicional
 

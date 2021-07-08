@@ -44,10 +44,10 @@
             <button type="submit" value="Search" formaction="/products/search/"><img src="/img/search.svg" alt=""></button>
         </form>
 
-        <% if(prod){ %>
+        <% if(locals.produ){ %>
         <datalist id="listaproductos">
-            <% for (let i=0; i < prod.length; i++){ %>
-                <option value="<%=prod[i].name%>">
+            <% for (let i=0; i < locals.produ.length; i++){ %>
+                <option value="<%=locals.produ[i].name%>">
              <% } %>
             </datalist>
              <% } %>
