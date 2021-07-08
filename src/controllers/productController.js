@@ -146,7 +146,7 @@ const productController = {
 
     bestseller: function (req, res){
         let list = product.listByRelative("price", 1000);
-        res.render("products/searchresult",{catalogo: list, search: "Los mas vendidos!"});
+        res.render("products/searchresult",{catalogo: list, search: "Los más vendidos!"});
 
     },
 
@@ -154,7 +154,7 @@ const productController = {
         let list1 = product.listByField("dif", 1);
         let list2 = product.listByField("dif", 2);
         let list = list1.concat(list2);
-        res.render("products/searchresult",{catalogo: list, search: "Plantas fáciles de mantenes (easymode!)"})
+        res.render("products/searchresult",{catalogo: list, search: "Plantas fáciles de mantener (easymode!)"})
 
 
     }

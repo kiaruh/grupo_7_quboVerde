@@ -53,5 +53,27 @@
     "password": "$2a$10$zQR3WzYCfVL4yWDtuu6arOqjKoKpvTkurOQwiKacVBY2s5aIy0/Fa",
     "avatar": "avatar1.png",
     "admin": false
+  },
+  {
+    "id": 6,
+    "username": "Usuario Prueba 6",
+    "birthdate": "1993-03-07",
+    "firstname": "Marina",
+    "lastname": "Y.",
+    "email": "arqmarinayu@gmail.com",
+    "password": "$2a$10$cg3EyYf9dIMUD3UrGFYPC.f4P3jsQz9Ni2QAWKXu9fSOzZYj7Zn3u",
+    "avatar": "default_profile.png",
+    "admin": false
+  },
+  {
+    "id": 7,
+    "username": "Pepito1234",
+    "birthdate": "2021-07-01",
+    "firstname": "Pepito",
+    "lastname": "Pepita",
+    "email": "unmail@gmail.com",
+    "password": "$2a$10$JHnDIpzBzVa9YB62cb9ww.QTQuFGpBHJ3d1wfh5547CoyeHq3xhTC",
+    "avatar": "default_profile.png",
+    "admin": false
   }
 ]

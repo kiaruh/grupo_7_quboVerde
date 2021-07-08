@@ -17,9 +17,9 @@
 
     <main class="main">
     <% if(catalogo.length == 1) { %>
-      <h1>Resultado de la busqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultado</h1> 
+      <h1>Resultado de la búsqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultado</h1> 
    <% } else { %>
-      <h1>Resultados de la busqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultados</h1> 
+      <h1>Resultados de la búsqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultados</h1> 
    <% } %>
       
       <section class="prod-container">
@@ -28,7 +28,7 @@
                <article class="prod">
                   <picture class="prod-img">
                      <a href="/products/detail/<%= catalogo[i].id%>">
-                        <img src="/img/img_products/<%= catalogo[i].img %>" alt="">
+                        <img src="/img/upload/product/<%= catalogo[i].img %>" alt="">
                      </a>
                   </picture>
                   

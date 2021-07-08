@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     
 
     <title>quboverde Registrar</title>
@@ -62,11 +61,13 @@
                     </div>
                                             
                     <div class="col-1">
-                        <button type="submit" class="register-btn btn-main btn" >Editar</button> 
+                        <a href="/users/mod/<%=users[0].id%>">
+                            <button type="submit" class="register-btn btn-main btn" >Editar</button> 
+                        </a>
                     </div>
                     
                     <p class="aviso">Solución temporal: Para visualizar otros perfiles ingresar a</p>
-                    <p class="aviso-link">https://grupo7quboverde.herokuapp.com//users/profile/:id </p>
+                    <p class="aviso-link">https://grupo7quboverde.herokuapp.com/users/profile/:id </p>
                 
                  
                 </div>

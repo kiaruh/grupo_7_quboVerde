@@ -13,7 +13,7 @@ const controller = require('../controllers/productController');
 
 const mds = multer.diskStorage({
     destination: (req, file, callback) => {
-        let prodFolder = path.resolve(__dirname, '../', '../public', 'img', 'img_products');
+        let prodFolder = path.resolve(__dirname, '../', '../public', 'img', 'upload','product');
         callback(null, prodFolder);
     },
     filename: (req, file, callback) => {

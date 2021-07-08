@@ -7,6 +7,10 @@
     position: relative;
     align-content: center ;
 }
+i.fas fa-pen{
+  color: white;
+  font-size: 15px;
+}
 
 input{
   margin: auto;
@@ -60,6 +64,7 @@ label.titulo{
 
 .col-img input{
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 input.dato_existente{
@@ -150,24 +155,8 @@ p{
   border-radius: 25px;
 }
 .register-btn {
-  background: rgba(136, 136, 136, 0.55);
-  padding-left: 17%;
-  padding-right: 17%;
-  color: #FDFCFD;
-  border-radius: 50px;
-  height: 35px;
   border: none;
   outline: none;
-  margin-top: 6px;
-  margin-bottom: 6px;
-}
-.nacimiento {
-    border: none;
-    color: #FDFCFD;
-    width: 118px;
-    font-size: 14px;
-    margin-left: 4%;
-    background: transparent;
 }
 
 .register-btn{
@@ -176,6 +165,7 @@ p{
   background: #CB6565;
   border-radius: 50px;
 }
+
 .register-btn:hover {
   background: #ff8282;
   cursor: pointer;
@@ -208,8 +198,8 @@ p{
     width: 70vw;
   }
   .register-btn {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
 }

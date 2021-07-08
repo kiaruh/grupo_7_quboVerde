@@ -140,19 +140,6 @@
     "desc": "Oscura y atemporal, la mejor de las plantas de interior. Ubicar cerca de una ventana con luz indirecta y verás cómo brilla."
   },
   {
-    "id": 28,
-    "price": "1200",
-    "name": "Sin Foto",
-    "img": "default.jpg",
-    "species": "Dracaena",
-    "scale": "2",
-    "irr": "5",
-    "light": "1",
-    "pet": "false",
-    "dif": 3,
-    "desc": "sin foto"
-  },
-  {
     "id": 29,
     "price": 1000,
     "name": "Prueba Producto 1",
