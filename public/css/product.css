@@ -628,10 +628,14 @@ display: none;
 }
 
 
+
 }
 
 @media (max-width: 720px){
     .other-products{
+        display: none;
+    }
+    .other-title{
         display: none;
     }
 }
