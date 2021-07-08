@@ -108,7 +108,7 @@ const productController = {
         }
 
         product.mod(modIndex, setMod);
-        res.redirect("/products/admin/all_prod");
+        res.redirect("/products/mod");
         console.log(setMod);
     },
 
@@ -122,7 +122,7 @@ const productController = {
         imgController.deleteImg(deleteImg);
         product.delete(setId);
 
-        res.redirect("/products/admin/all_prod");
+        res.redirect("/products/mod");
 
         console.log(deleteImg);
     },

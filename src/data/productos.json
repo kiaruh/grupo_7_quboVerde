@@ -155,9 +155,8 @@
   {
     "id": 30,
     "price": 123,
-    "name": "Prueba Producto 2",
+    "name": "Prueba Producto 3",
     "img": "default.jpg",
-    "species": "Dracaena",
     "scale": "2",
     "irr": "3",
     "light": "4",
