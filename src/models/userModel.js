@@ -1,12 +1,11 @@
 const fs = require("fs")
 const path = require('path')
 const directory = path.resolve(__dirname,"../data","users.json");
+
 const User = {
-    
-	fileName: directory,
 
 	getData: function () {
-		return JSON.parse(fs.readFileSync(this.fileName, "utf-8"));
+		return JSON.parse(fs.readFileSync(directory, "utf-8"));
 	},
 
 	generateId: function () {
@@ -41,14 +40,15 @@ const User = {
 			...userData
 		}
 		allUsers.push(newUser);
-		fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null,  " "));
+		fs.writeFileSync(directory, JSON.stringify(allUsers, null,2));
 		return newUser;
+
 	},
 
 	delete: function (id) {
 		let allUsers = this.findAll();
 		let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
-		fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, " "));
+		fs.writeFileSync(directory, JSON.stringify(finalUsers, null, " "));
 		return true;
 	}
 }

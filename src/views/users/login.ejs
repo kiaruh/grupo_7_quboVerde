@@ -28,15 +28,15 @@
 
         <div class="side-banner"><img src="/img/banner-vertical.jpg" alt=""></div>
 
-        <form class="form-login" action="#">
+        <form class="form-login" method="POST" action="/users/login">
            
                 <h1 class="titulo-login">Bienvenido</h1>
                   
 
                 <fieldset class="login">
                                   
-                  <input class="login-input" type="text" id="usuario" placeholder="Usuario" name="user" minlength="2" required> 
-                  <input class="login-input"  type="password" id="psw" placeholder="Contraseña" name="psw" required>
+                  <input class="login-input" type="email" placeholder="Email" name="email" minlength="2" required> 
+                  <input class="login-input"  type="password" placeholder="Contraseña" name="password" required>
 
                   <fieldset class="recordar">
                     <input type="checkbox" id="check" class="check" checked>

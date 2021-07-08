@@ -1,10 +1,9 @@
 [
   {
     "id": 17,
-    "price": "1000",
+    "price": 1000,
     "name": "Rojo Congo",
     "img": "Rojo_Congo-1625325134341.jpg",
-    "species": "Philodendron",
     "scale": "2",
     "irr": "0",
     "light": "3",
@@ -155,6 +154,7 @@
   },
   {
     "id": 29,
+<<<<<<< HEAD
     "price": 1000,
     "name": "Prueba Producto 1",
     "img": "default.jpg",
@@ -165,5 +165,17 @@
     "pet": "true",
     "dif": 1,
     "desc": "Una linda plantita para tu hogar"
+=======
+    "price": 54321,
+    "name": "testproducto00",
+    "img": "default.jpg",
+    "species": "Philodendron",
+    "scale": "1",
+    "irr": "1",
+    "light": "1",
+    "pet": "true",
+    "dif": 1,
+    "desc": "algo algo algo"
+>>>>>>> aef68a1e0e4cbfefd6e775c433ad6e48c8ba92df
   }
 ]

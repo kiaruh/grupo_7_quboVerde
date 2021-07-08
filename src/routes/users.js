@@ -13,8 +13,10 @@ const validations = require('../middlewares/validationRegisterMiddleware')
 
 //Route
 router.get("/register", controller.register)
-router.post("/login", controller.processRegister)
+router.post("/register", controller.processRegister)
+
 router.get("/login", controller.login)
+router.post("/login", controller.loginProcess)
 
 
 
