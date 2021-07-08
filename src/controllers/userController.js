@@ -2,6 +2,7 @@ const bcryptjs = require("bcryptjs")
 const {validationResult} = require("express-validator")
 const { send } = require("process")
 
+const imgController = require("../models/imgModel")
 const User = require("../models/userModel")
 
 
@@ -61,7 +62,30 @@ const usercontroller = {
 
 	profile: (req,res) => res.render("users/profile",{users:User.getData()}), // get userprofile (temporal para que no se rompa la ruta)
 	profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
-	mProfile: (req,res) => res.render("users/profile_mod", {users:User.findUserId(req.params.id)}), //formulario de modificacion
+	getProfile: (req,res) => res.render("users/profile_mod", {users:User.findUserId(req.params.id)}), //formulario de modificacion
+
+	setProfile: (req,res) => {
+		let list = User.findAll();
+		let userIndex = list.findIdex(user => user.id == req.params.id);
+		let imgPath = "";
+
+		if(req.file == undefined){
+			imgPath = list[userIndex].avatar;
+			console.log("same avatar");
+		} else {
+			imgController.deleteImgAvtar(list[userIndex].avatar);
+			imgPath = req.file.filename;
+		}
+		let updatedUser = {
+			id: Number(req.params.id),...req.body, avatar: imgPath
+		}
+		User.mod(updatedUser.id,updatedUser);
+		res.redirect('/users/profile/' + updatedUser.id)
+
+
+
+
+	},
 
 
 	// queda pendiente crear la función que toma la imagen de perfil preexistente, else mostrar default

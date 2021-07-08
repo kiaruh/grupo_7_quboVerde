@@ -58,7 +58,16 @@ const User = {
 		let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
 		fs.writeFileSync(directory, JSON.stringify(finalUsers, null, " "));
 		return true;
-	}
+	},
+	mod: function(id, data){
+        let allUsers = this.findAll();
+        let modIndex = id;
+
+        allProd[modIndex] = data;
+
+        let modProdJson = JSON.stringify(allUsers,null,2);
+        fs.writeFileSync(directory, modProdJson);
+    },
 }
 
 module.exports = User;

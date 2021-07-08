@@ -7,7 +7,7 @@ const controller = require('../controllers/userController')
 
 //Middlewares
 const validations = require('../middlewares/validationRegisterMiddleware')
-
+const avatarMulter = require('../middlewares/multerAvatarMiddleware')
 
 
 
@@ -23,7 +23,9 @@ router.get("/profile/", controller.profile);
 router.get("/profile/:id", controller.profilebyid);
 
 // rutas para modificar perfil de usuario
-router.get("/mod/:id", controller.mProfile);
-// router.put("/mod/:id", fileUpload.single('img'), controller.setProd); //pendiente setear img default
+router.get("/mod/:id", controller.getProfile);
+router.put("/mod/:id", fileUpload.single('img'),[avatarMulter], controller.setProfile); //pendiente setear img default
+
+router.delete("/mod/:id", controller.delete);
 
 module.exports = router

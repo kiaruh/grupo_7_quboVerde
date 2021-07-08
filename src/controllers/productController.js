@@ -1,5 +1,5 @@
 const express = require('express');
-const product = require("../models/productModel")
+const product = require("../models/productModel") //Product mayuscula 
 const imgController = require('../models/imgModel')
 const path = require('path'); 
 const fs = require('fs');

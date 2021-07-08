@@ -10,7 +10,7 @@ const multer = require('multer');
 const controller = require('../controllers/productController');
 
 // configuracion de multer (que despues tendria que armarla directo como middleware aparte para limpiar esto un poco)
-
+//esto es un middleware podria llamarse multerProdImgMiddleware.js
 const mds = multer.diskStorage({
     destination: (req, file, callback) => {
         let prodFolder = path.resolve(__dirname, '../', '../public', 'img', 'upload','product');
