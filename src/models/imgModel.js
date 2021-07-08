@@ -1,7 +1,7 @@
 const path = require('path'); 
 const fs = require('fs');
 
-const directory = path.resolve(__dirname, "../" , "../public", "img", "img_products");
+const directory = path.resolve(__dirname, "../" , "../public", "img", "upload", "product");
 
 const model = {
     deleteImg: function(img){
