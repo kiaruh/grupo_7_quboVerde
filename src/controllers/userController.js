@@ -20,7 +20,8 @@ const usercontroller = {
         // if(userInDB) {
         //     return res.render("users/register", {errors: { email: { msg: "Este mail ya fue utilizado" } }, oldData: req.body})
         // }
-    let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10)};       
+	
+    let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10),admin:false, avatar:'default_profile.png'};       
     let newUser =  User.create(userTocreate);
     return res.redirect("/users/login")
     },
@@ -76,7 +77,7 @@ const usercontroller = {
 			imgPath = req.file.filename;
 		}
 		let updatedUser = {
-			id:Number(req.params.id),...req.body, avatar:imgPath
+			id:Number(req.params.id),...req.body,password: bcryptjs.hashSync(req.body.password, 10), avatar:imgPath
 		}
 
 		User.mod(updatedUser.id,updatedUser);

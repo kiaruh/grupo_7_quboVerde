@@ -2,24 +2,42 @@
   {
     "id": 1,
     "username": "Usuario default",
-    "birthdate": "1900-12-01",
-    "email": "ejemplo@gmail.com",
+    "password": "$2a$10$BlUwPaUblpXpWMBBtLB0vuMQAdorGWgyoIQ4geQcakwRZC0C2savO",
     "firstname": "Cosme",
     "lastname": "Fulanito",
-    "password:": "hola1234",
-    "avatar": "default_profile.png",
-    "admin": true
+    "email": "ejemplo@gmail.com",
+    "birthdate": "1900-12-01",
+    "avatar": "default_profile.png"
   },
   {
     "id": 2,
     "username": "userchau",
-    "birthdate": "1900-01-12",
-    "email": "chau@gmail.com",
+    "password": "$2a$10$yt8W02irVP4AhtnKEBy1pe33hH/QztqNVB5wrO5zfAAAGYe0gc24e",
     "firstname": "chauchau",
     "lastname": "byebye",
-    "password:": "chau1234",
-    "avatar": "default_profile.png",
-    "admin": false
+    "email": "chau@gmail.com",
+    "birthdate": "1900-01-12",
+    "avatar": "default_profile.png"
+  },
+  {
+    "id": 3,
+    "username": "User3",
+    "password": "$2a$10$ECI35XftY5q6/LOyOxqAMOSsbEJOmGTiJmle9QVyLwXQca2RSHUkK",
+    "firstname": "chauchau3",
+    "lastname": "byebye",
+    "email": "chau3@gmail.com",
+    "birthdate": "1900-01-12",
+    "avatar": "default_profile.png"
+  },
+  {
+    "id": 4,
+    "username": "userchau",
+    "password": "$2a$10$e/SpRoonR7QiSSdmTWx/.ezch/kBJ3StEcaKAtzvzRPLDd0G5eID2",
+    "firstname": "chauchau",
+    "lastname": "byebye",
+    "email": "chau@gmail.com",
+    "birthdate": "1900-01-12",
+    "avatar": "default_profile.png"
   },
   {
     "id": 5,
@@ -53,5 +71,15 @@
     "password": "$2a$10$JHnDIpzBzVa9YB62cb9ww.QTQuFGpBHJ3d1wfh5547CoyeHq3xhTC",
     "avatar": "default_profile.png",
     "admin": false
+  },
+  {
+    "id": 8,
+    "username": "userchau",
+    "password": "$2a$10$z3l5aVY4c3vBHuSrLYEuI.Q6jKITKb8TLtP2nPfk6KbaNK8fNBH8q",
+    "firstname": "chauchau",
+    "lastname": "byebye",
+    "email": "chau@gmail.com",
+    "birthdate": "1900-01-12",
+    "avatar": "default_profile.png"
   }
 ]
