@@ -24,24 +24,12 @@
   {
     "id": 3,
     "username": "annadefrozen",
-    "birthdate": "2021-07-05",
-    "firstname": "Anna",
-    "lastname": "de Frozen",
-    "email": "test@email.com",
     "password": "$2a$10$uwVv2rQ.n9cWMAnxOmhZDeYA/cQ9hn4t1MpZtZZ5frlTpGhlEyn.y",
-    "avatar": "avatar3.png",
-    "admin": false
-  },
-  {
-    "id": 4,
-    "username": "Bebé Enojado",
-    "birthdate": "2021-07-04",
-    "firstname": "Bebé",
-    "lastname": "Enojado",
-    "email": "bebeenojado@email.com",
-    "password": "$2a$10$7Y.MUoTPwvG/Zw6LvxuBx.xB39Wmc50/GM2sWjs/UHrnaAApq8X0m",
-    "avatar": "avatar2.png",
-    "admin": false
+    "firstname": "AnnaCAMBIO",
+    "lastname": "de FrozenCAMBIO",
+    "email": "test@email.com",
+    "birthdate": "2021-07-05",
+    "avatar": "avatar-1625786059742.jpg"
   },
   {
     "id": 5,

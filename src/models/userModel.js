@@ -60,14 +60,17 @@ const User = {
 		return true;
 	},
 	mod: function(id, data){
-        let allUsers = this.findAll();
-        let modIndex = id;
+        let allUsers = this.getData();
+        let modIndex = allUsers.findIndex(obj => obj.id == id);
+		
+        allUsers[modIndex] = data;
+	
 
-        allProd[modIndex] = data;
-
-        let modProdJson = JSON.stringify(allUsers,null,2);
-        fs.writeFileSync(directory, modProdJson);
-    },
+        let modUserJson = JSON.stringify(allUsers,null,2);
+		
+        fs.writeFileSync(directory, modUserJson)
+		
+    }
 }
 
 module.exports = User;

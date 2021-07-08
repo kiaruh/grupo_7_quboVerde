@@ -31,13 +31,13 @@
                 <h1 class="titulo-register">Bienvenido <%= users[0].firstname %></h1>
                   
 
-                <form class="register" action="/users/profile/mod/<%=users[0].id%>?_method=PUT" method="POST" id="user-info" enctype="multipart/form-data">
+                <form class="register" action="/users/mod/<%=users[0].id%>?_method=PUT" method="POST" id="user-info" enctype="multipart/form-data">
 
                   <div class="col-2">
 
                         <div class="col-img">
                             <img src="/img/upload/avatar/<%= users[0].avatar %>">
-                            <input class="input-photo" type="file" accept=".jpg, .png" name="img">
+                            <input class="input-photo" type="file" accept=".jpg, .png" name="avatar">
                         </div>
 
                         <div class="col-titulodato">

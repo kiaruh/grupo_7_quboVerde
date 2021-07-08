@@ -66,26 +66,28 @@ const usercontroller = {
 
 	setProfile: (req,res) => {
 		let list = User.findAll();
-		let userIndex = list.findIdex(user => user.id == req.params.id);
+		let userIndex = list.findIndex(user => user.id == req.params.id);
 		let imgPath = "";
 
 		if(req.file == undefined){
 			imgPath = list[userIndex].avatar;
-			console.log("same avatar");
 		} else {
 			imgController.deleteImgAvtar(list[userIndex].avatar);
 			imgPath = req.file.filename;
 		}
 		let updatedUser = {
-			id: Number(req.params.id),...req.body, avatar: imgPath
+			id:Number(req.params.id),...req.body, avatar:imgPath
 		}
+		console.log("-----");
+		console.log(updatedUser);
+		console.log("-----");
 		User.mod(updatedUser.id,updatedUser);
 		res.redirect('/users/profile/' + updatedUser.id)
 
 
 
 
-	},
+	}
 
 
 	// queda pendiente crear la función que toma la imagen de perfil preexistente, else mostrar default
