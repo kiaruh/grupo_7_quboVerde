@@ -152,5 +152,18 @@
     "pet": "false",
     "dif": 3,
     "desc": "sin foto"
+  },
+  {
+    "id": 29,
+    "price": 1000,
+    "name": "Prueba Producto 1",
+    "img": "default.jpg",
+    "species": "Philodendron",
+    "scale": "1",
+    "irr": "0",
+    "light": "2",
+    "pet": "true",
+    "dif": 1,
+    "desc": "Una linda plantita para tu hogar"
   }
 ]
