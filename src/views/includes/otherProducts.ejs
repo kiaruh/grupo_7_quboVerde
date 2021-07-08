@@ -1,45 +1,35 @@
+<h3 class="other-products">Productos recomendados</h3>
+
 <section class="other-products">
+    
     <article class="other-button">
         <h2> < </h2>
+        
     </article>
+    
 
     <article class="other-bar">
 
-        <section class="other-bar-prod">
-            <picture>
-                <img src="/img/img_prod/large-plant-rojo-congo-black-pot.jpg" alt="" class="other-bar-img">
-                <img src="/img/fav.svg" alt="" class="other-bar-fav">
-            </picture>
-            <article class="other-content">
-            <h2>Nombre</h2>
-            <h3>Especie</h3>
-            <h4>$300</h4>
-            </article>
-        </section>
+        <% for (let i=0; i < locals.produ.length; i++){ %>
 
-        <section class="other-bar-prod">
-            <picture>
-                <img src="/img/img_prod/large-plant-umbrella-black-pot.jpg" alt="" class="other-bar-img">
-                <img src="/img/fav.svg" alt="" class="other-bar-fav">
-            </picture>
-            <article class="other-content">
-            <h2>Nombre</h2>
-            <h3>Especie</h3>
-            <h4>$300</h4>
-            </article>
-        </section>
+            <% if(dif == locals.produ[i].dif){ %>
+          
+            <section class="other-bar-prod">
+                <picture>
+                    <a href="/products/detail/<%= locals.produ[i].id%>">
+                    <img src="/img/upload/product/<%= locals.produ[i].img %>" alt="" class="other-bar-img">
+                </a>
+                    <img src="/img/fav.svg" alt="" class="other-bar-fav">
+                </picture>
+                <article class="other-content">
+                <h2><%= locals.produ[i].name%></h2>
+                <h3><%= locals.produ[i].species %></h3>
+                <h4>$<%= parseFloat(locals.produ[i].price).toFixed(0) %></h4>
+                </article>
+            </section>
+            <% } %>
 
-        <section class="other-bar-prod">
-            <picture>
-                <img src="/img/img_prod/medium-plant-velvet-calathea-black-pot.jpg" alt="" class="other-bar-img">
-                <img src="/img/fav.svg" alt="" class="other-bar-fav">
-            </picture>
-            <article class="other-content">
-            <h2>Nombre</h2>
-            <h3>Especie</h3>
-            <h4>$300</h4>
-            </article>
-        </section>
+         <% } %>
 
     </article>
 
