@@ -163,5 +163,15 @@
     "pet": "false",
     "dif": 4,
     "desc": "123"
+  },
+  {
+    "id": 31,
+    "price": 2121,
+    "name": "otraprueba",
+    "img": "default.jpg",
+    "species": "",
+    "irr": "3",
+    "dif": null,
+    "desc": ""
   }
 ]

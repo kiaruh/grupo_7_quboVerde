@@ -57,7 +57,7 @@ const productController = {
         }
 
         product.add(newProduct);
-        res.redirect("/products/all");
+        res.redirect("/products/mod");
     },
 
     mDetail: function(req, res){

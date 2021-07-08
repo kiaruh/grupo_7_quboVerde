@@ -145,47 +145,15 @@ main h1{
     padding: 5px;
 }
 
-/* este contenedor es SOLO para desktop, porque queda dentro de otro contenedor aparte.. despues cuando rearmamos el front lo sacamos */
 .search-bar-container-2{
-    position: relative;
-    display: flex;
-    flex-wrap:nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    border: 1px solid black;
-    border-radius: 15px;
-    height: 25px;
-    z-index: 20;
+    display: none;
 }
 
 .search-bar-container-2 input[type="search"]{
-    border: none;
-    margin-left: 5px;
-    padding: 2px;
-    min-width: 30%;
-    -webkit-appearance: none;
-    -moz-appearance:none;
-    font-size: 0.8rem;
-    background-color: #F4E7DE;
-    z-index: 10;
+  display: none;
 }
 
-.search-bar-container-2 button{
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
 
-    padding: 1px;
-    margin-left: 5px;
-
-}
-
-/* fin de los estilos para eliminar luego */
 
 .search-bar-container{
     position: relative;
@@ -369,6 +337,8 @@ border: none;
 
 @media (min-width: 480px) {
 
+
+
     /* header */
     /* .burger{
         display: none;
@@ -442,6 +412,51 @@ border: none;
 }
 
 @media (min-width: 720px) {
+    /* este contenedor es SOLO para desktop, porque queda dentro de otro contenedor aparte.. despues cuando rearmamos el front lo sacamos */
+    .search-bar-container-2{
+        display: block;
+        position: relative;
+        display: flex;
+        flex-wrap:nowrap;
+        justify-content: space-between;
+        align-items: center;
+    
+        border: 1px solid black;
+        border-radius: 15px;
+        height: 25px;
+        z-index: 20;
+    }
+    
+    .search-bar-container-2 input[type="search"]{
+        display: inline;
+        border: none;
+        margin-left: 5px;
+        padding: 2px;
+        min-width: 30%;
+        -webkit-appearance: none;
+        -moz-appearance:none;
+        font-size: 0.8rem;
+        background-color: #F4E7DE;
+        z-index: 10;
+    }
+    
+    .search-bar-container-2 button{
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    
+        padding: 1px;
+        margin-left: 5px;
+    
+    }
+    
+    /* fin de los estilos para eliminar luego */
+
+
     .burger{
         display: none;
     }
