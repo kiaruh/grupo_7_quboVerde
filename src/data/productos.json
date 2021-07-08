@@ -151,5 +151,18 @@
     "pet": "true",
     "dif": 1,
     "desc": "Una linda plantita para tu hogar"
+  },
+  {
+    "id": 30,
+    "price": 123,
+    "name": "Prueba Producto 2",
+    "img": "default.jpg",
+    "species": "Dracaena",
+    "scale": "2",
+    "irr": "3",
+    "light": "4",
+    "pet": "false",
+    "dif": 4,
+    "desc": "123"
   }
 ]

@@ -8,13 +8,13 @@
 }
 
 :root{
-    --palette-pink:#CB6565;
-    --palette-cream:#F4E7DE;
-    --palette-grey:#9d9d9d;
-    --palette-green:#BAC9C0;
-    --palette-darkgrey:#51505D;
-    --palette-lightgrey:#EDEDEF;
-    }
+--palette-pink:#CB6565;
+--palette-cream:#F4E7DE;
+--palette-grey:#9d9d9d;
+--palette-green:#BAC9C0;
+--palette-darkgrey:#51505D;
+--palette-lightgrey:#EDEDEF;
+}
 
 body {
     margin: 0px;
@@ -30,6 +30,8 @@ main h1{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 10px;
 }
  /* header */
 
@@ -45,7 +47,7 @@ main h1{
 
     padding: 4px;
 
-    background-color:#F4E7DE;
+    background-color: var(--palette-green);
 
     width: 100vw;
     height: 40px;
@@ -68,7 +70,7 @@ main h1{
     top: 40px; /* antes estaba en 0px  y le puse left 0*/
     width: 180px;
     height: 100vh;
-    background-color: #F4E7DE;
+    background-color: var(--palette-green);
     z-index: 100;
 }
 
@@ -233,6 +235,21 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 /* botones */
+.flotante{
+    position: fixed;
+    right: 6%;
+    bottom:100px;
+    z-index: 10;
+    box-shadow: 4px 4px 20px rgb(243, 228, 228);
+    background-color: var(--palette-pink);
+    color:white;
+    border-radius: 65px;
+    border: none;
+    padding:10px 23px;
+    font-size: 40px;
+    
+}
+
 .checkout-non{
     border: solid 1px #51505D;
     background-color: #fff;
@@ -269,8 +286,8 @@ border: none;
     left: 0px;
     bottom: 0px;
     width: 100vw;
-    background-color: #CB6565;
-    color: white;
+    background-color: var(--palette-darkgrey);
+    color:var(--palette-lightgrey);
 
     display: flex;
     flex-direction: column;
@@ -286,14 +303,14 @@ border: none;
 .footer-section a{
     transition: all 250ms linear;
 
-    color: white;
+    color:var(--palette-lightgrey);
     text-decoration: none;
     margin: 0px;
     padding: 0px;
 }
 
 .footer-section a:hover{
-    color: #323231;
+    color: var(--palette-grey)
 
 }
 
@@ -435,7 +452,7 @@ border: none;
         top: 0px;
         position: relative;
         width: 80%;
-        background-color: #F4E7DE;
+        background-color: var(--palette-green);
         height: auto;
     }
 
@@ -502,6 +519,10 @@ border: none;
         flex-direction: row;
         flex-wrap: wrap;
 
+    }
+    .flotante{
+        position: fixed;
+        right: 10%;
     }
 
     .footer{

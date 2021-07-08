@@ -15,6 +15,8 @@ const productController = {
         res.render("products/admin/product_mod"); // get product modification
     },
 
+    modall: (req,res) => res.render("products/admin/all_mod",{catalogo:product.all()}),
+
     addProd: function(req, res){
         let list = product.all();
         let lastIndex = list.length - 1;

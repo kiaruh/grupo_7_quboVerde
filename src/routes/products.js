@@ -34,6 +34,7 @@ router.get("/newprod", controller.newprod);
 router.post("/new", fileUpload.single('img'), controller.addProd);
 
 // rutas para modificar producto
+router.get("/mod/", controller.modall);
 router.get("/mod/:id", controller.mDetail);
 router.put("/mod/:id", fileUpload.single('img'), controller.setProd);
 
