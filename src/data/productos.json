@@ -166,8 +166,8 @@
   },
   {
     "id": 31,
-    "price": 1111,
-    "name": "prueba2",
+    "price": 2121,
+    "name": "otraprueba",
     "img": "default.jpg",
     "species": "",
     "irr": "3",
