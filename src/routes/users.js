@@ -39,6 +39,6 @@ router.get("/profile/:id", controller.profilebyid);
 router.get("/mod/:id", controller.getProfile);
 router.put("/mod/:id", fileUpload.single("avatar"), controller.setProfile); //pendiente setear img default
 
-// router.delete("/mod/:id", controller.delete);
+router.delete("/mod/:id", controller.delUser);
 
 module.exports = router

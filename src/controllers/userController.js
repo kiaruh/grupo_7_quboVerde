@@ -78,16 +78,24 @@ const usercontroller = {
 		let updatedUser = {
 			id:Number(req.params.id),...req.body, avatar:imgPath
 		}
-		console.log("-----");
-		console.log(updatedUser);
-		console.log("-----");
+
 		User.mod(updatedUser.id,updatedUser);
 		res.redirect('/users/profile/' + updatedUser.id)
+	},
+	delUser: function(req, res){
+        let setId = req.params.id;
+        let list = User.findAll();
 
+        let delIndex = list.findIndex(user => user.id == setId)
+        let deleteImg = list[delIndex].avatar;
 
+        imgController.deleteImg(deleteImg);
+        let a = User.delete(setId);
+		console.log(a);
 
+        res.redirect("/users/profile");
 
-	}
+    },
 
 
 	// queda pendiente crear la función que toma la imagen de perfil preexistente, else mostrar default

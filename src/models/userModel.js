@@ -54,9 +54,10 @@ const User = {
 	},
 
 	delete: function (id) {
-		let allUsers = this.findAll();
-		let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
-		fs.writeFileSync(directory, JSON.stringify(finalUsers, null, " "));
+		let list = this.getData();
+		let deleteIndex = list.findIndex(prod => prod.id == id)
+		list.splice(deleteIndex, 1);
+		fs.writeFileSync(directory, JSON.stringify(list, null, 2));
 		return true;
 	},
 	mod: function(id, data){

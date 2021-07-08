@@ -64,6 +64,8 @@
                                             
                     <div class="col-1">
                         <button class="register-btn btn-main btn" type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button> 
+                        <br>
+                        <button class="register-btn btn-main btn" type="submit" formaction="/users/mod/<%= users[0].id%>?_method=DELETE" onclick="alert('Entrada eliminada')"> Eliminar usuario </button>
                     </div>
                     
                     <p class="aviso">Solución temporal: Para visualizar otros perfiles ingresar a</p>

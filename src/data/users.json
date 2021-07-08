@@ -22,16 +22,6 @@
     "admin": false
   },
   {
-    "id": 3,
-    "username": "annadefrozen",
-    "password": "$2a$10$uwVv2rQ.n9cWMAnxOmhZDeYA/cQ9hn4t1MpZtZZ5frlTpGhlEyn.y",
-    "firstname": "AnnaCAMBIO",
-    "lastname": "de FrozenCAMBIO",
-    "email": "test@email.com",
-    "birthdate": "2021-07-05",
-    "avatar": "avatar-1625786059742.jpg"
-  },
-  {
     "id": 5,
     "username": "soyunminionfeliz",
     "birthdate": "2021-02-11",
