@@ -23,8 +23,16 @@ const User = {
 
 	findByPk: function (id) {
 		let allUsers = this.findAll();
-		let userFound = allUsers.find(oneUser => oneUser.id === id);
+		let userFound = allUsers.find(oneUser => oneUser.id == id);
 		return userFound;
+	},
+
+	findUserId: function (id) {
+		let allUsers = this.findAll();
+		let userResults = [];
+		let userFound = allUsers.find(oneUser => oneUser.id == id)
+        userResults.push(userFound);
+        return userResults;
 	},
 
 	findByField: function (field, text) {

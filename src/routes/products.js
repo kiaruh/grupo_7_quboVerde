@@ -43,7 +43,7 @@ router.delete("/mod/del/:id", controller.delProd);
 // ruta para search
 router.get("/search", controller.searchProd);
 
-// rutas para mascotas, mas vendidos, bajo manenimiento
+// rutas para mascotas, mas vendidos, bajo mantenimiento
 router.get("/pet", controller.pet);
 router.get("/bestseller", controller.bestseller);
 router.get("/easymode", controller.easymode);

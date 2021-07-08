@@ -1,0 +1,281 @@
+*{
+    box-sizing: border-box;
+    /* border: hotpink solid 1px; */
+  }
+
+  .main-register {
+    position: relative;
+    align-content: center ;
+}
+
+input{
+  margin: auto;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.col-2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}  
+
+.col-img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.col-img input{
+  width: 220px;
+}
+
+.col-1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-img img{
+ width: 150px;
+}
+
+.register h4{
+ line-height: 25px;
+}
+
+label.titulo{
+  line-height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.col-img input{
+  margin-bottom: 20px;
+}
+
+input.dato_existente{
+  border: none;
+  background-color: #f5f4f4;
+  line-height: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.col-titulo{
+max-width: 200px;
+}
+
+.col-titulo label{
+  justify-content: space-between;
+  }
+
+
+.titulo{
+  color: var(--palette-grey);
+  text-transform: uppercase;
+}
+
+p{
+  color: var(--palette-grey);
+}
+
+.aviso{
+  color: var(--palette-grey);
+  font-size: 13.5px;
+  margin: 0;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.aviso-link{
+  color: var(--palette-pink);
+  font-size: 13.5px;
+  font-style: italic;
+  margin: 0;
+  margin: auto;
+}
+
+.col-titulodato{
+  width: 85vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.register-fondo {
+  margin-top: 80px;
+  max-width: 100vw;
+}
+
+.header-banner-mobile {
+  opacity: 0.65;
+
+}
+
+.form-register{
+  width: 100%;
+  position: absolute;
+  border: none;
+  top: 8%;
+}
+
+.titulo-register{
+  text-align: center;
+  margin-bottom: 6%;
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 1.8s ease forwards;
+}
+
+.register {
+  margin: auto;
+  width: 80vw;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  border-radius: 25px;
+}
+.register-btn {
+  background: rgba(136, 136, 136, 0.55);
+  padding-left: 17%;
+  padding-right: 17%;
+  color: #FDFCFD;
+  border-radius: 50px;
+  height: 35px;
+  border: none;
+  outline: none;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.nacimiento {
+    border: none;
+    color: #FDFCFD;
+    width: 118px;
+    font-size: 14px;
+    margin-left: 4%;
+    background: transparent;
+}
+
+.register-btn{
+  color: whitesmoke;
+  height: 35px;
+  background: #CB6565;
+  border-radius: 50px;
+}
+.register-btn:hover {
+  background: #ff8282;
+  cursor: pointer;
+}
+
+.side-banner {
+  display: none;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+
+
+@media (min-width: 480px) {
+  .register-fondo {
+    opacity: 0.58;
+  }
+  .form-register {
+    top: 5%;
+  }
+  .titulo-register {
+    margin-bottom: 10%;
+  }
+  .register {
+    width: 70vw;
+  }
+  .register-btn {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+}
+
+@media (min-width: 720px){
+  .register-fondo{
+    margin-top: 40px;
+  }
+  .register {
+    max-width: 30vw;
+  }
+
+}
+
+@media (min-width: 1000px){
+
+  .header-banner-desktop img{
+    display: none;
+  }
+  main{
+    display: block;
+    position: relative;
+    background: #f5f4f4;
+    height: 83vh;
+  }
+  .side-banner img{
+    opacity: 0.8;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .titulo-register{
+    margin-bottom: 4%;
+  }
+  .side-banner{
+    display: inline;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    z-index: 2;
+  }
+  .form-register {
+    margin:auto;
+    height: 70vh;
+    width: 64vw;
+    display: block;
+  }
+  .register {
+    max-width: 40%;
+  }
+
+  .register-btn{
+    border-radius: 5px;
+  }
+
+  .nacimiento {
+      color: black;
+  }
+
+  .register-btn {
+    margin-top: 2vh;
+  }
+  .col-titulodato{
+    justify-content: space-around;
+  }
+
+  form{
+    padding-bottom: 50px;
+  }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
+
+    <title>quboverde Registrar</title>
+</head>
+<body>
+    <%- include("../includes/header_form", {users: users}) %> 
+
+    <main class="main-register">
+        <section class="register-fondo">
+            <picture class="header-banner-mobile"><img src="/img/banner-mobile2.jpg" alt=""></picture>
+            <picture class="header-banner-desktop"><img src="/img/banner-d.jpg" alt=""></picture>
+        </section>
+
+
+        <div class="side-banner"><img src="/img/banner-vertical.jpg" alt=""></div>
+
+        <section class="form-register" action="/users/register" method="POST" >
+           
+                <h1 class="titulo-register">Bienvenido <%= users[0].firstname %></h1>
+                  
+
+                <form class="register" action="/users/profile/mod/<%=users[0].id%>?_method=PUT" method="POST" id="user-info" enctype="multipart/form-data">
+
+                  <div class="col-2">
+
+                        <div class="col-img">
+                            <img src="/img/upload/avatar/<%= users[0].avatar %>">
+                            <input class="input-photo" type="file" accept=".jpg, .png" name="img">
+                        </div>
+
+                        <div class="col-titulodato">
+                            <div class="col-titulo">
+                                <label class="titulo">Usuario</label>
+                                <label class="titulo">Contraseña</label>
+                                <label class="titulo">Nombre</label>
+                                <label class="titulo">Apellido</label>
+                                <label class="titulo">Email</label>
+                                <label class="titulo">Cumpleaños</label>
+                            </div>
+
+                            <div class="col-dato">
+                                <input class="dato_existente" type="text" name="username" value="<%= users[0].username %>" required>
+                                <input class="dato_existente" type="password" name="password" value="<%= users[0].password %>" required>
+                                <input class="dato_existente" type="text" name="firstname" value="<%= users[0].firstname %>" required>
+                                <input class="dato_existente" type="text" name="lastname" value="<%= users[0].lastname %>" required> 
+                                <input class="dato_existente" type="text" name="email" value="<%= users[0].email %>" required> 
+                                <input class="dato_existente" type="date" name="birthdate" value="<%= users[0].birthdate %>" required>   
+                            </div>
+                        </div>
+
+                    </div>
+                                            
+                    <div class="col-1">
+                        <button class="register-btn btn-main btn" type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button> 
+                    </div>
+                    
+                    <p class="aviso">Solución temporal: Para visualizar otros perfiles ingresar a</p>
+                    <p class="aviso-link">https://grupo7quboverde.herokuapp.com//users/profile/:id </p>
+                 
+                </form>
+
+        
+    
+        </section> 
+    
+    </main>
+
+    <%- include("../includes/footer") %> 
+</body>
+</html>

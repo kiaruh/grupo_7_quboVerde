@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
+
+    <title>quboverde Registrar</title>
+</head>
+<body>
+    <%- include("../includes/header_form", {users: users}) %> 
+
+    <main class="main-register">
+        <section class="register-fondo">
+            <picture class="header-banner-mobile"><img src="/img/banner-mobile2.jpg" alt=""></picture>
+            <picture class="header-banner-desktop"><img src="/img/banner-d.jpg" alt=""></picture>
+        </section>
+
+
+        <div class="side-banner"><img src="/img/banner-vertical.jpg" alt=""></div>
+
+        <section class="form-register" action="/users/register" method="POST" >
+           
+                <h1 class="titulo-register">Bienvenido <%= users[0].firstname %></h1>
+                  
+
+                <div class="register">
+
+                  <div class="col-2">
+                        <div class="col-img">
+                            <img src="/img/upload/avatar/<%= users[0].avatar %>">
+                            <p class="">Foto de perfil</p>        
+                        </div>
+
+                        <div class="col-titulodato">
+                            <div class="col-titulo">
+                                <h4 class="titulo">Usuario</h4>
+                                <h4 class="titulo">Contraseña</h4>
+                                <h4 class="titulo">Nombre</h4>
+                                <h4 class="titulo">Apellido</h4>
+                                <h4 class="titulo">Email</h4>
+                                <h4 class="titulo">Cumpleaños</h4>
+                            </div>
+
+                            <div class="col-dato">
+                                <h4 class="dato"><%= users[0].username %></h4>
+                                <h4 class="dato">* * * * * *</h4> 
+                                <h4 class="dato"><%= users[0].firstname%></h4>
+                                <h4 class="dato"><%= users[0].lastname %></h4> 
+                                <h4 class="dato"><%= users[0].email %></h4> 
+                                <h4 class="dato"><%= users[0].birthdate %></h4>      
+                            </div>
+                        </div>
+
+                    </div>
+                                            
+                    <div class="col-1">
+                        <button type="submit" class="register-btn btn-main btn" >Editar</button> 
+                    </div>
+                    
+                    <p class="aviso">Solución temporal: Para visualizar otros perfiles ingresar a</p>
+                    <p class="aviso-link">https://grupo7quboverde.herokuapp.com//users/profile/:id </p>
+                
+                 
+                </div>
+
+        
+    
+        </section> 
+    
+    </main>
+
+    <%- include("../includes/footer") %> 
+</body>
+</html>

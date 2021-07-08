@@ -7,6 +7,13 @@
     font-family: 'Questrial', sans-serif;
 }
 
+:root{
+--palette-pink:#CB6565;
+--palette-cream:#F4E7DE;
+--palette-grey:#9d9d9d;
+
+}
+
 body {
     margin: 0px;
     padding: 0px;

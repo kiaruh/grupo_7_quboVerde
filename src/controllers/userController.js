@@ -57,8 +57,14 @@ const usercontroller = {
 				}
 			}
 		});
-	}
-    
+	},
+
+	profile: (req,res) => res.render("users/profile",{users:User.getData()}), // get userprofile (temporal para que no se rompa la ruta)
+	profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
+	mProfile: (req,res) => res.render("users/profile_mod", {users:User.findUserId(req.params.id)}), //formulario de modificacion
+
+
+	// queda pendiente crear la función que toma la imagen de perfil preexistente, else mostrar default
 
 }
 
