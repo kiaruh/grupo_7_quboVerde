@@ -92,5 +92,49 @@
     "email": "pikachu@gmail.com",
     "birthdate": "1990-01-11",
     "avatar": "avatar6.png"
+  },
+  {
+    "id": 10,
+    "username": "Planta",
+    "birthdate": "2021-07-15",
+    "firstname": "Potus",
+    "lastname": "Verde",
+    "email": "potusverde@gmail.com",
+    "password": "$2a$10$RpJVE/u2d4q48ROr1YkmVuNJknIi39RZjqrym3auKksyzIphGEDpC",
+    "admin": false,
+    "avatar": "avatar9.png"
+  },
+  {
+    "id": 11,
+    "username": "lolo",
+    "birthdate": "2021-07-21",
+    "firstname": "guitarra",
+    "lastname": "de lolo",
+    "email": "guitarralolo@gmail.com",
+    "password": "$2a$10$O9HmrwnV2xN0zHc0/rnwk.6FVOiz.juli89QcQ/S0wT90fVM.9LzK",
+    "admin": false,
+    "avatar": "avatar2.png"
+  },
+  {
+    "id": 12,
+    "username": "nemo",
+    "birthdate": "2021-07-05",
+    "firstname": "buscando",
+    "lastname": "a nemo",
+    "email": "nemo@gmail.com",
+    "password": "$2a$10$wi.dNqYtwUd/Z26KpJHAIuIaCzYCy5XBu4xvzxxPw14.1Pu6uEsKW",
+    "admin": false,
+    "avatar": "avatar9.png"
+  },
+  {
+    "id": 13,
+    "username": "pepita",
+    "birthdate": "2021-07-20",
+    "firstname": "pepita",
+    "lastname": "pep",
+    "email": "pepita@gmail.com",
+    "password": "$2a$10$84cq2Xc.chLjJ4oV2I7n8ex7dYtOMAUeQu0zEtwxpiNrlW8iaOQXq",
+    "admin": false,
+    "avatar": "avatar1.png"
   }
 ]
