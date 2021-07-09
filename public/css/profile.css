@@ -41,7 +41,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: 220px;
 }
 
-.col-1{
+.edit{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ label.titulo{
 
 input.dato_existente{
   border: none;
-  background-color: #f5f4f4;
+  background-color: transparent;
   line-height: 48px;
   width: 100%;
   display: flex;
@@ -274,5 +274,10 @@ p{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .register-btn {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
