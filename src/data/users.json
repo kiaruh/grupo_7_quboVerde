@@ -12,12 +12,12 @@
   {
     "id": 2,
     "username": "userchau",
-    "password": "$2a$10$yt8W02irVP4AhtnKEBy1pe33hH/QztqNVB5wrO5zfAAAGYe0gc24e",
+    "password": "$2a$10$6WYc6498bBTY2XR5VM9l6eB2SOJP4KID8ilxNTP4QBolOQd9YjAau",
     "firstname": "chauchau",
     "lastname": "byebye",
     "email": "chau@gmail.com",
     "birthdate": "1900-01-12",
-    "avatar": "default_profile.png"
+    "avatar": "avatar-1625789224072.jpg"
   },
   {
     "id": 3,
