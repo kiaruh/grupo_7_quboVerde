@@ -11,33 +11,33 @@
   },
   {
     "id": 2,
-    "username": "userchau",
+    "username": "Annadefrozen",
     "password": "$2a$10$yt8W02irVP4AhtnKEBy1pe33hH/QztqNVB5wrO5zfAAAGYe0gc24e",
-    "firstname": "chauchau",
-    "lastname": "byebye",
-    "email": "chau@gmail.com",
-    "birthdate": "1900-01-12",
-    "avatar": "default_profile.png"
+    "firstname": "Anna",
+    "lastname": "de Frozen",
+    "email": "annafrozen@gmail.com",
+    "birthdate": "2000-03-05",
+    "avatar": "avatar3.png"
   },
   {
     "id": 3,
-    "username": "User3",
+    "username": "Bebé",
     "password": "$2a$10$ECI35XftY5q6/LOyOxqAMOSsbEJOmGTiJmle9QVyLwXQca2RSHUkK",
-    "firstname": "chauchau3",
-    "lastname": "byebye",
-    "email": "chau3@gmail.com",
-    "birthdate": "1900-01-12",
-    "avatar": "default_profile.png"
+    "firstname": "Bebé",
+    "lastname": "Enojado",
+    "email": "soyunbebe@gmail.com",
+    "birthdate": "2010-11-12",
+    "avatar": "avatar2.png"
   },
   {
     "id": 4,
-    "username": "userchau",
+    "username": "Bobesponja",
     "password": "$2a$10$e/SpRoonR7QiSSdmTWx/.ezch/kBJ3StEcaKAtzvzRPLDd0G5eID2",
-    "firstname": "chauchau",
-    "lastname": "byebye",
-    "email": "chau@gmail.com",
+    "firstname": "Bob",
+    "lastname": "Esponja",
+    "email": "bob@gmail.com",
     "birthdate": "1900-01-12",
-    "avatar": "default_profile.png"
+    "avatar": "avatar8.png"
   },
   {
     "id": 5,
@@ -52,13 +52,13 @@
   },
   {
     "id": 6,
-    "username": "Usuario Prueba 6",
+    "username": "marinaquboverde",
     "birthdate": "1993-03-07",
     "firstname": "Marina",
     "lastname": "Y.",
     "email": "arqmarinayu@gmail.com",
     "password": "$2a$10$cg3EyYf9dIMUD3UrGFYPC.f4P3jsQz9Ni2QAWKXu9fSOzZYj7Zn3u",
-    "avatar": "default_profile.png",
+    "avatar": "avatar4.png",
     "admin": false
   },
   {
@@ -69,17 +69,18 @@
     "lastname": "Pepita",
     "email": "unmail@gmail.com",
     "password": "$2a$10$JHnDIpzBzVa9YB62cb9ww.QTQuFGpBHJ3d1wfh5547CoyeHq3xhTC",
-    "avatar": "default_profile.png",
+    "avatar": "avatar9.png",
     "admin": false
   },
   {
     "id": 8,
-    "username": "userchau",
+    "username": "kungfupanda",
     "password": "$2a$10$z3l5aVY4c3vBHuSrLYEuI.Q6jKITKb8TLtP2nPfk6KbaNK8fNBH8q",
-    "firstname": "chauchau",
-    "lastname": "byebye",
-    "email": "chau@gmail.com",
-    "birthdate": "1900-01-12",
-    "avatar": "default_profile.png"
+    "firstname": "Panda",
+    "lastname": "Power",
+    "email": "kunffupanda@gmail.com",
+    "birthdate": "2003-01-11",
+    "avatar": "avatar7.png",
+    "admin": false
   }
 ]
