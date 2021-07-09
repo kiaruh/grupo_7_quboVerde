@@ -16,7 +16,7 @@ const model = {
         }
     },
     deleteImgAvtar: function(img){
-        if (img == "default.jpg"){
+        if (img == "default_profile.png"){
             
         } else {
 
