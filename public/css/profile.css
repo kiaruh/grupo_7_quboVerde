@@ -224,7 +224,7 @@ p{
     position: relative;
     background: #f5f4f4;
     height: 83vh;
-    margin-bottom: 12%;
+    /* margin-bottom: 12%; */
   }
   .side-banner img{
     opacity: 0.8;
