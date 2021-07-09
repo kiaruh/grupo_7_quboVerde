@@ -73,7 +73,7 @@ const usercontroller = {
 		if(req.file == undefined){
 			imgPath = list[userIndex].avatar;
 		} else {
-			imgController.deleteImgAvtar(list[userIndex].avatar);
+			imgController.deleteImgAvatar(list[userIndex].avatar);
 			imgPath = req.file.filename;
 		}
 		let updatedUser = {

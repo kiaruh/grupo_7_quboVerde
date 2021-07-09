@@ -15,11 +15,11 @@ const model = {
         fs.unlink(imgToDelete, () => console.log("borrando " + img));
         }
     },
-    deleteImgAvtar: function(img){
-        if (img == "default_profile.png"){
-            
+    deleteImgAvatar: function(img){
+        if (img == "default_profile.png" || "avatar1.png" || "avatar2.png"|| "avatar3.png"
+        || "avatar4.png"|| "avatar5.png"|| "avatar6.png"|| "avatar7.png"|| "avatar8.png"|| "avatar9.png"){
+            return true
         } else {
-
         let imgToDelete = path.resolve(directoryAvatar, img);
         console.log (imgToDelete);
         fs.unlink(imgToDelete, () => console.log("borrando " + img));

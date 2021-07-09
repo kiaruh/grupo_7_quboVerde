@@ -82,5 +82,15 @@
     "birthdate": "2003-01-11",
     "avatar": "avatar7.png",
     "admin": false
+  },
+  {
+    "id": 9,
+    "username": "pikachu",
+    "password": "$2a$10$Oo71HUVOKJRLbE5SWcADp.HXMkLyUG4tfCm3pzG5ti/uG2Qu9zc1S",
+    "firstname": "pika",
+    "lastname": "chu",
+    "email": "pikachu@gmail.com",
+    "birthdate": "1990-01-11",
+    "avatar": "avatar6.png"
   }
 ]
