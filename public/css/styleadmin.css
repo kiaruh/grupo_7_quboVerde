@@ -30,7 +30,7 @@ main h1{
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 10vh;
     padding-bottom: 10px;
 }
  /* header */
@@ -240,7 +240,6 @@ input[type="search"]::-webkit-search-results-decoration {
     right: 6%;
     bottom:100px;
     z-index: 10;
-    box-shadow: 4px 4px 20px rgb(243, 228, 228);
     background-color: var(--palette-pink);
     color:white;
     border-radius: 65px;
@@ -509,6 +508,11 @@ border: none;
         overflow: hidden;
     }
 /* lo de aca arriba estaba en el otro mediaquery*/
+    
+    .main-header{
+        height: 50px;
+    }
+    
     .main{
         width: 70vw;
         margin-left: 12.5%;
@@ -531,6 +535,10 @@ border: none;
         justify-content: space-between;
     
         line-height: 3px;
+    }
+
+    main h1{
+        padding-top: 40px;
     }
 
 }
