@@ -16,8 +16,8 @@ const model = {
         }
     },
     deleteImgAvatar: function(img){
-        if (img == "default_profile.png" || "avatar1.png" || "avatar2.png"|| "avatar3.png"
-        || "avatar4.png"|| "avatar5.png"|| "avatar6.png"|| "avatar7.png"|| "avatar8.png"|| "avatar9.png"){
+        if (img == "default_profile.png" || img =="avatar1.png" || img =="avatar2.png"|| img =="avatar3.png"
+        || img =="avatar4.png"|| img =="avatar5.png"|| img =="avatar6.png"|| img =="avatar7.png"|| img =="avatar8.png"|| img =="avatar9.png"){
             return true
         } else {
         let imgToDelete = path.resolve(directoryAvatar, img);
