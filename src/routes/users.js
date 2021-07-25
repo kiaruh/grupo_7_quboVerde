@@ -2,13 +2,16 @@
 const express = require('express')
 const router = express.Router()
 const path = require('path');
+const multer = require('multer')
+
+const { body, validationResult } = require('express-validator')
 //Controller require
 const controller = require('../controllers/userController')
 
 //Middlewares
-const validations = require('../middlewares/validationRegisterMiddleware')
+//const validations = require('../middlewares/validationRegisterMiddleware')
 //const fileUpload = require('../middlewares/multerAvatarMiddleware')
-const multer = require('multer');
+
 
 const mds = multer.diskStorage({
     destination: (req, file, callback) => {
@@ -24,9 +27,19 @@ const mds = multer.diskStorage({
 });
 const fileUpload = multer({storage: mds});
 
+const validations = [ 
+    body('username').notEmpty().withMessage('Tienes que escribir un usuario'),
+    body('birthdate').notEmpty().withMessage('Tienes que seleccionar una fecha'),
+    body('firstname').notEmpty().withMessage('Tienes que escribir un nombre'),
+    body('lastname').notEmpty().withMessage('Tienes que escribir un apellido'),
+    body('email').notEmpty().withMessage('Tienes que escribir un email'),
+    body('password').notEmpty().withMessage('Tienes que escribir una constraseña'),
+
+]
+
 //Route
 router.get("/register", controller.register)
-router.post("/register", controller.processRegister)
+router.post("/register",validations, controller.processRegister)
 
 router.get("/login", controller.login)
 router.post("/login", controller.loginProcess)
@@ -37,7 +50,7 @@ router.get("/profile/:id", controller.profilebyid);
 
 // rutas para modificar perfil de usuario
 router.get("/mod/:id", controller.getProfile);
-router.put("/mod/:id", fileUpload.single("avatar"), controller.setProfile); //pendiente setear img default
+router.put("/mod/:id", fileUpload.single("avatar"),validations , controller.setProfile); //pendiente setear img default
 
 router.delete("/mod/:id", controller.delUser);
 

@@ -11,9 +11,9 @@ const usercontroller = {
     register: (req,res) => res.render("users/register"), // get register
 
     processRegister: (req,res) => {
-        // const resultValidation = validationResult(req)
-        // if(resultValidation.erros.length > 0){
-        //     return res.render("users/register", {errors: resultValidation.mapped(), oldData: req.body})
+        const resultValidation = validationResult(req)
+        if(resultValidation.errors.length > 0){
+            return res.render("users/register", {errors: resultValidation.mapped()})
         // }
         // let userInDB = User.findByField('email', req.body.email)
 
@@ -25,7 +25,7 @@ const usercontroller = {
     let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10),admin:false, avatar:img};       
     let newUser =  User.create(userTocreate);
     return res.redirect("/users/login")
-    },
+    }},
 
     login: (req,res) => res.render("users/login"), // get login
 
