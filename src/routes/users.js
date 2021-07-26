@@ -32,7 +32,8 @@ const validations = [
     body('birthdate').notEmpty().withMessage('Tienes que seleccionar una fecha'),
     body('firstname').notEmpty().withMessage('Tienes que escribir un nombre'),
     body('lastname').notEmpty().withMessage('Tienes que escribir un apellido'),
-    body('email').notEmpty().withMessage('Tienes que escribir un email'),
+    body('email').notEmpty().withMessage('Tienes que escribir un email valido')
+    .bail().isEmail().withMessage('Debes utilizar un formato del tipo email'),
     body('password').notEmpty().withMessage('Tienes que escribir una constraseña'),
 
 ]
