@@ -136,5 +136,16 @@
     "password": "$2a$10$84cq2Xc.chLjJ4oV2I7n8ex7dYtOMAUeQu0zEtwxpiNrlW8iaOQXq",
     "admin": false,
     "avatar": "avatar1.png"
+  },
+  {
+    "id": 14,
+    "username": "nicoli",
+    "birthdate": "2021-07-20",
+    "firstname": "nico",
+    "lastname": "lee",
+    "email": "nico@nico.com",
+    "password": "$2a$10$Zxhpn.e8G/atqU5okhuwl.V.lmT89w.Im5qevWCRfBKFxkMOWSFra",
+    "admin": false,
+    "avatar": "avatar1.png"
   }
 ]

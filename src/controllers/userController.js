@@ -35,15 +35,17 @@ const usercontroller = {
 		if(userToLogin) {
 			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
 			if (isOkThePassword) {
+				//return res.send('ingresaste')
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
 
 				if(req.body.remember_user) {
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+					res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
 				}
 
 				return res.redirect('/');
 			} 
+			
 			return res.render('users/login', {
 				errors: {
 					email: {
@@ -56,7 +58,7 @@ const usercontroller = {
 		return res.render('users/login', {
 			errors: {
 				email: {
-					msg: 'No se encuentra este email en nuestra base de datos'
+					msg: 'credenciales inválidas'
 				}
 			}
 		});
