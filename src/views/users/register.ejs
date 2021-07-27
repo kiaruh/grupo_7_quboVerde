@@ -59,7 +59,7 @@
                   <% } %>
 
                   <input class="register-input <%= locals.errors && errors.email ? 'is-invalid':'is-valid' %>"
-                   type="email" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email: null %>" minlength="2" > 
+                   type="text" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email: null %>" minlength="2" > 
                   <% if (locals.errors && errors.email) { %>
                     <div class="text-danger"> <%= errors.email.msg %></div>
                   <% } %>
