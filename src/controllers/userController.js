@@ -14,18 +14,18 @@ const usercontroller = {
         const resultValidation = validationResult(req)
         if(resultValidation.errors.length > 0){
             return res.render("users/register", {errors: resultValidation.mapped(), oldData: req.body})
-        // }
-        // let userInDB = User.findByField('email', req.body.email)
+        }
+        let userInDB = User.findByField('email', req.body.email)
 
-        // if(userInDB) {
-        //     return res.render("users/register", {errors: { email: { msg: "Este mail ya fue utilizado" } }, oldData: req.body})
-        // }
+        if(userInDB) {
+           return res.render("users/register", {errors: { email: { msg: "Este mail ya fue utilizado" } }, oldData: req.body})
+        }
 	let img = `avatar${Math.floor(Math.random() * 9) + 1}.png`
 	
     let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10),admin:false, avatar:img};       
-    let newUser =  User.create(userTocreate);
+    User.create(userTocreate);
     return res.redirect("/users/login")
-    }},
+    },
 
     login: (req,res) => res.render("users/login"), // get login
 
