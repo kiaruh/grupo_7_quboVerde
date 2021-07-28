@@ -10,6 +10,7 @@ const controller = require('../controllers/userController')
 
 //Middlewares
 const validations = require('../middlewares/validationRegisterMiddleware')
+const guestMiddleware = require('../middlewares/guestMiddleware')
 //const fileUpload = require('../middlewares/multerAvatarMiddleware')
 
 
@@ -28,10 +29,10 @@ const mds = multer.diskStorage({
 const fileUpload = multer({storage: mds});
 
 //Route
-router.get("/register", controller.register)
+router.get("/register",guestMiddleware, controller.register)
 router.post("/register",validations, controller.processRegister)
 
-router.get("/login", controller.login)
+router.get("/login",guestMiddleware, controller.login)
 router.post("/login", controller.loginProcess)
 
 // rutas para perfil de usuario

@@ -27,7 +27,7 @@ const usercontroller = {
     return res.redirect("/users/login")
     },
 
-    login: (req,res) => res.render("users/login"), // get login
+    login: (req,res) => {res.render("users/login")}, // get login
 
     loginProcess: (req, res) => {
 		let userToLogin = User.findByField('email', req.body.email);
@@ -64,7 +64,7 @@ const usercontroller = {
 		});
 	},
 
-	profile: (req,res) => res.render("users/profile",{users:User.getData()}), // get userprofile (temporal para que no se rompa la ruta)
+	profile: (req,res) => {res.render("users/profile",{users:User.getData()})}, // get userprofile (temporal para que no se rompa la ruta)
 	profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
 	getProfile: (req,res) => res.render("users/profile_mod", {users:User.findUserId(req.params.id)}), //formulario de modificacion
 

@@ -13,7 +13,7 @@ const { send } = require('process');
 
 
 //session
-app.use(session({secret: "quboverde",resave: false,saveUninitialized: false,}))
+app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 
 //middlewares
 app.use(cookies())
