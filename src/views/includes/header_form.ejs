@@ -32,7 +32,9 @@
         <article class="icon-navbar">
             <!-- <a href="#"><img class ="icons" src="/img/search.svg" alt=""></a> -->
             <a href="/users/profile"><img class ="icons" src="/img/user.svg" alt=""></a>
-            <span class ="icons small-text">Inicia sesión</span>
+            <span class ="icons small-text"> <% if (locals.userLogged) { %>
+                <%=locals.userLogged.firstname %> 
+               <% } %> </span>
 
             <!-- en este punto si el usuario está loggeado mostrar el Name/Username en vez de "Inicia sesión"-->
 
