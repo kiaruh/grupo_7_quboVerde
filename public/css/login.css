@@ -3,7 +3,8 @@
 }
 .main-login {
   position: relative;
-  align-content: center ;
+  align-content: center;
+  margin-top: 50px;
 }
 
 .login-fondo {
@@ -70,6 +71,16 @@ fieldset ::placeholder{
 
 .olvide-psw:hover {
   color: rgb(66, 55, 55);
+  text-decoration: underline;
+}
+
+.link{
+  text-decoration: none;
+  color: var(--palette-pink);
+}
+
+.link:hover{
+  color: var(--palette-pinkhover);
   text-decoration: underline;
 }
 
