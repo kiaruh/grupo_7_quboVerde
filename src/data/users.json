@@ -1,13 +1,14 @@
 [
   {
     "id": 1,
-    "username": "Usuario default",
-    "password": "$2a$10$s2Q4fW.ww1a5/NqqezlT4.Y1OgrokAOUnY60gqdxepfI1mDenuxR.",
+    "username": "admin",
+    "password": "$2a$10$Zxhpn.e8G/atqU5okhuwl.V.lmT89w.Im5qevWCRfBKFxkMOWSFra",
     "firstname": "Cosme",
     "lastname": "Fulanito",
-    "email": "ejemplo@gmail.com",
+    "email": "admin@gmail.com",
     "birthdate": "1900-12-01",
-    "avatar": "default_profile.png"
+    "avatar": "default_profile.png",
+    "admin":true
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "lastname": "de Frozen",
     "email": "annafrozen@gmail.com",
     "birthdate": "2000-03-05",
-    "avatar": "avatar3.png"
+    "avatar": "avatar3.png",
+    "admin": false
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "lastname": "Enojado",
     "email": "soyunbebe@gmail.com",
     "birthdate": "2010-11-12",
-    "avatar": "avatar2.png"
+    "avatar": "avatar2.png",
+    "admin": false
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "lastname": "Esponja",
     "email": "bob@gmail.com",
     "birthdate": "1900-01-12",
-    "avatar": "avatar8.png"
+    "avatar": "avatar8.png",
+    "admin": false
   },
   {
     "id": 5,
@@ -91,7 +95,8 @@
     "lastname": "chu",
     "email": "pikachu@gmail.com",
     "birthdate": "1990-01-11",
-    "avatar": "avatar6.png"
+    "avatar": "avatar6.png",
+    "admin": false
   },
   {
     "id": 10,

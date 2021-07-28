@@ -9,8 +9,8 @@ const app = express();
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
-const { send } = require('process');
 
+const { send } = require('process');
 
 //session
 app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
@@ -18,7 +18,8 @@ app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 //middlewares
 app.use(cookies())
 app.use(express.urlencoded({ extended: false }))
-// app.use(userLoggedMiddleware)
+app.use(userLoggedMiddleware)
+
 
 // micro-middleware para enviar los datos de productos al formulario de busqueda en todas las vistas 
 const product = require("./models/productModel")

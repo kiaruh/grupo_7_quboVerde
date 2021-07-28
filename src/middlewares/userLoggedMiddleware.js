@@ -1,16 +1,14 @@
-const path = require('path');
-const multer = require('multer');
+function userLoggedMiddleware(req,res,next){
+	res.locals.isLogged = false
 
-const storage = multer.diskStorage({
-	destination: (req, file, cb) => {
-		cb(null, '../public/img/uploads/avatars');
-	},
-	filename: (req, file, cb) => {
-		let fileName = `${Date.now()}_img${path.extname(file.originalname)}`;
-		cb(null, fileName);
+	
+	if(req.session && req.session.userLogged){
+		res.locals.isLogged = true
+		res.locals.userLogged = req.session.userLogged
 	}
-})
 
-const uploadFile = multer({ storage });
+	next()
 
-module.exports = uploadFile;
+}
+
+module.exports = userLoggedMiddleware
