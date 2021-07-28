@@ -46,4 +46,7 @@ router.put("/mod/:id", fileUpload.single("avatar"),validations , controller.setP
 
 router.delete("/mod/:id", controller.delUser);
 
+// Logout
+router.get('/logout/', controller.logout);
+
 module.exports = router

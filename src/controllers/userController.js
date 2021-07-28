@@ -102,6 +102,10 @@ const usercontroller = {
         res.redirect("/");
 
     },
+	logout: (req,res) => {
+		req.session.destroy()
+		res.redirect('/')
+	}
 
 
 	// queda pendiente crear la función que toma la imagen de perfil preexistente, else mostrar default
