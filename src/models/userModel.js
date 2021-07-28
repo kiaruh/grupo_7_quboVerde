@@ -37,13 +37,18 @@ const User = {
 
 	findByField: function (field, text) {
 		let allUsers = this.findAll();
+		// let userResults = [];
 		let userFound = allUsers.find(oneUser => oneUser[field] == text);
-		return userFound;
+		// userResults.push(userFound);
+		// return userResults
+		return userFound
 	},
 	findByUser: function (user){
 		let allUsers = this.findAll()
+		let userResults = [];
 		let userFound = allUsers.find( oneUser => oneUser.username == user)
-		return userFound
+		userResults.push(userFound);
+		return userResults
 	},
 
 	create: function (userData) {

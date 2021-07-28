@@ -8,7 +8,8 @@ const User = require("../models/userModel")
 
 const usercontroller = {
 
-    register: (req,res) => res.render("users/register"), // get register
+    register: (req,res) => {
+		res.render("users/register")}, // get register
 
     processRegister: (req,res) => {
 		//res.send(req.body)
@@ -28,7 +29,8 @@ const usercontroller = {
     	return res.redirect("/users/login")
     },
 
-    login: (req,res) => {res.render("users/login")}, // get login
+    login: (req,res) => {
+		res.render("users/login")}, // get login
 
     loginProcess: (req, res) => {
 		let userToLogin = User.findByField('email', req.body.email);
@@ -40,7 +42,7 @@ const usercontroller = {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
 
-				if(req.body.remember_user) {
+				if(req.body.recordar) {
 					res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
 				}
 				
@@ -66,7 +68,9 @@ const usercontroller = {
 		});
 	},
 
-	profile: (req,res) => {res.render("users/profile" ,{users:User.findUserId(req.session.userLogged.id)})}, // get userprofile (temporal para que no se rompa la ruta)
+	profile: (req,res) => {
+
+		res.render("users/profile" ,{users:User.findUserId(req.session.userLogged.id)})}, // get userprofile (temporal para que no se rompa la ruta)
 	//profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
 	getProfile: (req,res) => res.render("users/profile_mod", {users:User.findUserId(req.params.id)}), //formulario de modificacion
 
@@ -103,6 +107,7 @@ const usercontroller = {
 
     },
 	logout: (req,res) => {
+		res.clearCookie('email')
 		req.session.destroy()
 		res.redirect('/')
 	}
