@@ -11,6 +11,7 @@ const usercontroller = {
     register: (req,res) => res.render("users/register"), // get register
 
     processRegister: (req,res) => {
+		//res.send(req.body)
         const resultValidation = validationResult(req)
         if(resultValidation.errors.length > 0){
             return res.render("users/register", {errors: resultValidation.mapped(), oldData: req.body})
@@ -20,11 +21,11 @@ const usercontroller = {
         if(userInDB) {
            return res.render("users/register", {errors: { email: { msg: "Este mail ya fue utilizado" } }, oldData: req.body})
         }
-	let img = `avatar${Math.floor(Math.random() * 9) + 1}.png`
+		let img = `avatar${Math.floor(Math.random() * 9) + 1}.png`
 	
-    let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10),admin:false, avatar:img};       
-    User.create(userTocreate);
-    return res.redirect("/users/login")
+    	let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10),admin:false, avatar:img};       
+    	User.create(userTocreate)
+    	return res.redirect("/users/login")
     },
 
     login: (req,res) => {res.render("users/login")}, // get login
@@ -98,7 +99,7 @@ const usercontroller = {
         let a = User.delete(setId);
 		console.log(a);
 
-        res.redirect("/users/profile");
+        res.redirect("/");
 
     },
 

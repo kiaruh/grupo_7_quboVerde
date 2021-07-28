@@ -8,20 +8,20 @@ module.exports = [
     body('lastname').notEmpty().withMessage('Tienes que escribir un apellido'),
     body('email').notEmpty().withMessage('Tienes que escribir un email valido')
     .bail().isEmail().withMessage('Debes utilizar un formato del tipo email'),
-    body('password').notEmpty().withMessage('Tienes que escribir una constraseña'),
-    body('avatar').custom((value, { req }) => { 
-        let file = req.file
-        let acceptedExtensions = ['.jpg','.png','.gif']
-        if(!file) {
-            throw new Error('Tienes que subir una imagen')
-        } else {
-            let fileExtension = path.extname(file.originalname)
-            if(!acceptedExtensions.includes(fileExtension)){
-                throw new Error(`Formato valido ${acceptedExtensions.join(', ')}`)
-            }
-        }
+    body('password').notEmpty().withMessage('Tienes que escribir una constraseña')
+    // ,body('avatar').custom((value, { req }) => { 
+    //     let file = req.file
+    //     let acceptedExtensions = ['.jpg','.png','.gif']
+    //     if(!file) {
+    //         throw new Error('Tienes que subir una imagen')
+    //     } else {
+    //         let fileExtension = path.extname(file.originalname)
+    //         if(!acceptedExtensions.includes(fileExtension)){
+    //             throw new Error(`Formato valido ${acceptedExtensions.join(', ')}`)
+    //         }
+    //     }
         
-        return true
-    })
+    //     return true
+    // })
 
 ]

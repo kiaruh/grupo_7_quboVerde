@@ -147,5 +147,16 @@
     "password": "$2a$10$Zxhpn.e8G/atqU5okhuwl.V.lmT89w.Im5qevWCRfBKFxkMOWSFra",
     "admin": false,
     "avatar": "avatar1.png"
+  },
+  {
+    "id": 15,
+    "username": "marinayu",
+    "birthdate": "2021-07-06",
+    "firstname": "marina",
+    "lastname": "yuyu",
+    "email": "mari@mari.com",
+    "password": "$2a$10$jlhfXZ97GotnRXyEzUI6s.k3gZrZdlr.ocopVleWODR4OITZDoYnO",
+    "admin": false,
+    "avatar": "avatar5.png"
   }
 ]
