@@ -9,6 +9,7 @@
 
 :root{
     --palette-pink:#CB6565;
+    --palette-pinkhover:#ff8282;
     --palette-cream:#F4E7DE;
     --palette-grey:#9d9d9d;
     --palette-green:#BAC9C0;
@@ -330,9 +331,6 @@ border: none;
 }
 
 
-
-
-
 /* desktop-tablet  - lo cambie de 361 al tamaño mas conveniente */
 
 @media (min-width: 480px) {
@@ -516,7 +514,7 @@ border: none;
 
     .icon-navbar{
         /* width:fit-content; */
-        width: 25%;
+        width: 45%;
 
         position: relative;
         padding: 4;
@@ -551,6 +549,11 @@ border: none;
     
         overflow: hidden;
     }
+
+    .small-text{
+        font-size: 0.9rem
+    }
+
 /* lo de aca arriba estaba en el otro mediaquery*/
     
     .main-header{

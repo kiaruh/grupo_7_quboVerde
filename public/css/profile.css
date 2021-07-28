@@ -6,6 +6,7 @@
   .main-register {
     position: relative;
     align-content: center ;
+    margin-top: 50px;
 }
 i.fas fa-pen{
   color: white;
@@ -157,9 +158,6 @@ p{
 .register-btn {
   border: none;
   outline: none;
-}
-
-.register-btn{
   color: whitesmoke;
   height: 35px;
   background: #CB6565;
@@ -169,6 +167,20 @@ p{
 .register-btn:hover {
   background: #ff8282;
   cursor: pointer;
+}
+
+.register-btn-sec {
+  border: none;
+  outline: none;
+  color: #CB6565;
+  height: 35px;
+  border-radius: 50px;
+  background: none;
+  margin-top: 2vh;
+}
+
+.register-btn-sec:hover {
+  color: #ff8282;
 }
 
 .side-banner {

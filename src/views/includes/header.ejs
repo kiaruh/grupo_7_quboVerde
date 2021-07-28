@@ -18,8 +18,7 @@
         <li> <a href="/products/mod">Administrar</a></li>
     <% } %>
 <% } %>    
-            <li> <a href="/users/login">Inicia sesión</a></li>
-            <li> <a href="/users/register">Crea tu cuenta</a></li>
+          
         
         </article>
     </navbar>
@@ -36,6 +35,10 @@
             <button type="submit" value="Search" formaction="/products/search/"><img class ="icons" src="/img/search.svg" alt=""></button>
         </form>
         <a href="/users/profile"><img class ="icons" src="/img/user.svg" alt=""></a>
+        <span class ="icons small-text">Inicia sesión</span>
+        
+            <!-- en este punto si el usuario está loggeado mostrar el Name/Username en vez de "Inicia sesión"-->
+
         <a href="/checkout/cart"><img src="/img/cart.svg" alt=""></a>
     </article>
 
