@@ -11,6 +11,7 @@ const controller = require('../controllers/userController')
 //Middlewares
 const validations = require('../middlewares/validationRegisterMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
 //const fileUpload = require('../middlewares/multerAvatarMiddleware')
 
 
@@ -36,8 +37,8 @@ router.get("/login",guestMiddleware, controller.login)
 router.post("/login", controller.loginProcess)
 
 // rutas para perfil de usuario
-router.get("/profile/", controller.profile);
-router.get("/profile/:id", controller.profilebyid);
+router.get("/profile/:username",authMiddleware, controller.profile);
+router.get("/profile/",authMiddleware, controller.profile);
 
 // rutas para modificar perfil de usuario
 router.get("/mod/:id", controller.getProfile);

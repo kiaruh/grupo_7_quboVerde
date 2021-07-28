@@ -42,8 +42,9 @@ const usercontroller = {
 				if(req.body.remember_user) {
 					res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
 				}
-
-				return res.redirect('/');
+				
+				return res.redirect('/users/profile/'+ userToLogin.username);
+				
 			} 
 			
 			return res.render('users/login', {
@@ -64,8 +65,8 @@ const usercontroller = {
 		});
 	},
 
-	profile: (req,res) => {res.render("users/profile",{users:User.getData()})}, // get userprofile (temporal para que no se rompa la ruta)
-	profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
+	profile: (req,res) => {res.render("users/profile" ,{users:User.findUserId(req.session.userLogged.id)})}, // get userprofile (temporal para que no se rompa la ruta)
+	//profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
 	getProfile: (req,res) => res.render("users/profile_mod", {users:User.findUserId(req.params.id)}), //formulario de modificacion
 
 	setProfile: (req,res) => {

@@ -37,8 +37,13 @@ const User = {
 
 	findByField: function (field, text) {
 		let allUsers = this.findAll();
-		let userFound = allUsers.find(oneUser => oneUser[field] === text);
+		let userFound = allUsers.find(oneUser => oneUser[field] == text);
 		return userFound;
+	},
+	findByUser: function (user){
+		let allUsers = this.findAll()
+		let userFound = allUsers.find( oneUser => oneUser.username == user)
+		return userFound
 	},
 
 	create: function (userData) {
