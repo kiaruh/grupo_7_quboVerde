@@ -1,0 +1,115 @@
+#panel.admin{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+
+/* ------------ Header ------------ */
+
+.main-header{
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    background-color: white;
+    box-shadow: 10px 5px 5px rgba(10, 10, 10, 0.1);
+    align-items: center;
+}
+
+/* ------------ Lateral chico - Menu ------------ */
+
+.nav-lateral{
+    width: 20vw;
+    height: 100vh;
+    min-width: 200px;
+    max-width: 240px;
+    background-color: var(--palette-darkgrey);
+    position: fixed;
+    left: 0px;
+    z-index: -10;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-lateral h1{
+    padding-left: 0px;
+}
+
+.item-navbar{
+    display: block;
+}
+
+
+.icons{
+    display: inline;
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+.icon-navbar a img{
+width: 31px;
+height: 31px;
+margin-top:10px;
+margin-right: 6px;
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+    line-height: 40px;
+}
+
+a:hover{
+    text-decoration: none;
+    color: var(--palette-grey)
+}
+
+.nav-lateral-component{
+    margin-top: 8vh;
+    color: white;
+    min-width: 146px;
+}
+
+.nav-lateral a{
+    display: flex;
+    align-items: center;
+}
+
+.plain-text-button{
+    position: absolute;
+    bottom: 10vh;
+    min-width: 145px;
+}
+
+/* ------------ Lateral grande - display ------------ */
+.lateral-big{
+    width: 80vw;
+    max-width: 1300px;
+    position: absolute;
+    left: 20vw;
+    padding: 50px;
+}
+
+.lateral-big p{ 
+    padding-left:20px; 
+}
+
+.flotante{
+    position: fixed;
+    right: 6%;
+    bottom:100px;
+    z-index: 10;
+    background-color: var(--palette-pink);
+    color:white;
+    border-radius: 65px;
+    border: none;
+    padding:10px 23px;
+    font-size: 40px;
+}
+
+/* ------------ Footer ------------ */
+
+.footer{
+    display: none
+}

@@ -1,0 +1,45 @@
+<!-- esta archivo esta armado solamente para el header de los formularios, vinculado a la hoja de estilos principal-->
+
+    <header>
+        <section class="main-header">
+            
+        <navbar>
+            <!-- boton del menu hamburguesa-->
+            <article class="burger">
+                <a href="#" onclick="burgerMenuAction()"><img src="/img/burger-menu.svg" alt=""></a>
+            </article>
+
+            <!-- barra de navegacion-->
+            <article class="navbar-menu" id="IDburgerMenu">
+            
+            </article>
+        </navbar>
+
+        <!-- este article es solo el logo, para tenerlo mas controlado en caja-->
+        <article class="header-logo">
+            <a href="/"><img src="/img/quboverde_logo.svg" alt=""></a>
+        </article>
+
+        <article class="icon-navbar">
+            <!-- <a href="#"><img class ="icons" src="/img/search.svg" alt=""></a> -->
+            <a href="/users/profile"><img class ="icon avatar" src="/img/upload/avatar/default_profile.png" alt=""></a>
+            <p>
+                <% if (locals.userLogged) { %>
+                 <%=locals.userLogged.firstname %> <%=locals.userLogged.lastname %> 
+                 <% } %>
+                </p>
+        </article>
+
+    </section>
+
+    <section class="search-bar">
+        <article>
+        <form method="GET" class="search-bar-container" >
+            <input type="search" placeholder="¿Qué estás buscando?" name="search">
+            <button type="submit" value="Search" formaction="/products/search/"><img src="/img/search.svg" alt=""></button>
+        </form>
+        </article>
+           
+    </section>
+
+    </header>
