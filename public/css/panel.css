@@ -1,4 +1,4 @@
-#panel.admin{
+.panel.admin{
     display: flex;
     flex-direction: row;
     position: relative;
@@ -66,7 +66,7 @@ a:hover{
 }
 
 .nav-lateral-component{
-    margin-top: 8vh;
+    margin-top: 100px;
     color: white;
     min-width: 146px;
 }
@@ -89,6 +89,7 @@ a:hover{
     position: absolute;
     left: 20vw;
     padding: 50px;
+    padding-top: 100px;
 }
 
 .lateral-big p{ 
@@ -112,4 +113,34 @@ a:hover{
 
 .footer{
     display: none
+}
+
+
+/* ------------ Menu panel ------------ */
+
+#panel h3.prod-title {
+    width: 100% !important;
+}
+
+#panel .lateral-big{
+    padding-top: 50px;
+}
+
+#panel article.prod{
+    max-width: 47%;
+    min-width: 300px;
+    box-shadow: 4px 4px 10px rgb(189, 189, 189);
+    margin-top: 30px;
+}
+
+#panel article.prod:hover{
+    box-shadow: 4px 4px 10px #666;
+}
+
+#panel .lateral-big h1{
+    padding-left: 0px;
+}
+
+#panel .lateral-big p{
+    padding-left: 0px;
 }

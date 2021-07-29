@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/panel.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <title>quboverde</title>
+</head>
+<body>
+
+   <%- include("../../includes/header_admin") %> 
+
+    <main id="panel" class="main">
+      
+      <nav class="admin nav-lateral">
+        
+         <article class="nav-lateral-component">
+            <h1>Hola
+               <% if (locals.userLogged) { %>
+                <%=locals.userLogged.firstname %> 
+                <% } %>
+             </h1>
+             <a href="/admin/panel" class="item-navbar"><img class ="icons" src="/img/fi-rr-apps.svg" alt="">Panel Admin</a>
+             <a href="/products/mod/" class="item-navbar"><img class ="icons" src="/img/fi-rr-products.svg" alt="">Productos</a>
+             <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-megaphone.svg" alt="">Promos</a>
+             <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-edit.svg" alt="">Customización</a>
+             <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-key.svg" alt="">Permisos</a>
+             <a href="/users/logout" class="item-navbar plain-text-button"><img class ="icons" src="/img/fi-rr-sign-out.svg" alt="">Cerrar sesión </a>
+          </article>
+      </nav>
+      
+      <section class="admin lateral-big">
+         <h1>Bienvenido de nuevo!</h1>
+
+         <p>Desde el panel de administrador podés gestionar la totalidad de tu e-shop: podés editar el catálogo de productos, cargar promociones, personalizar las imágenes de la página web y dar permisos de administrador a distintos usuarios. </p>
+         
+         <article class="prod-container">
+            <article class="prod">
+               <picture class="prod-img">
+                  <a href="/products/mod/">
+                     <img src="/img/admin_poster_productos.jpg" alt="">
+                  </a>
+               </picture>
+               <div class="prod-box">
+                  <h3 class="prod-title">Administrar productos</h3>
+               </div>
+            </article>
+
+            <article class="prod">
+               <picture class="prod-img">
+                  <a href="#">
+                     <img src="/img/admin_poster_promos.jpg" alt="">
+                  </a>
+               </picture>
+               <div class="prod-box">
+                  <h3 class="prod-title">Gestionar promos</h3>
+               </div>
+            </article>
+
+            <article class="prod">
+               <picture class="prod-img">
+                  <a href="#">
+                     <img src="/img/admin_poster_personalizar.jpg" alt="">
+                  </a>
+               </picture>
+               <div class="prod-box">
+                  <h3 class="prod-title">Personalizar página web</h3>
+               </div>
+            </article>
+
+            <article class="prod">
+               <picture class="prod-img">
+                  <a href="#">
+                     <img src="/img/admin_poster_permisos.jpg" alt="">
+                  </a>
+               </picture>
+               <div class="prod-box">
+                  <h3 class="prod-title">Administrar permisos</h3>
+               </div>
+            </article>
+         </article>
+
+
+      </section>
+    </main>
+
+    <%- include("../../includes/footer") %> 
+</body>
+</html>
