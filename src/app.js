@@ -55,6 +55,7 @@ const rutasMain = require('./routes/main');
 const rutasProducts = require('./routes/products');
 const rutasUsers = require('./routes/users');
 const rutasCheckout = require('./routes/checkout');
+const rutasAdmin = require('./routes/admin');
 
 
 // App Use
@@ -62,3 +63,4 @@ app.use('/',rutasMain);
 app.use('/products',rutasProducts);
 app.use('/users',rutasUsers);
 app.use('/checkout',rutasCheckout);
+app.use('/admin',rutasAdmin);

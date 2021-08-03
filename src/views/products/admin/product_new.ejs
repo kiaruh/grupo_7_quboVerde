@@ -5,7 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/normalize.css">
-        <link rel="stylesheet" href="/css/styleadmin.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/panel.css">
         <link rel="stylesheet" href="/css/edit.css">
         <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -13,10 +15,26 @@
         <title>Crear producto</title>
     </head>
 <body>
-    <%- include("../../includes/header_form") %>
+    <%- include("../../includes/header_admin") %>
     <main class="register-main">
+        <nav class="admin nav-lateral">
+        
+            <article class="nav-lateral-component">
+               <h1>Hola
+                  <% if (locals.userLogged) { %>
+                   <%=locals.userLogged.firstname %> 
+                   <% } %>
+                </h1>
+                <a href="/admin/panel" class="item-navbar"><img class ="icons" src="/img/fi-rr-apps.svg" alt="">Panel Admin</a>
+                <a href="/products/mod/" class="item-navbar"><img class ="icons" src="/img/fi-rr-products.svg" alt="">Productos</a>
+                <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-megaphone.svg" alt="">Promos</a>
+                <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-edit.svg" alt="">Customización</a>
+                <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-key.svg" alt="">Permisos</a>
+                <a href="/users/logout" class="item-navbar plain-text-button"><img class ="icons" src="/img/fi-rr-sign-out.svg" alt="">Cerrar sesión </a>
+             </article>
+        </nav>
 
-        <form class="register-registro" action="/products/new?_method=POST" method="POST" enctype="multipart/form-data">
+        <form class="register-registro admin lateral-big" action="/products/new?_method=POST" method="POST" enctype="multipart/form-data">
             <div class="register-titulo">
                 <h3 class="register-titulo">Ficha de producto</h3>
             </div>

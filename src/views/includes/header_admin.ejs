@@ -12,13 +12,6 @@
             <!-- barra de navegacion-->
             <article class="navbar-menu" id="IDburgerMenu">
             
-                <% if (locals.userLogged) { %> 
-                    <% if (locals.userLogged.admin) { %>
-                        <li> <a href="/admin/panel">Administrar</a></li>
-                    <% } %>
-                <% } %> 
-            
-            
             </article>
         </navbar>
 
@@ -27,17 +20,14 @@
             <a href="/"><img src="/img/quboverde_logo.svg" alt=""></a>
         </article>
 
-        <!-- este article todo el carrito, que en la version web tendria mas contenidos-->
         <article class="icon-navbar">
             <!-- <a href="#"><img class ="icons" src="/img/search.svg" alt=""></a> -->
-            <a href="/users/profile"><img class ="icons" src="/img/user.svg" alt=""></a>
-            <span class ="icons small-text"> <% if (locals.userLogged) { %>
-                <%=locals.userLogged.firstname %> 
-               <% } %> </span>
-
-            <!-- en este punto si el usuario está loggeado mostrar el Name/Username en vez de "Inicia sesión"-->
-
-            <a href="/checkout/cart"><img src="/img/cart.svg" alt=""></a>
+            <a href="/users/profile"><img class ="icon avatar" src="/img/upload/avatar/default_profile.png" alt=""></a>
+            <p>
+                <% if (locals.userLogged) { %>
+                 <%=locals.userLogged.firstname %> <%=locals.userLogged.lastname %> 
+                 <% } %>
+                </p>
         </article>
 
     </section>

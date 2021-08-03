@@ -3,12 +3,12 @@
     "id": 1,
     "username": "admin",
     "password": "$2a$10$Zxhpn.e8G/atqU5okhuwl.V.lmT89w.Im5qevWCRfBKFxkMOWSFra",
-    "firstname": "Cosme",
-    "lastname": "Fulanito",
+    "firstname": "Margarita",
+    "lastname": "Quboverde",
     "email": "admin@gmail.com",
     "birthdate": "1900-12-01",
     "avatar": "default_profile.png",
-    "admin":true
+    "admin": true
   },
   {
     "id": 2,

@@ -12,10 +12,9 @@
         <!-- barra de navegacion-->
         <article class="navbar-menu" id="IDburgerMenu">
         
-            <li> <a href="/products/all">Tienda</a> </li>
 <% if (locals.userLogged) { %> 
     <% if (locals.userLogged.admin) { %>
-        <li> <a href="/products/mod">Administrar</a></li>
+        <li> <a href="/admin/panel">Administrar</a></li>
     <% } %>
 <% } %>    
           
