@@ -21,12 +21,20 @@ app.use(express.urlencoded({ extended: false }))
 app.use(userLoggedMiddleware)
 
 
-// micro-middleware para enviar los datos de productos al formulario de busqueda en todas las vistas 
-const product = require("./models/productModel")
-let dataSearch = function(req, res, next) {
-    let data = product.all();
+// micro-middleware para enviar los datos de productos al formulario de busqueda en todas las vistas
+// pero modificado para andar con la db 
+const db = require('../src/database/models');
+//const product = require("./models/productModel")
+
+let dataSearch = async function(req, res, next) {
+    try {
+    let data = await db.Product.findAll();
     res.locals.produ = data;
     next();
+    } catch(e){
+        throw e;
+    }
+    
 }
 
 app.use(dataSearch);

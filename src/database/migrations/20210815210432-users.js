@@ -12,9 +12,23 @@ module.exports = {
           autoIncrement: true
         },
 
-        name: {
+        user: {
           type: Sequelize.STRING,
           allowNull: false,
+        },
+
+        bday: {
+          type: Sequelize.DATEONLY,
+          alowNull: false
+        },
+
+        firstname: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+
+        lastname: {
+          type: Sequelize.STRING,
         },
 
         email: {
@@ -24,13 +38,13 @@ module.exports = {
         },
 
         password: {
-          type: Sequelize.INTEGER,
+          type: Sequelize.STRING,
           alowNull: false
         },
 
-        bday: {
-          type: Sequelize.DATEONLY,
-          alowNull: false
+        admin: {
+          type: Sequelize.INTEGER,
+          alowNull: false,
         },
 
         avatar: {
@@ -40,7 +54,7 @@ module.exports = {
 
         send_ID: { // puede no tener una direccion ingresada
           type: Sequelize.INTEGER,
-          alowNull: true
+          alowNull: true,
         },
 
         pm_ID: { // puede no tener un medio de pago ingresado

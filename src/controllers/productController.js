@@ -57,7 +57,21 @@ const productController = {
         res.render("products/admin/product_mod"); // get product modification
     },
 
-    modall: (req,res) => res.render("products/admin/all_mod",{catalogo:product.all()}),
+    modall: async function (req,res) {
+
+        try {
+
+            let listaProductos = await db.Product.findAll({
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            res.render("products/admin/all_mod",{catalogo: listaProductos})
+
+        } catch(e){
+            throw e
+        }
+        
+    },
 
     addProd: async function(req, res){
         try {
@@ -312,6 +326,7 @@ const productController = {
     },
 
     bestseller: function (req, res){
+        // este todavia no lo arme, porque tiene mas logica armado desde el carrito.
         let list = product.listByRelative("price", 1000);
         res.render("products/searchresult",{catalogo: list, search: "Los más vendidos!"});
 
