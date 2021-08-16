@@ -4,9 +4,51 @@ const imgController = require('../models/imgModel')
 const path = require('path'); 
 const fs = require('fs');
 
+// voy a comentar todas las cosas que cambie de este archivo para armarlo en DB, asi sabemos donde es el tema.
+// requerir el modelo
+
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
+
 const productController = {
-    list: (req,res) => res.render("products/all",{catalogo:product.all()}),
-    detail: (req,res) => res.render("products/detail",{catalogo:product.productbyid(req.params.id)}),
+
+    list: async function (req,res){
+
+        // sobre el listado: la asociacion precios e imagenes es 1 a 1, vinculada directamente en PK, la de especies no
+        // y las imagenes van hacia la vista como un string, y en la vista se convierten en un array.
+
+        try {
+
+        let listaProductos = await db.Product.findAll({
+            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+        })
+
+        res.render("products/all",{catalogo:listaProductos})
+        
+        
+        }catch(e){
+            console.log(e);
+        }
+    },
+
+    detail: async function (req,res) { 
+
+        try {
+
+        // inclui la asociaciones en el findByPk (no sabia que se podia)
+        // y las imagenes van hacia la vista como un string, y en la vista se convierten en un array.
+
+            let detalleProducto = await db.Product.findByPk(req.params.id, {
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            res.render("products/detail",{catalogo:detalleProducto})
+
+        }catch(e){
+            throw error;
+        }  
+    },
+
     newprod: function(req,res){
         res.render("products/admin/product_new"); // get new product
     },
@@ -17,15 +59,19 @@ const productController = {
 
     modall: (req,res) => res.render("products/admin/all_mod",{catalogo:product.all()}),
 
-    addProd: function(req, res){
+    addProd: async function(req, res){
+        try {
+        /* 
+        // calculo del ultimo index, para agregar en el json
+
         let list = product.all();
         let lastIndex = list.length - 1;
 
         let newProductId = list[lastIndex].id + 1;
+        */
 
         let newProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
 
-        let descripcion = req.body.descripcion;
         let newImg;
 
         if (req.body.img == ""){
@@ -42,6 +88,14 @@ const productController = {
             newImg = "default.jpg"
         }
 
+        if (req.body.aptomascotas == "true"){
+            req.body.aptomascotas = 1
+        } else {
+            req.body.aptomascotas = 0
+        }
+
+        /* 
+        // armado del objeto a insertar en el json
         let newProduct = {
             id: Number(newProductId),
             price: Number(req.body.precio),
@@ -56,94 +110,205 @@ const productController = {
             desc: descripcion,
         }
 
+        */
+
+        /* 
+        // llama a al funcion que escribe el json
         product.add(newProduct);
+        */
+
+        
+        // creo el producto en la tabla de productos
+        await db.Product.create({
+            name: req.body.producto,
+            specie_id: req.body.especie,
+            des: req.body.descripcion,
+            irr: parseInt(req.body.riego),
+            light: parseInt(req.body.luz),
+            scale: parseInt(req.body.escala), 
+            pet: parseInt(req.body.aptomascotas),
+            diff: newProductDif 
+        })
+
+        // creo precio en la tabla de precios
+        await db.Price.create({
+            price: Number(req.body.precio) 
+        })
+
+        // creo la primer imagen en la tabla de imagenes
+        // antes, como quiero meter un array en el campo con las imagenes, armo el array y lo transformo en un string
+        let imagenesAGuardar = [];
+        imagenesAGuardar.push(newImg);
+        let dbimage = JSON.stringify(imagenesAGuardar);
+
+        await db.Image.create({
+            image: dbimage 
+        })
+       
         res.redirect("/products/mod");
+
+        }catch(error){
+            throw error;
+        }
     },
 
-    mDetail: function(req, res){
-        let detId = req.params.id;
+    mDetail: async function(req, res){
 
-        let list = product.all();
+        // busco con un findByPk que incluya las tablas cruzadas
+        // y despues envio a la tabla de la misma manera que siempre
 
-        let detIndex = list.findIndex(prod => prod.id == detId)
+        try {
+        let detalleProducto = await db.Product.findByPk(req.params.id, {
+            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+        })
 
-        let datos = list[detIndex];
+        let todasLasEspecies = await db.Specie.findAll();
+        
+        res.render ("products/admin/product_mod", {datos: detalleProducto, especies: todasLasEspecies});
+    
+        }catch(e){
+            throw error;
+        } 
 
-
-        res.render ("products/admin/product_mod", {datos: datos});
-        console.log(datos);
     },
 
-    setProd: function(req, res){
-        let setId = req.params.id;
-        let list = product.all();
+    setProd: async function(req, res){
 
-        let modIndex = list.findIndex(prod => prod.id == setId);
-        let modImg = "";
+        // esta andando, lo que no resolvi todavia es el tema de gestion de las fotos cuando se eliminan
 
-        let setProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
+        try {
+            let setId = req.params.id;
 
-        // verifica si cambio la imagen, si cambio elimina la anterior y carga la nueva en el json, si no cambio pone en el json la imagen que ya estaba.
+
+        let modProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
+
+        await db.Product.update({
+            name: req.body.producto,
+            specie_id: req.body.especie,
+            price_id: setId,
+            img_id: setId,
+            des: req.body.descripcion,
+            irr: parseInt(req.body.riego),
+            light: parseInt(req.body.luz),
+            scale: parseInt(req.body.escala), 
+            pet: parseInt(req.body.aptomascotas),
+            diff: modProductDif 
+        }, 
+        {
+            where: {id: setId}
+        })
+
+        
+        await db.Price.update({
+            price: Number(req.body.precio) 
+        }, 
+        {
+            where: {id: setId}
+        })
+
+        // modificacion de imagenes lo comentado abajo es el tema de eliminar las imagenes no utilizadas, que tengo que checkearlo mejor...
+        
+        /*
+        let modImg = JSON.parse(detalleProducto.imagenes.image);
+
+    for (i=0; i>modImg.length; i++){
+
         if (req.file == undefined){  
-            modImg = list[modIndex].img;
+            modImg = detalleProducto[].imagenes.image;
             console.log("undefined desde body");
         } else {
             imgController.deleteImg(list[modIndex].img);
             modImg = req.file.filename;
             console.log("valor desde body");
         }
+    }
+    */
 
-        let setMod = {
-            id: Number(setId),
-            price: Number(req.body.precio),
-            name: req.body.producto,
-            img: modImg,
-            species: req.body.especie,
-            scale: req.body.escala,
-            irr: req.body.riego,
-            light: req.body.luz,
-            pet: req.body.aptomascotas,
-            dif: setProductDif,
-            desc: req.body.descripcion,
-        }
+        let newImg = req.file.filename;
+        let imagenesAGuardar = [];
+        imagenesAGuardar.push(newImg);
+        let dbimage = JSON.stringify(imagenesAGuardar);
 
-        product.mod(modIndex, setMod);
+        await db.Image.update({
+            image: dbimage 
+        }, 
+        {
+        where: {id: setId}
+        })
+
         res.redirect("/products/mod");
-        console.log(setMod);
+
+        } catch(e){
+            throw error
+        }
     },
 
-    delProd: function(req, res){
-        let setId = req.params.id;
-        let list = product.all();
+    delProd: async function(req, res){
 
-        let delIndex = list.findIndex(prod => prod.id == setId)
+        // idem anterior, tengo que resolver el tema de eliminar las imagenes que no se usan.
+
+        try {
+            let setId = req.params.id;
+
+            // elminado el producto
+            await db.Product.destroy({
+                where: {id: setId}
+            })
+
+            // eliminado el precio
+            await db.Price.destroy({
+                where: {id: setId}
+            })
+
+            // eliminada la ruta a las imagenes (no las imagenes aun)
+            await db.Image.destroy({
+                where: {id: setId}
+            })
+
+            res.redirect("/products/mod");
+
+        } catch(e){
+            throw e
+        }
+        
+        /*
         let deleteImg = list[delIndex].img;
 
         imgController.deleteImg(deleteImg);
         product.delete(setId);
-
-        res.redirect("/products/mod");
-
-        console.log(deleteImg);
+        */
     },
 
-    searchProd: function (req, res){
-        let search = req.query.search.toLowerCase();
-        let data = product.all();
-        // arma el array vacio de respuesta
-        let query = [];
-        // arma el loop que busca las respuestas. Pordria ser un forEach, pero lo arme asi para ir toqueteando.
-        for (let i=0; i < data.length; i++) {
-            if (data[i].name.toLowerCase().includes(search)){
-                query.push(data[i]);
-            }
+    searchProd: async function (req, res){
+        const Op = db.Sequelize.Op;
+        try {
+            let search = req.query.search.toLowerCase();
+            let query = await db.Product.findAll({
+                where: {
+                    name: {[Op.like]: '%' + search + '%'}
+                }
+            })
+
+            res.render("products/searchresult",{catalogo: query, search: search})
+
+        } catch(e){
+            throw e
         }
-        res.render("products/searchresult",{catalogo: query, search: search})
     },
 
-    pet: function (req, res){
-        let list = product.listByField("pet", "true");
-        res.render("products/searchresult",{catalogo: list, search: "Productos Aptos para Mascotas"})
+    pet: async function (req, res){
+
+        try {
+        let query = await db.Product.findAll({
+            where: {
+                pet: 1
+            }
+        })
+        res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas"})
+
+        }catch(e){
+            throw e;
+        }  
     },
 
     bestseller: function (req, res){
@@ -152,13 +317,23 @@ const productController = {
 
     },
 
-    easymode: function (req, res){
-        let list1 = product.listByField("dif", 1);
-        let list2 = product.listByField("dif", 2);
-        let list = list1.concat(list2);
-        res.render("products/searchresult",{catalogo: list, search: "Plantas fáciles de mantener (easymode!)"})
+    easymode: async function (req, res){
 
+        const Op = db.Sequelize.Op;
+        // el easymode sigue siendo dificultades hasta dos (1 y 2 inclusive). Si queremos poner hasta 3 modificamos en OP.lte a 3.
 
+        try {
+            let query = await db.Product.findAll({
+                where: {
+                    diff: {[Op.lte]: 2}
+                }
+            })
+
+            res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)"})
+
+        } catch(e){
+            throw e
+        }
     }
 }
 

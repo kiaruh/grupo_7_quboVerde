@@ -50,36 +50,32 @@
 
                 <div>
                     <label class="register-labe1">Precio</label>
-                    <input class="register-input1" type="number" name="precio" min="0" value="<%=datos.price%>" required>
+                    <input class="register-input1" type="number" name="precio" min="0" value="<%=datos.precios.price%>" required>
                 </div>
 
                 <div>
                     <label class="register-labe1">Foto de producto</label>
                     <p>Foto actual del producto</p>
-                    <img src="/img/upload/product/<%=datos.img%>" width="200px">
+                    <% let imagenes = JSON.parse(datos.imagenes.image)%>
+                    <img src="/img/upload/product/<%=imagenes[0]%>" width="200px">
                     <input class="input-photo" type="file" accept=".jpg, .png" name="img">
                 </div>
 
                 <div>
                     <label class="register-labe1">Especie</label>
                     <br>
-                    <select class="register-input1">
+                    <select class="register-input1" name="especie">
                         <option value="" selected>Seleccioná de la lista</option>
                       
-                        <option value="Philodendron" <% if(datos.species == "Philodendron"){  %> <%="selected"%> <%}%> >Philodendron</option>
-                        
-                        <option value="Dracaena" <% if(datos.species == "Dracaena"){  %> <%="selected"%> <%}%>>Dracaena</option>
-                        
-                        <option value="Calathea" <% if(datos.species == "Calathea"){  %> <%="selected"%> <%}%>>Calathea</option>
-                        
-                        <option value="Ficus" <% if(datos.species == "Ficus"){  %> <%="selected"%> <%}%> >Ficus</option>
-                        
+                        <% for (let i=0; i < especies.length; i++){ %>
+                        <option value="<%= especies[i].id %>" <% if(datos.especies.specie == especies[i].specie){  %> <%="selected"%> <%}%>> <%=especies[i].specie %></option>
+                        <% } %>
                     </select>
                 </div>
 
                 <div id="comment">
                     <label class="register-labe1">Descripción</label>
-                    <textarea class="register-inputbig" rows="6" cols="34" name="descripcion" form="product-info"><%=datos.desc %></textarea>
+                    <textarea class="register-inputbig" rows="6" cols="34" name="descripcion" form="product-info"><%=datos.des %></textarea>
                 </div>
             </fieldset>
 
@@ -151,8 +147,8 @@
                 <h5>Dificultad de mantenimiento</h5>
                 <p>Calculado automaticamente en base a los valores riego/luz</p>
                
-                <input class="range2" id ="range2" type="range" min="0" max="5" name="irr" value= <%= datos.dif %> disabled><br>
-                <p> dificultad total: <%=datos.dif%>/5</p>
+                <input class="range2" id ="range2" type="range" min="0" max="5" name="irr" value= <%= datos.diff %> disabled><br>
+                <p> dificultad total: <%=datos.diff%>/5</p>
                 
             </fieldset>
 
@@ -161,12 +157,12 @@
                 <p>Apta para mascotas = Toda planta cuya ingestión no sea peligrosa</p>
 
                 <div class="checklist">
-                    <input type="radio" id="si" name="aptomascotas" value=true <% if(datos.pet == "true"){  %> <%="checked"%> <%}%>>
+                    <input type="radio" id="si" name="aptomascotas" value=true <% if(datos.pet == 1){  %> <%="checked"%> <%}%>>
                     <label for="si">Si</label>
                 </div>
 
                 <div class="checklist">
-                    <input type="radio" id="no" name="aptomascotas" value=false <% if(datos.pet == "false"){  %> <%="checked"%> <%}%>>
+                    <input type="radio" id="no" name="aptomascotas" value=false <% if(datos.pet == 0){  %> <%="checked"%> <%}%>>
                     <label for="no">No</label>
                 </div>
             </fieldset>

@@ -19,17 +19,18 @@
         <section class="product">
 
             <picture class="product-img">
-                <img src="/img/upload/product/<%= catalogo[0].img %>" alt="">
+                <% let imagenes = JSON.parse(catalogo.imagenes.image)%>
+                <img src="/img/upload/product/<%= imagenes[0] %>" alt="">
             </picture>
 
             <article class="product-desc">
                 <section class="desc-name">
-                    <h2><%= catalogo[0].name%></h2>
-                    <h3>$ <%= catalogo[0].price %></h3>
+                    <h2><%= catalogo.name%></h2>
+                    <h3>$ <%= catalogo.precios.price %></h3>
                 </section>
 
                 <section class="desc-text">
-                    <h4><%= catalogo[0].desc %></h4>
+                    <h4><%= catalogo.precios.disconunt %></h4>
                 </section>
 
                 <section class="desc-care">
@@ -37,28 +38,28 @@
                     <section class="desc-care-box">
                         <picture><img src="/img/gota.svg" alt=""></picture>
                         <h2>riego</h2>
-                        <% switch (catalogo[0].irr) {
-                            case "0": 
+                        <% switch (catalogo.irr) {
+                            case 0: 
                             %> <h3>Semanal</h3> <%
                             break;
                             
-                            case "1": 
+                            case 1: 
                             %> <h3>cada 3 dias</h3> <%
                             break;
 
-                            case "2": 
+                            case 2: 
                             %> <h3>Leve</h3><%
                             break;
 
-                            case "3": 
+                            case 3: 
                             %> <h3>Moderado</h3> <%
                             break;
 
-                            case "4": 
+                            case 4: 
                             %><h3>Abundante</h3> <%
                             break;
 
-                            case "5":
+                            case 5:
                             %><h3>Abundante <b>+</b></h3> <%
                             break;
                         } %>
@@ -67,24 +68,24 @@
                     <section class="desc-care-box">
                         <picture><img src="/img/sol.svg" alt=""></picture>
                         <h2>Luz</h2>
-                        <% switch (catalogo[0].light) {
-                            case "1": 
+                        <% switch (catalogo.light) {
+                            case 1: 
                             %> <h3>Sombra</h3> <%
                             break;
                             
-                            case "2": 
+                            case 2: 
                             %> <h3>Artificial</h3> <%
                             break;
 
-                            case "3": 
+                            case 3: 
                             %> <h3>indirecta</h3><%
                             break;
 
-                            case "4": 
+                            case 4: 
                             %> <h3>Moderada</h3> <%
                             break;
 
-                            case "5": 
+                            case 5: 
                             %><h3>Abundante</h3> <%
                             break;
                         } %>
@@ -93,7 +94,7 @@
                     <section class="desc-care-box">
                         <picture><img src="/img/mascota.svg" alt=""></picture>
                         <h2>mascotas</h2>
-                        <% if(catalogo[0].pet == "true"){ %> 
+                        <% if(catalogo.pet == 1){ %> 
                         <h3>apta mascotas</h3>
                         <% } else { %>
                         <h3><b>NO</b> apto</h3>
@@ -117,23 +118,23 @@
                     <form action="#" class="care-bar-r care-bar">
                         <picture class="bar-img"><img src="/img/gotita.svg" alt=""></picture>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].irr == 1 || catalogo[0].irr == 0 || catalogo[0].irr > 1) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.irr == 1 || catalogo.irr == 0 || catalogo.irr > 1) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].irr == 2 || catalogo[0].irr > 2 ) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.irr == 2 || catalogo.irr > 2 ) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].irr == 3 || catalogo[0].irr > 3 ) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.irr == 3 || catalogo.irr > 3 ) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].irr == 4 || catalogo[0].irr > 4 ) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.irr == 4 || catalogo.irr > 4 ) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].irr == 5) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.irr == 5) { %> checked <% } %>>
                             <div></div>
                         </label>
                     </form>
@@ -144,23 +145,23 @@
                     <form action="#" class="care-bar-l care-bar">
                         <picture class="bar-img"><img src="/img/solcito.svg" alt=""></picture>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].light == 1 || catalogo[0].light > 1) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.light == 1 || catalogo.light > 1) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].light == 2 || catalogo[0].light > 2) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.light == 2 || catalogo.light > 2) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].light == 3 || catalogo[0].light > 3) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.light == 3 || catalogo.light > 3) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].light == 4 || catalogo[0].light > 4) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.light == 4 || catalogo.light > 4) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].light == 5) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.light == 5) { %> checked <% } %>>
                             <div></div>
                         </label>
                     </form>
@@ -171,23 +172,23 @@
                     <form action="#" class="care-bar-m care-bar">
                         <picture class="bar-img"><img src="/img/palita.svg" alt=""></picture>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].dif == 1 || catalogo[0].dif > 1) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.diff == 1 || catalogo.diff > 1) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].dif == 2 || catalogo[0].dif > 2) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.diff == 2 || catalogo.diff > 2) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].dif == 3 || catalogo[0].dif > 3) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.diff == 3 || catalogo.diff > 3) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].dif == 4 || catalogo[0].dif > 4) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.diff == 4 || catalogo.diff > 4) { %> checked <% } %>>
                             <div></div>
                         </label>
                         <label>
-                            <input type="checkbox" disabled <% if(catalogo[0].dif == 5) { %> checked <% } %>>
+                            <input type="checkbox" disabled <% if(catalogo.diff == 5) { %> checked <% } %>>
                             <div></div>
                         </label>
                     </form>
@@ -202,24 +203,24 @@
                 <picture class="product-scale-img"><img src="/img/hsp1A.svg" alt=""></picture>
        
                 <picture class="product-scale-img">
-                    <% switch (catalogo[0].scale) {
-                            case "1": 
+                    <% switch (catalogo.scale) {
+                            case 1: 
                             %> <img src="/img/hsp1.svg" alt=""> <%
                             break;
                             
-                            case "2": 
+                            case 2: 
                             %> <img src="/img/hsp2.svg" alt=""> <%
                             break;
 
-                            case "3": 
+                            case 3: 
                             %> <img src="/img/hsp3.svg" alt=""><%
                             break;
 
-                            case "4": 
+                            case 4: 
                             %> <img src="/img/hsp4.svg" alt=""> <%
                             break;
 
-                            case "5": 
+                            case 5: 
                             %><img src="/img/hsp5.svg" alt=""> <%
                             break;
                         } %>
@@ -234,7 +235,7 @@
             </article>
         </section>
         
-    <%- include("../includes/otherProducts", {dif: catalogo[0].dif, name: catalogo[0].name}) %> 
+    <%- include("../includes/otherProducts", {dif: catalogo.dif, name: catalogo.name}) %> 
     </main>
 
     <%- include("../includes/footer") %> 

@@ -1,0 +1,11 @@
+$ sequelize migration:generate --name products
+$ sequelize migration:generate --name species
+$ sequelize migration:generate --name price
+$ sequelize migration:generate --name images
+
+$ sequelize migration:generate --name users
+$ sequelize migration:generate --name users_directions
+$ sequelize migration:generate --name users_paymethod
+
+
+

@@ -173,5 +173,18 @@
     "irr": "3",
     "dif": null,
     "desc": ""
+  },
+  {
+    "id": 32,
+    "price": 10,
+    "name": "producto de prueba",
+    "img": "default.jpg",
+    "species": "Philodendron",
+    "scale": "3",
+    "irr": "5",
+    "light": "5",
+    "pet": "true",
+    "dif": 5,
+    "desc": "uno"
   }
 ]

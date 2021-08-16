@@ -23,14 +23,15 @@
                <article class="prod">
                   <picture class="prod-img">
                      <a href="/products/detail/<%= catalogo[i].id%>">
-                        <img src="/img/upload/product/<%= catalogo[i].img %>" alt="">
+                        <% let imagenes = JSON.parse(catalogo[i].imagenes.image) %>
+                        <img src="/img/upload/product/<%= imagenes[0] %>" alt="">
                      </a>
                   </picture>
                   
                   <div class="prod-box">
                      <h3 class="prod-title"><%= catalogo[i].name %></h3>
-                     <h4 class="prod-price">$ <%= parseFloat(catalogo[i].price).toFixed(0) %></h4>
-                     <h5 class="prod-type"><%= catalogo[i].species %></h5>
+                     <h4 class="prod-price">$ <%= parseFloat(catalogo[i].precios.price).toFixed(0) %></h4>
+                     <h5 class="prod-type"><%= catalogo[i].especies.specie %></h5>
 
                      <form class="prod-action" action="#">
                         <button class="add-cart">agregar</button>
