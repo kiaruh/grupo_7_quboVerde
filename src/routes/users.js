@@ -44,7 +44,7 @@ router.get("/profile/",authMiddleware, controller.profile);
 router.get("/mod/:id", controller.getProfile);
 router.put("/mod/:id", fileUpload.single("avatar"),validations , controller.setProfile); //pendiente setear img default
 
-router.delete("/mod/:id", controller.delUser);
+router.delete("/delete/:id", controller.delUser);
 
 // Logout
 router.get('/logout/', controller.logout);

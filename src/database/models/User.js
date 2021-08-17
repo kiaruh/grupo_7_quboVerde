@@ -10,7 +10,22 @@ module.exports = function (sequelize, dataTypes){
             autoIncrement: true
           },
   
-          name: {
+          user: {
+            type: dataTypes.STRING,
+            allowNull: false,
+          },
+
+          bday: {
+            type: dataTypes.DATEONLY,
+            alowNull: false
+          },
+
+          firstname: {
+            type: dataTypes.STRING,
+            allowNull: false,
+          },
+
+          lastname: {
             type: dataTypes.STRING,
             allowNull: false,
           },
@@ -25,9 +40,9 @@ module.exports = function (sequelize, dataTypes){
             type: dataTypes.INTEGER,
             alowNull: false
           },
-  
-          bday: {
-            type: dataTypes.DATEONLY,
+
+          admin: {
+            type: dataTypes.INTEGER,
             alowNull: false
           },
   

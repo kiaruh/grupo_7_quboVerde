@@ -27,14 +27,14 @@
 
         <section class="form-register" action="/users/register" method="POST" >
            
-                <h1 class="titulo-register">Bienvenido <%= users[0].firstname %></h1>
+                <h1 class="titulo-register">Bienvenido <%= users.firstname %></h1>
                   
 
                 <div class="register">
 
                   <div class="col-2">
                         <div class="col-img">
-                            <img src="/img/upload/avatar/<%= users[0].avatar %>">
+                            <img src="/img/upload/avatar/<%= users.avatar %>">
                             <p class="">Foto de perfil</p>        
                         </div>
 
@@ -49,19 +49,19 @@
                             </div>
 
                             <div class="col-dato">
-                                <h4 class="dato"><%= users[0].username %></h4>
+                                <h4 class="dato"><%= users.user %></h4>
                                 <h4 class="dato">* * * * * *</h4> 
-                                <h4 class="dato"><%= users[0].firstname%></h4>
-                                <h4 class="dato"><%= users[0].lastname %></h4> 
-                                <h4 class="dato"><%= users[0].email %></h4> 
-                                <h4 class="dato"><%= users[0].birthdate %></h4>      
+                                <h4 class="dato"><%= users.firstname%></h4>
+                                <h4 class="dato"><%= users.lastname %></h4> 
+                                <h4 class="dato"><%= users.email %></h4> 
+                                <h4 class="dato"><%= users.bday %></h4>      
                             </div>
                         </div>
 
                     </div>
                                             
                     <div class="edit">
-                        <a href="/users/mod/<%=users[0].id%>">
+                        <a href="/users/mod/<%=users.id%>">
                             <button type="submit" class="register-btn btn-main btn" >Editar</button> 
                         </a>
                     </div>

@@ -5,105 +5,187 @@ const { send } = require("process")
 const imgController = require("../models/imgModel")
 const User = require("../models/userModel")
 
+// requerir el modelo
+
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
+
 
 const usercontroller = {
 
     register: (req,res) => {
 		res.render("users/register")}, // get register
 
-    processRegister: (req,res) => {
-		//res.send(req.body)
-        const resultValidation = validationResult(req)
-        if(resultValidation.errors.length > 0){
-            return res.render("users/register", {errors: resultValidation.mapped(), oldData: req.body})
-        }
-        let userInDB = User.findByField('email', req.body.email)
+    processRegister: async function (req,res) {
 
-        if(userInDB) {
-           return res.render("users/register", {errors: { email: { msg: "Este mail ya fue utilizado" } }, oldData: req.body})
-        }
-		let img = `avatar${Math.floor(Math.random() * 9) + 1}.png`
+		try {
+			
+			const resultValidation = validationResult(req)
+			if(resultValidation.errors.length > 0){
+				return res.render("users/register", {errors: resultValidation.mapped(), oldData: req.body})
+			}
+		
+			let userInDB = await db.User.findOne({
+				where: {
+					email: req.body.email
+				}
+			})
 	
-    	let userTocreate = { ...req.body,password: bcryptjs.hashSync(req.body.password, 10),admin:false, avatar:img};       
-    	User.create(userTocreate)
-    	return res.redirect("/users/login")
+			if(userInDB != undefined || userInDB != null ) {
+			   return res.render("users/register", {errors: { email: { msg: "Este mail ya fue utilizado" } }, oldData: req.body})
+			} else {
+			let img = `avatar${Math.floor(Math.random() * 9) + 1}.png`
+		     
+			//User.create(userTocreate)
+			await db.User.create({
+				user: req.body.user,
+				bday: Date(req.body.bday),
+				firstname: req.body.firstname,
+				lastname: req.body.lastname,
+				email: req.body.email,
+				password: bcryptjs.hashSync(req.body.password, 10),
+				admin: 0, 
+				avatar:img,
+				send_ID: 0,
+				pm_ID: 0
+			});
+
+			console.log (req.body.date);
+			return res.redirect("/users/login")
+		}
+
+		} catch(e){
+			throw e
+		}
+		
     },
 
     login: (req,res) => {
 		res.render("users/login")}, // get login
 
-    loginProcess: (req, res) => {
-		let userToLogin = User.findByField('email', req.body.email);
+    loginProcess: async function (req, res) {
 		
-		if(userToLogin) {
-			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-			if (isOkThePassword) {
-				//return res.send('ingresaste')
-				delete userToLogin.password;
-				req.session.userLogged = userToLogin;
+		
+		try{
+			// let userToLogin = User.findByField('email', req.body.email);
 
-				if(req.body.recordar) {
-					res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
-				}
+			let userToLogin = await db.User.findOne({
+				where: {email: req.body.email}
+			})
+
+			if(userToLogin != null || userToLogin != undefined) {
+				let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+				if (isOkThePassword) {
+					//return res.send('ingresaste')
+					delete userToLogin.password;
+					req.session.userLogged = userToLogin;
+	
+					if(req.body.recordar) {
+						res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
+					}
+					
+					return res.render('users/profile', {users: userToLogin});
+					
+				} 
 				
-				return res.redirect('/users/profile/'+ userToLogin.username);
-				
-			} 
-			
+				return res.render('users/login', {
+					errors: {
+						email: {
+							msg: 'Las credenciales son inválidas'
+						}
+					}
+				});
+			}
+	
 			return res.render('users/login', {
 				errors: {
 					email: {
-						msg: 'Las credenciales son inválidas'
+						msg: 'credenciales inválidas'
 					}
 				}
 			});
+		}catch(e){
+			throw e
 		}
 
-		return res.render('users/login', {
-			errors: {
-				email: {
-					msg: 'credenciales inválidas'
-				}
-			}
-		});
+		
+	
 	},
 
 	profile: (req,res) => {
 
 		res.render("users/profile" ,{users:User.findUserId(req.session.userLogged.id)})}, // get userprofile (temporal para que no se rompa la ruta)
 	//profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
-	getProfile: (req,res) => res.render("users/profile_mod", {users:User.findUserId(req.params.id)}), //formulario de modificacion
+	getProfile: async function(req,res) {
+		try{
 
-	setProfile: (req,res) => {
-		let list = User.findAll();
-		let userIndex = list.findIndex(user => user.id == req.params.id);
+		let users = await db.User.findByPk(req.params.id)
+
+		res.render("users/profile_mod", {users:users})
+
+		}catch(e){
+			throw e
+		}
+
+		
+	}, //formulario de modificacion
+
+	setProfile: async function(req,res) {
+
+		try {
+
 		let imgPath = "";
 
+		let avatarName = await db.User.findByPk(req.params.id);
+
 		if(req.file == undefined){
-			imgPath = list[userIndex].avatar;
+			imgPath = avatarName.avatar;
 		} else {
-			imgController.deleteImgAvatar(list[userIndex].avatar);
+			imgController.deleteImgAvatar(avatarName.avatar);
 			imgPath = req.file.filename;
 		}
-		let updatedUser = {
-			id:Number(req.params.id),...req.body,password: bcryptjs.hashSync(req.body.password, 10), avatar:imgPath
+
+		await db.User.update({
+			user: req.body.user,
+			bday: req.body.bday,
+			firstname: req.body.firstname,
+			lastname: req.body.lastname,
+			email: req.body.email,
+			password: bcryptjs.hashSync(req.body.password, 10),
+			admin: 0, 
+			avatar: imgPath,
+			send_ID: 0,
+			pm_ID: 0
+		}, {
+			where: {id: req.params.id}
+		});
+
+		let users = await db.User.findByPk(req.params.id);
+
+		res.render("users/profile_mod", {users:users})
+
+		}catch(e){
+			throw e
 		}
-
-		User.mod(updatedUser.id,updatedUser);
-		res.redirect('/users/profile/' + updatedUser.id)
+		
 	},
-	delUser: function(req, res){
-        let setId = req.params.id;
-        let list = User.findAll();
 
-        let delIndex = list.findIndex(user => user.id == setId)
-        let deleteImg = list[delIndex].avatar;
+	delUser: async function(req, res){
+        
+		try{
+		let deleteImg = await db.User.findByPk(req.params.id);
 
-        imgController.deleteImg(deleteImg);
-        let a = User.delete(setId);
-		console.log(a);
+        imgController.deleteImg(deleteImg.avatar);
+       
+		await db.User.destroy({
+			where: {id: req.params.id}
+		})
 
         res.redirect("/");
+
+		}catch(e){
+			throw e
+		} 
 
     },
 	logout: (req,res) => {

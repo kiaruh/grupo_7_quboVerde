@@ -33,7 +33,7 @@
           
                 <fieldset class="register">
                   <input class="register-input <%= locals.errors && errors.username ? 'is-invalid':'is-valid' %>"
-                    type="text" name="username" placeholder="Usuario" value="<%= locals.oldData ? oldData.username: null %>"
+                    type="text" name="user" placeholder="Usuario" value="<%= locals.oldData ? oldData.username: null %>"
                      minlength="2" > 
                   <% if (locals.errors && errors.username) { %>
                     <div class="text-danger"> <%= errors.username.msg %></div>
@@ -42,7 +42,7 @@
                   <label class="register-input <%= locals.errors && errors.username ? 'is-invalid':'is-valid' %>
                     " for="nacimiento">Cumpleaños
                   <input class="nacimiento <%= locals.errors && errors.birthdate ? 'is-invalid':'is-valid' %>"
-                   type="date" name="birthdate" value="<%= locals.oldData ? oldData.birthdate: null %>" ></label>
+                   type="date" name="bday" value="<%= locals.oldData ? oldData.birthdate: null %>" ></label>
                   <% if (locals.errors && errors.birthdate) { %>
                     <div class="text-danger"> <%= errors.birthdate.msg %></div>
                   <% } %>

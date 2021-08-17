@@ -28,15 +28,15 @@
 
         <section class="form-register" action="/users/register" method="POST" >
            
-                <h1 class="titulo-register">Bienvenido <%= users[0].firstname %></h1>
+                <h1 class="titulo-register">Bienvenido <%= users.firstname %></h1>
                   
 
-                <form class="register" action="/users/mod/<%=users[0].id%>?_method=PUT" method="POST" id="user-info" enctype="multipart/form-data">
+                <form class="register" action="/users/mod/<%=users.id%>?_method=PUT" method="POST" id="user-info" enctype="multipart/form-data">
 
                   <div class="col-2">
 
                         <div class="col-img">
-                            <img src="/img/upload/avatar/<%= users[0].avatar %>">
+                            <img src="/img/upload/avatar/<%= users.avatar %>">
                             <input class="input-photo" type="file" accept=".jpg, .png" name="avatar">
                         </div>
 
@@ -51,12 +51,12 @@
                             </div>
 
                             <div class="col-dato">
-                                <input class="dato_existente" type="text" name="username" value="<%= users[0].username %>" required>
-                                <input class="dato_existente" type="password" name="password" value="<%= users[0].password %>" required>
-                                <input class="dato_existente" type="text" name="firstname" value="<%= users[0].firstname %>" required>
-                                <input class="dato_existente" type="text" name="lastname" value="<%= users[0].lastname %>" required> 
-                                <input class="dato_existente" type="text" name="email" value="<%= users[0].email %>" required> 
-                                <input class="dato_existente" type="date" name="birthdate" value="<%= users[0].birthdate %>" required>   
+                                <input class="dato_existente" type="text" name="user" value="<%= users.user %>" required>
+                                <input class="dato_existente" type="password" name="password" value="<%= users.password %>" required>
+                                <input class="dato_existente" type="text" name="firstname" value="<%= users.firstname %>" required>
+                                <input class="dato_existente" type="text" name="lastname" value="<%= users.lastname %>" required> 
+                                <input class="dato_existente" type="text" name="email" value="<%= users.email %>" required> 
+                                <input class="dato_existente" type="date" name="birthdate" value="<%= users.bday %>" required>   
                             </div>
                         </div>
 
@@ -65,7 +65,7 @@
                     <div class="col-1">
                         <button class="register-btn btn-main btn" type="submit" > Guardar cambios </button> 
                         <br>
-                        <button class="register-btn btn-main btn" type="submit" formaction="/users/mod/<%= users[0].id%>?_method=DELETE" > Eliminar usuario </button>
+                        <button class="register-btn btn-main btn" type="submit" formaction="/users/delete/<%= users.id%>?_method=DELETE" > Eliminar usuario </button>
                     </div>
             
                  
