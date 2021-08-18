@@ -32,9 +32,9 @@ module.exports = function (sequelize, dataTypes){
     
     // va el belongsTo porque es un producto a un precio
    Price.associate = function (models) {
-        Price.hasMany(models.Product, {
-            as: "product",
-            foreignKey: "price_id"
+        Price.hasOne(models.Product, {
+            as: "productos",
+            foreignKey: "id"
         })
     }
   

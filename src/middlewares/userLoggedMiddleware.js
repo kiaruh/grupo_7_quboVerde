@@ -1,11 +1,24 @@
 const User = require('../models/userModel')
-const db = require("../database/models")
+const db = require('../database/models')
 
-function userLoggedMiddleware(req,res,next){
-	res.locals.isLogged = false
+async function userLoggedMiddleware(req,res,next){
+	
 
-	let emailInCookie = req.cookies.email
-	let userFromCookie = User.findByField('email', emailInCookie)
+	try {
+		res.locals.isLogged = false
+		let emailInCookie = req.cookies.email
+	//let userFromCookie = User.findByField('email', emailInCookie)
+	
+	if(emailInCookie == undefined){
+		emailInCookie = "";
+	}
+	
+	console.log(emailInCookie);
+	let userFromCookie = await db.User.findOne({
+		where: {
+			email: emailInCookie
+		}
+	})
 
 	if(userFromCookie) {
 		req.session.userLogged = userFromCookie
@@ -17,6 +30,21 @@ function userLoggedMiddleware(req,res,next){
 	}
 
 	next()
+
+	
+
+	
+	
+
+	} catch(e){
+		console.log("fallo userlogghedmiddleware")
+		console.log(userFromCookie)
+		console.log(emailInCookie)
+		console.log(pruebausers)
+		console.log(e)
+		
+	}
+	
 
 }
 

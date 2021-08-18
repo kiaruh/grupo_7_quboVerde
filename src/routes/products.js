@@ -38,6 +38,10 @@ router.get("/mod/", controller.modall);
 router.get("/mod/:id", controller.mDetail);
 router.put("/mod/:id", fileUpload.single('img'), controller.setProd);
 
+// rutas para modificar lista de precios
+router.get("/price", controller.priceList);
+router.post("/pricemod/:id", controller.priceSet);
+
 // ruta para eliminar el producto desde edit
 router.delete("/mod/del/:id", controller.delProd);
 

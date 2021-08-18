@@ -352,6 +352,57 @@ const productController = {
         } catch(e){
             throw e
         }
+    },
+
+    priceList: async function (req, res){
+        // esta funcion manda a la vista el listado de precios
+        try{
+
+            let listadoPrecios = await db.Price.findAll({
+                include: [{association: 'productos'}]
+            });
+
+            res.render("products/admin/product_price_mod",{precios: listadoPrecios})
+
+        }catch(e){
+            throw e
+        }
+    },
+
+    priceSet: async function(req, res){
+
+        let id = req.params.id;
+            let nombrePrecio = "precio" + id;
+            let nombreDescuento = "descuento" + id;
+
+      console.log(req.body[nombrePrecio])
+      console.log(req.body.precio2)
+
+        try{
+
+            
+            
+
+            /* await db.Price.update({
+                price: req.body[nombrePrecio],
+                discount: req.body[nombreDescuento] 
+            }, 
+            {
+                where: {id: req.params.id}
+            }) */
+
+        
+
+            /*
+        let listadoPrecios = await db.Price.findAll({
+            include: [{association: 'productos'}]
+        });
+
+        res.render("products/admin/product_price_mod",{precios: listadoPrecios})
+        */
+        }catch(e){
+            throw e
+        }
     }
 }
 
