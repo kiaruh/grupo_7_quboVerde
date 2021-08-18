@@ -28,7 +28,10 @@ const db = require('../src/database/models');
 
 let dataSearch = async function(req, res, next) {
     try {
-    let data = await db.Product.findAll();
+    let data = await db.Product.findAll(
+        {
+            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+        });
     res.locals.produ = data;
     next();
     } catch(e){

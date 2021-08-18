@@ -12,19 +12,20 @@
 
         <% for (let i=0; i < locals.produ.length; i++){ %>
 
-            <% if(dif == locals.produ[i].dif && name != locals.produ[i].name){ %>
+            <% if(dif == locals.produ[i].diff && name != locals.produ[i].name){ %>
           
             <section class="other-bar-prod">
                 <picture>
                     <a href="/products/detail/<%= locals.produ[i].id%>">
-                    <img src="/img/upload/product/<%= locals.produ[i].img %>" alt="" class="other-bar-img">
+                        <% let imagenes = JSON.parse(locals.produ[i].imagenes.image) %>
+                    <img src="/img/upload/product/<%= imagenes[0] %>" alt="" class="other-bar-img">
                 </a>
                     <img src="/img/fav.svg" alt="" class="other-bar-fav">
                 </picture>
                 <article class="other-content">
                 <h2><%= locals.produ[i].name%></h2>
-                <h3><%= locals.produ[i].species %></h3>
-                <h4>$<%= parseFloat(locals.produ[i].price).toFixed(0) %></h4>
+                <h3><%= locals.produ[i].especies.species %></h3>
+                <h4>$<%= parseFloat(locals.produ[i].precios.price).toFixed(0) %></h4>
                 </article>
             </section>
             <% } %>

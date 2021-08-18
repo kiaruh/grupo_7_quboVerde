@@ -61,7 +61,41 @@ const model = {
         let productos = this.all();
         let filter = productos.filter(producto => producto[field] <= value)
         return filter
+    },
+
+    imgList: function (){
+        let productos = this.all();
+
+        let respuesta = [];
+        for (let i=0; i<productos.length; i++){
+            let content = JSON.stringify(Array(productos[i].img))
+            let result = {image: content}
+            respuesta.push(result);
+        }
+        
+        console.log(respuesta)
+        return respuesta;
+        
+    },
+
+    priceList: function (){
+        let productos = this.all();
+
+        let respuesta = [];
+        for (let i=0; i<productos.length; i++){
+            let content = Number(productos[i].price)
+            let result = {price: content}
+            respuesta.push(result);
+        }
+        
+        console.log(respuesta)
+        return respuesta;
+        
     }
+
+
 }
+
+
 
 module.exports = model;

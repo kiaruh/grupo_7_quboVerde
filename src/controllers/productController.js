@@ -300,7 +300,8 @@ const productController = {
             let query = await db.Product.findAll({
                 where: {
                     name: {[Op.like]: '%' + search + '%'}
-                }
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
             res.render("products/searchresult",{catalogo: query, search: search})
@@ -316,7 +317,8 @@ const productController = {
         let query = await db.Product.findAll({
             where: {
                 pet: 1
-            }
+            },
+            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
         })
         res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas"})
 
@@ -340,8 +342,9 @@ const productController = {
         try {
             let query = await db.Product.findAll({
                 where: {
-                    diff: {[Op.lte]: 2}
-                }
+                    diff: {[Op.lte]: 2},
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
             res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)"})

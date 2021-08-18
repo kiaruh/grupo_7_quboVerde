@@ -12,8 +12,7 @@ module.exports = function (sequelize, dataTypes){
   
           image: {
             type: dataTypes.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: true,
           }
     }
 

@@ -5,13 +5,13 @@ const productosDesdeJson = require("../../models/productModel")
 module.exports = {
   up: async (queryInterface, Sequelize) => {
    
-     await queryInterface.bulkInsert('products', productosDesdeJson.all(), {});
-    console.log(productosDesdeJson.all());
+  await queryInterface.bulkInsert('images', productosDesdeJson.imgList(), {});
+    console.log(productosDesdeJson.imgList());
   },
 
   down: async (queryInterface, Sequelize) => {
    
-     await queryInterface.bulkDelete('products', null, {});
+     await queryInterface.bulkDelete('images', null, {});
      
   }
 };
