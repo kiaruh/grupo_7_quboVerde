@@ -47,3 +47,15 @@
 * Less of: Lo mismo que la retro anterior, no trabarse con pruebas de secciones o ejercicios no-pedidos hasta ahora (aunque a esta altura ya es un estilo propio del equipo, y es casi una fortaleza de la manera de trabajo).
 
 * Stop doing: Volver atras con pequeños detalles de otros sprint.
+
+## Retro - Sprint 5:
+
+* Start Doing: Empezar a registrar el avance diario. Avanzamos pero nos cuesta escribirlo!
+
+* More of: Probar diferentes maneras de hacer lo mismo y seguir avanzando por fuera de lo requerido, adelantando lo queya sabemos hacer.
+
+* Keep doing: Seguir usando el tablero y seguir trabajando con Github como hasta ahora, de manera ordenada y clara.
+
+* Less of: No trabarse con pruebas de secciones o ejercicios no-pedidos hasta ahora (ya es un estilo propio del equipo claramente!).
+
+* Stop doing: Volver atras con pequeños detalles de otros sprint.

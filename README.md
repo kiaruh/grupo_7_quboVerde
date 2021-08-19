@@ -84,7 +84,7 @@ https://grupo7quboverde.herokuapp.com
   mas vendidos: '/products/bestseller' 
   easymode (fáciles de mantener): '/products/easymode' 
 
-* Busqueda de productos (barra visible en formato movil) '/products/search/?query'
+* Busqueda de productos (barra visible en todos los formatos) '/products/search/?query'
 
 * Carrito de compras:'/checkout/cart'
 
