@@ -35,24 +35,53 @@
              </article>
           </nav>
 
+          <form class="register-registro admin lateral-big" action="/products/modprice?_method=PUT" method="POST">
+            <table style="width:100%">
+                <tr>
+                
+                    <th># - nombre producto</th>
+                    <th>precio de lista</th>
+                    <th>% descuento</th>
+                    <th></th>
+                
+            </tr>
 
-        <form class="register-registro admin lateral-big">
-            <table>
             <% for (let i=0; i < precios.length; i++){ %>
                 <tr>
-                <form action="/products/price/<%=precios[i].id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-                <section>
+                
                     <td><%= precios[i].id %> - <%= precios[i].productos.name %></td>
-                    <td> <input type="text" name="uno" value="<%= precios[i].price %>"></td>
-                    <td> <input type="text" name="<%= precios[i].productos.name %>" value="<%= precios[i].discount %>"></td>
-                    <td><button type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button></td>
-                </section>
-                </form>
+                    <td><%= precios[i].price %></td>
+                    <td><%= precios[i].discount %></td>
+                
             </tr>
             <% } %>
+       
+        <tr>
+            <td>--------------</td>
+        </tr>
+        
+            <tr>
+                <th>modificar producto</th>
+                    <th>nuevo precio</th>
+                    <th>% descuento</th>
+                    
+            </tr>
+            <tr>
+                <td>
+                    <select name="aModificar">
+                        <% for (let i=0; i < precios.length; i++){ %>
+                        <option value="<%=precios[i].id%>"><%= precios[i].productos.name %></option>
+                        <% } %>
+                      </select>
+                </td>
+                <td><input type="number" name="precioNuevo"></td>
+                <td><input type="number" name="descuentoNuevo"></td>
+                <td><button type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button></td>
+                
+                   
+            </tr>
         </table>
-
-
+        
         </form>
 
     </main>

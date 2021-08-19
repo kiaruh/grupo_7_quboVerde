@@ -362,7 +362,7 @@ const productController = {
                 include: [{association: 'productos'}]
             });
 
-            res.render("products/admin/product_price_mod",{precios: listadoPrecios})
+            res.render("products/admin/product_price_list",{precios: listadoPrecios})
 
         }catch(e){
             throw e
@@ -370,39 +370,28 @@ const productController = {
     },
 
     priceSet: async function(req, res){
-
-        let id = req.params.id;
-            let nombrePrecio = "precio" + id;
-            let nombreDescuento = "descuento" + id;
-
-      console.log(req.body[nombrePrecio])
-      console.log(req.body.precio2)
-
+        console.log("entro")
+        console.log(req.body)
+        
         try{
 
-            
-            
+            await db.Price.update({
+                price: req.body.precioNuevo,
+                discount: req.body.descuentoNuevo
+            },
+            {where: {id:req.body.aModificar}}
+            )
 
-            /* await db.Price.update({
-                price: req.body[nombrePrecio],
-                discount: req.body[nombreDescuento] 
-            }, 
-            {
-                where: {id: req.params.id}
-            }) */
+            let listadoPrecios = await db.Price.findAll({
+                include: [{association: 'productos'}]
+            });
 
-        
+            res.render("products/admin/product_price_list",{precios: listadoPrecios})
 
-            /*
-        let listadoPrecios = await db.Price.findAll({
-            include: [{association: 'productos'}]
-        });
-
-        res.render("products/admin/product_price_mod",{precios: listadoPrecios})
-        */
         }catch(e){
             throw e
         }
+
     }
 }
 
