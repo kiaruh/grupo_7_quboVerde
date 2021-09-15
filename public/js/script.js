@@ -1,5 +1,4 @@
 
-
  function burgerMenuAction() {
     var x = document.getElementById("IDburgerMenu");
     if (x.style.display === "block") {
