@@ -35,41 +35,52 @@
                   <input class="register-input <%= locals.errors && errors.username ? 'is-invalid':'is-valid' %>"
                     type="text" name="user" placeholder="Usuario" value="<%= locals.oldData ? oldData.username: null %>"
                      minlength="2" > 
+                     <div class="text-danger">
                   <% if (locals.errors && errors.username) { %>
-                    <div class="text-danger"> <%= errors.username.msg %></div>
-                  <% } %>
+                     <%= errors.username.msg %>
+                  <% } %></div>
+                  <span class="msg-user"></span>
                     
                   <label class="register-input <%= locals.errors && errors.username ? 'is-invalid':'is-valid' %>
                     " for="nacimiento">Cumpleaños
                   <input class="nacimiento <%= locals.errors && errors.birthdate ? 'is-invalid':'is-valid' %>"
                    type="date" name="bday" value="<%= locals.oldData ? oldData.birthdate: null %>" ></label>
-                  <% if (locals.errors && errors.birthdate) { %>
-                    <div class="text-danger"> <%= errors.birthdate.msg %></div>
-                  <% } %>
+                   <div class="text-danger">
+                   <% if (locals.errors && errors.birthdate) { %>
+                     <%= errors.birthdate.msg %>
+                  <% } %></div>
+                  <span class="msg-date"></span>
 
                   <input class="register-input <%= locals.errors && errors.firstname ? 'is-invalid':'is-valid' %>
                   " type="text" name="firstname" placeholder="Nombre" value="<%= locals.oldData ? oldData.firstname: null %>" minlength="2" > 
+                  <div class="text-danger">
                   <% if (locals.errors && errors.firstname) { %>
-                    <div class="text-danger"> <%= errors.firstname.msg %></div>
-                  <% } %>
+                     <%= errors.firstname.msg %>
+                  <% } %></div>
+                  <span class="mensaje-name"></span>
 
                   <input class="register-input <%= locals.errors && errors.lastname ? 'is-invalid':'is-valid' %>"
                    type="text" name="lastname" placeholder="Apellido" value="<%= locals.oldData ? oldData.lastname: null %>" minlength="2" > 
-                  <% if (locals.errors && errors.lastname) { %>
-                    <div class="text-danger"> <%= errors.lastname.msg %></div>
-                  <% } %>
+                   <div class="text-danger">
+                   <% if (locals.errors && errors.lastname) { %>
+                     <%= errors.lastname.msg %>
+                  <% } %></div>
+                  <span class="msg-lastname"></span>
 
                   <input class="register-input <%= locals.errors && errors.email ? 'is-invalid':'is-valid' %>"
                    type="text" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email: null %>" minlength="2" > 
-                  <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger"> <%= errors.email.msg %></div>
-                  <% } %>
+                   <div class="text-danger">
+                   <% if (locals.errors && errors.email) { %>
+                     <%= errors.email.msg %>
+                  <% } %></div>
+                  <span class="msg-email"></span>
 
                   <input class="register-input <%= locals.errors && errors.password ? 'is-invalid':'is-valid' %>"
                     type="password"  placeholder="Contraseña" name="password">
-                  <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger"> <%= errors.password.msg %></div>
-                  <% } %>
+                    <div class="text-danger"> 
+                    <% if (locals.errors && errors.password) { %>
+                    <%= errors.password.msg %>
+                  <% } %></div>
 
                   <fieldset class="condiciones">
                     <input type="checkbox" id="check" class="check" checked>
@@ -84,5 +95,6 @@
     </main>
 
     <%- include("../includes/footer") %> 
+    <script src="/js/registerForm.js"></script>
 </body>
 </html>

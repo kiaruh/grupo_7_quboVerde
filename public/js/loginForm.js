@@ -1,9 +1,8 @@
 window.addEventListener('load', function(){
     let form = document.querySelector('.form-login')
-    let mensaje = document.querySelector('.mensaje')
+    let mensaje = document.querySelector('.msg-email')
     let email = form.email
     let danger = document.querySelector('.text-danger')
-
 
     email.addEventListener('input', validateEmail, false)
     email.addEventListener('blur', validateEmail, false)
