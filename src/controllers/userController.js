@@ -1,7 +1,6 @@
 const bcryptjs = require("bcryptjs")
 const {validationResult} = require("express-validator")
 const { send } = require("process")
-
 const imgController = require("../models/imgModel")
 const User = require("../models/userModel")
 

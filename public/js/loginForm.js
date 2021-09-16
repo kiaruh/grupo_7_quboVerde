@@ -2,7 +2,8 @@ window.addEventListener('load', function(){
     let form = document.querySelector('.form-login')
     let mensaje = document.querySelector('.mensaje')
     let email = form.email
-    let errors = []
+    let danger = document.querySelector('.text-danger')
+
 
     email.addEventListener('input', validateEmail, false);
     email.addEventListener('blur', validateEmail, false);
@@ -16,8 +17,10 @@ window.addEventListener('load', function(){
 
     function validateEmail(e) {
         if (!email.value) {
+            danger.innerHTML = ' '
             mensaje.innerHTML = 'Escribe tu Email'
         } else if (!regexEmail.test(email.value)) {
+            danger.innerHTML = ' '
             mensaje.innerHTML = 'El formano no es del tipo email'
         } else {
             mensaje.innerHTML = ' '
