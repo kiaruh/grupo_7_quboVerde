@@ -5,8 +5,8 @@ window.addEventListener('load', function(){
     let danger = document.querySelector('.text-danger')
 
 
-    email.addEventListener('input', validateEmail, false);
-    email.addEventListener('blur', validateEmail, false);
+    email.addEventListener('input', validateEmail, false)
+    email.addEventListener('blur', validateEmail, false)
 
     let regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
 
@@ -17,7 +17,6 @@ window.addEventListener('load', function(){
 
     function validateEmail(e) {
         if (!email.value) {
-            danger.innerHTML = ' '
             mensaje.innerHTML = 'Escribe tu Email'
         } else if (!regexEmail.test(email.value)) {
             danger.innerHTML = ' '

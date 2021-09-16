@@ -36,11 +36,12 @@
                 <fieldset class="login">
                                   
                   <input class="login-input" type="text" placeholder="Email" name="email" minlength="2" > 
+                  <div class="text-danger">
                   <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger">
+                    
                       <%= errors.email.msg %> 
-                    </div>
-                  <% } %>
+                    
+                  <% } %></div>
                   <span class="mensaje"></span>
                   <input class="login-input"  type="password" placeholder="Contraseña" name="password" >
 
