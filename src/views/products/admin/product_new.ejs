@@ -43,12 +43,12 @@
                 <legend><h5>Información general</h5></legend>
                 <div>
                     <label class="register-labe1">Producto</label>
-                    <input class="register-input1" type="text" name="producto" minlength="1" placeholder="Nombre del producto" required>
+                    <input class="register-input1" type="text" name="producto" placeholder="Nombre del producto" >
                 </div>
 
                 <div>
                     <label class="register-labe1">Precio</label>
-                    <input class="register-input1" type="number" name="precio" min="0" placeholder="Ingresá únicamente valores numéricos" required>
+                    <input class="register-input1" type="number" name="precio" min="0" placeholder="Ingresá únicamente valores numéricos" >
                 </div>
 
                 <div>
@@ -154,12 +154,13 @@
             </fieldset>
 
             <div class="botonx2">
-                <button class="cta-sq" type="submit" onclick="alert('Producto creado con éxito')"> Crear producto </button>
+                <button class="cta-sq" type="submit" > Crear producto </button>
                 <button class="cta-cancel" type="reset"> Borrar </button>
             </div>
         </form>
 
     </main>
     <script src="/js/script.js"></script>
+    <script src='/js/productCreate.js'></script>
 </body>
 </html>
