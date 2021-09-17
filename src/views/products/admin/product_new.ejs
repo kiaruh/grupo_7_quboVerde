@@ -44,18 +44,21 @@
                 <div>
                     <label class="register-labe1">Producto</label>
                     <input class="register-input1" type="text" name="producto" placeholder="Nombre del producto" >
-                </div>
-
+                    <span class="msg-product"></span>
+                </div> 
+                <br>
                 <div>
                     <label class="register-labe1">Precio</label>
                     <input class="register-input1" type="number" name="precio" min="0" placeholder="Ingresá únicamente valores numéricos" >
-                </div>
-
+                    <span class="msg-price"></span>
+                </div> 
+                <br>
                 <div>
                     <label class="register-labe1">Foto de producto</label>
                     <input class="input-photo" type="file" accept=".jpg, .png" name="img">
-                </div>
-
+                    <span class="msg-picture"></span>
+                </div> 
+                <br>
                 <div>
                     <label class="register-labe1">Especie</label>
                     <br>
@@ -66,8 +69,9 @@
                         <option value="Calathea">Calathea</option>
                         <option value="Ficus">Ficus</option>
                     </select>
-                </div>
-
+                    <span class="msg-specie"></span>
+                </div> 
+                <br>
                 <div id="comment">
                     <label class="register-labe1">Descripción</label>
                     <textarea class="register-inputbig" rows="6" cols="34" name="descripcion" id="descripcion" placeholder="Escribí acá la descripción de tu producto"></textarea>
@@ -91,8 +95,9 @@
                     <input type="radio" id="grande" name="escala" value="3">
                     <label for="grande">Grande</label>
                 </div>
-            </fieldset>
-
+                <span class="msg-size"></span>
+            </fieldset> 
+            <br>
             <fieldset class="register-perfilusuario">
                 <h5>Riego</h5>
                 <p>De menor a mayor (Poco riego a Riego abundante)</p>
@@ -135,9 +140,9 @@
                     <input type="radio" id="abundante" name="luz" value="5">
                     <label for="abundante">Abundante luz directa</label>
                 </div>
-
-            </fieldset>
-
+                <span class="msg-light"></span>
+            </fieldset> 
+            <br>
             <fieldset class="register-perfilusuario">
                 <h5>Apto Mascotas</h5>
                 <p>Apta para mascotas = Toda planta cuya ingestión no sea peligrosa</p>
@@ -151,8 +156,9 @@
                     <input type="radio" id="no" name="aptomascotas" value=false>
                     <label for="no">No</label>
                 </div>
-            </fieldset>
-
+                <span class="msg-pet"></span>
+            </fieldset>  
+            <br>
             <div class="botonx2">
                 <button class="cta-sq" type="submit" > Crear producto </button>
                 <button class="cta-cancel" type="reset"> Borrar </button>
