@@ -24,19 +24,16 @@ window.addEventListener('load',function(){
         if(isEmpty(product,msgproduct)){
             if(isEmpty(price,msgprice)){
                 if(isEmpty(picture,msgpicture)){
-                        if(isEmpty(size,msgsize)){
-                            if(isEmpty(light,msglight)){
-                                if(isEmpty(pet,msgpet)){
                                     form.submit()
                                 }
                             }
                         }
                     
-                }
-            }
-        }
+                })
+            
         
-    })
+        
+    
 
     function isEmpty(input,output){
         if(input.value == ""){
@@ -47,6 +44,15 @@ window.addEventListener('load',function(){
             return true
         }
 
+    }
+    function isCheck (input,output){
+        if(!input.checked){
+            output.innerHTML = 'El campo esta vacio'
+            return false
+        }else {
+            output.innerHTML = ''
+            return true
+        }
     }
 
 
