@@ -45,12 +45,13 @@
                 <legend><h5>Información general</h5></legend>
                 <div>
                     <label class="register-labe1">Producto</label>
-                    <input class="register-input1" type="text" name="producto" value="<%=datos.name %>" required>
+                    <input class="register-input1" type="text" name="producto" value="<%=datos.name %>" >
+                    <span class="msg-product"></span>
                 </div>
 
                 <div>
                     <label class="register-labe1">Precio</label>
-                    <input class="register-input1" type="number" name="precio" min="0" value="<%=datos.precios.price%>" required>
+                    <input class="register-input1" type="number" name="precio" min="0" value="<%=datos.precios.price%>" >
                 </div>
 
                 <div>
@@ -168,8 +169,8 @@
             </fieldset>
 
             <div class="botonx2">
-                <button class="cta-sq" type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button>
-                <button class="cta-sq" type="submit" formaction="/products/mod/del/<%= datos.id%>?_method=DELETE" onclick="alert('Entrada eliminada / Imagen del producto eliminada')"> Eliminar producto </button>
+                <button class="cta-sq" type="submit" > Guardar cambios </button>
+                <button class="cta-sq" type="submit" formaction="/products/mod/del/<%= datos.id%>?_method=DELETE" > Eliminar producto </button>
                 <button class="cta-cancel" type="reset"> Borrar </button>
             </div>
         </form>
