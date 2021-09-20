@@ -15,6 +15,7 @@ const { send } = require('process');
 //session
 app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 
+
 //middlewares
 app.use(cookies())
 app.use(express.urlencoded({ extended: false }))
@@ -30,7 +31,7 @@ let dataSearch = async function(req, res, next) {
     try {
     let data = await db.Product.findAll(
         {
-            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            // include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
         });
     res.locals.produ = data;
     next();
@@ -69,9 +70,15 @@ const rutasCheckout = require('./routes/checkout');
 const rutasAdmin = require('./routes/admin');
 
 
+
 // App Use
 app.use('/',rutasMain);
 app.use('/products',rutasProducts);
 app.use('/users',rutasUsers);
 app.use('/checkout',rutasCheckout);
 app.use('/admin',rutasAdmin);
+
+// API 
+const rutasApi = require('./routes/api');
+app.use('/api',rutasApi);
+
