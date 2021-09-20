@@ -47,7 +47,7 @@ const apiController = {
                 id: user.id,
                 user: user.user,
                 firstname: user.firstname,
-                lastname: user.last,
+                lastname: user.lastname,
                 bday: user.bday,
                 email: user.email,
                 img: req.protocol + "://" + req.get('host') + "/img/upload/avatar/" + user.avatar
