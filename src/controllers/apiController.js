@@ -82,7 +82,7 @@ const apiController = {
             r.des = obj.des;
             r.pet = obj.pet;
             r.diff = obj.diff;
-            r.detail = req.protocol + "://" + req.get('host') + req.originalUrl + "/" + obj.id
+            r.detail = req.protocol + "://" + req.get('host') + req.originalUrl + obj.id
 
             return r
         })
