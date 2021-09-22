@@ -19,22 +19,7 @@
 
     <main id="panel" class="main">
       
-      <nav class="admin nav-lateral">
-        
-         <article class="nav-lateral-component">
-            <h1>Hola
-               <% if (locals.userLogged) { %>
-                <%=locals.userLogged.firstname %> 
-                <% } %>
-             </h1>
-             <a href="/admin/panel" class="item-navbar"><img class ="icons" src="/img/fi-rr-apps.svg" alt="">Panel Admin</a>
-             <a href="/products/mod/" class="item-navbar"><img class ="icons" src="/img/fi-rr-products.svg" alt="">Productos</a>
-             <a href="/products/price/" class="item-navbar"><img class ="icons" src="/img/fi-rr-megaphone.svg" alt="">Lista de precios</a>
-             <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-edit.svg" alt="">Customización</a>
-             <a href="#" class="item-navbar"><img class ="icons" src="/img/fi-rr-key.svg" alt="">Permisos</a>
-             <a href="/users/logout" class="item-navbar plain-text-button"><img class ="icons" src="/img/fi-rr-sign-out.svg" alt="">Cerrar sesión </a>
-          </article>
-      </nav>
+      <%- include("../../includes/navAdmin") %> 
       
       <section class="admin lateral-big">
          <h1>Bienvenido de nuevo!</h1>

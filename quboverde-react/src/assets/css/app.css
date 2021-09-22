@@ -2267,13 +2267,11 @@ fieldset:disabled a.btn {
 }
 .btn-danger {
     color: #fff;
-    background-color: #e74a3b;
-    border-color: #e74a3b;
+    background-color: #CB6565;
 }
 .btn-danger:hover {
     color: #fff;
-    background-color: #e02d1b;
-    border-color: #d52a1a;
+    background-color: #ff8282;
 }
 .btn-danger.focus,
 .btn-danger:focus {
@@ -8765,7 +8763,7 @@ a:focus {
 }
 .bg-gradient-secondary {
     background-color: #858796;
-    background-image: linear-gradient(180deg, #51505D 10%, #9d9d9d 100%);
+    background-image: linear-gradient(180deg, #51505D 10%, #000000 100%);
     background-size: cover;
 }
 .bg-gradient-success {
