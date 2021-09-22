@@ -52,7 +52,7 @@ app.use(method("_method")) //parámetro debe coincidir con la ruta en el formula
 
 
 //Server Start
-app.set('port',process.env.PORT || 3000) //establece el puerto que nos da el server o el 3000
+app.set('port',process.env.PORT || 3001) //establece el puerto que nos da el server o el 3001
 app.listen(app.get('port'),() => console.log('conectado a http://localhost:' + app.get('port')));//levanta la pagina
 
 
