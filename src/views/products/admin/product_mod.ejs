@@ -58,7 +58,10 @@
                     <label class="register-labe1">Foto de producto</label>
                     <p>Foto actual del producto</p>
                     <% let imagenes = JSON.parse(datos.imagenes.image)%>
-                    <img src="/img/upload/product/<%=imagenes[0]%>" width="200px">
+                    <% locals.imgmod = imagenes %>
+                    <img src="/img/upload/product/<%=imagenes[0]%>" width="200px"><br>
+
+                    <input type="text" name="iA" value="<%=imagenes[0] %>" style="display: none">
                     <input class="input-photo" type="file" accept=".jpg, .png" name="img">
                 </div>
 

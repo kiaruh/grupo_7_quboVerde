@@ -40,7 +40,6 @@
          <h1>Catálogo de productos</h1>
          <p>Todos los productos de tu e-shop están acá. Podés agregar productos clickeando en el botón de "+"" en la esquina inferior derecha, o eliminar o modificar los ya existentes.</p>
       <article class="prod-container">
-        
             <% for (let i=0; i < catalogo.length; i++){ %>
                <article class="prod">
                   <picture class="prod-img">
@@ -53,7 +52,7 @@
                   <div class="prod-box">
                      <h3 class="prod-title"><%= catalogo[i].name %></h3>
                      <h4 class="prod-price">$ <%= parseFloat(catalogo[i].precios.price).toFixed(0) %></h4>
-                     <h5 class="prod-type"><%= catalogo[i].especies.species %></h5>
+                     <h5 class="prod-type"><%= catalogo[i].especies.specie %></h5>
 
                      <!-- <form  action=""> -->
                         <div class="prod-action">

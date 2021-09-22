@@ -20,7 +20,7 @@ window.addEventListener('load',function(){
 
 
     form.addEventListener('submit', (e)=>{
-        e.preventDefault()
+       // e.preventDefault()
         if(isEmpty(product,msgproduct)){
             if(isEmpty(price,msgprice)){
                 if(isEmpty(picture,msgpicture)){

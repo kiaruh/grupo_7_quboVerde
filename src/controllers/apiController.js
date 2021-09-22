@@ -52,7 +52,7 @@ const apiController = {
                 email: user.email,
                 img: req.protocol + "://" + req.get('host') + "/img/upload/avatar/" + user.avatar
             }
-        
+
 
             res.status(200).json(
                 {
