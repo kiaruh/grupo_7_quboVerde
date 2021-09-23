@@ -93,6 +93,9 @@ const apiController = {
         let e3c = 0;
         let e4c = 0;
         let easyCounter = 0;
+        let poca = 0;
+        let algo = 0;
+        let capo = 0;
 
         listaProductos.forEach(function(elemento) {
             if (elemento.pet == 1){
@@ -119,6 +122,18 @@ const apiController = {
                 easyCounter = easyCounter +1;
             }
 
+            if (elemento.diff == 3){
+                poca = poca +1;
+            }
+
+            if (elemento.diff == 4){
+                algo = algo +1;
+            }
+
+            if (elemento.diff == 5){
+                capo = capo +1;
+            }
+
         })
 
         console.log(petCounter);
@@ -132,7 +147,10 @@ const apiController = {
                     especie2: e2c,
                     especie3: e3c,
                     especie4: e4c,
-                    easymode: easyCounter
+                    easymode: easyCounter,
+                    poca: poca,
+                    algo: algo,
+                    capo: capo
                 },
                 products: productsApi,
                 status: 200

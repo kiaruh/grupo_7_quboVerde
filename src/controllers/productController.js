@@ -349,10 +349,20 @@ const productController = {
         }  
     },
 
-    bestseller: function (req, res){
-        // este todavia no lo arme, porque tiene mas logica armado desde el carrito.
-        let list = product.listByRelative("price", 1000, { include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]});
-        res.render("products/searchresult",{catalogo: list, search: "Los más vendidos!"});
+    bestseller: async function (req, res){
+      
+        try {
+            let query = await db.Product.findAll({
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            let ofertas = query.filter(oferta => oferta.precios.discount > 0);
+
+            res.render("products/searchresult",{catalogo: ofertas, search: "Promociones!", listado: false})
+
+        } catch(e){
+            throw e
+        }
 
     },
 
@@ -414,6 +424,63 @@ const productController = {
             throw e
         }
 
+    },
+    poca: async function (req, res){
+
+        const Op = db.Sequelize.Op;
+        // el easymode sigue siendo dificultades hasta dos (1 y 2 inclusive). Si queremos poner hasta 3 modificamos en OP.lte a 3.
+
+        try {
+            let query = await db.Product.findAll({
+                where: {
+                    diff: 3
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            res.render("products/searchresult",{catalogo: query, search: "Plantas para poca experiencia", listado: false})
+
+        } catch(e){
+            throw e
+        }
+    },
+    algo: async function (req, res){
+
+        const Op = db.Sequelize.Op;
+        // el easymode sigue siendo dificultades hasta dos (1 y 2 inclusive). Si queremos poner hasta 3 modificamos en OP.lte a 3.
+
+        try {
+            let query = await db.Product.findAll({
+                where: {
+                    diff: 4,
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            res.render("products/searchresult",{catalogo: query, search: "Plantas para 'algo' de experiencia", listado: false})
+
+        } catch(e){
+            throw e
+        }
+    },
+    capo: async function (req, res){
+
+        const Op = db.Sequelize.Op;
+        // el easymode sigue siendo dificultades hasta dos (1 y 2 inclusive). Si queremos poner hasta 3 modificamos en OP.lte a 3.
+
+        try {
+            let query = await db.Product.findAll({
+                where: {
+                    diff: 5
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            res.render("products/searchresult",{catalogo: query, search: "Plantas modo HARDMODE", listado: false})
+
+        } catch(e){
+            throw e
+        }
     }
 }
 

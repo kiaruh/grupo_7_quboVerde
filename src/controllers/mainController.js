@@ -22,6 +22,8 @@ const mainController = {
     // index: (req,res) => res.send(product.all()),
     // index: (req,res) => res.render("home"), // get home
     error: (req,res) => res.render("error"), // get error
+    intro: (req,res) => res.render("intro") // get error
+
 }
 
 module.exports = mainController;

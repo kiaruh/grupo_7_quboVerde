@@ -26,7 +26,15 @@
             <article class="product-desc">
                 <section class="desc-name">
                     <h2><%= catalogo.name%></h2>
-                    <h3>$ <%= catalogo.precios.price %></h3>
+                    <h3>
+                        <% if(catalogo.precios.discount > 0){ %>
+                            <i><del>$<%= parseFloat(catalogo.precios.price).toFixed(0) %></del></i> 
+                            $<%= parseFloat(catalogo.precios.price - (catalogo.precios.price * (catalogo.precios.discount/100))).toFixed(0) %> - <%= catalogo.precios.discount + "%OFF" %>
+    
+                            <% } else { %> 
+                               $<%= parseFloat(catalogo.precios.price).toFixed(0) %>
+                            <% } %>
+                    </h3>
                 </section>
 
                 <section class="desc-text">

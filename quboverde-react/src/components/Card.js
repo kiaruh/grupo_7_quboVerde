@@ -17,15 +17,6 @@ function Card(props){
 		</div>
     )
 
-	Card.propTypes = {
-		title: Proptypes.string,
-		total: Proptypes.number
-	}
-	
-	Card.defaultProps = {
-		title: "Título",
-		total: 0
-	}
 
 }
 export default Card;

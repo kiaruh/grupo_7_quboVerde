@@ -12,6 +12,8 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 const { send } = require('process');
 
+const cors = require('cors')
+
 //session
 app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 
@@ -20,6 +22,10 @@ app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 app.use(cookies())
 app.use(express.urlencoded({ extended: false }))
 app.use(userLoggedMiddleware)
+
+//CORS 
+app.use(cors());
+
 
 
 // micro-middleware para enviar los datos de productos al formulario de busqueda en todas las vistas

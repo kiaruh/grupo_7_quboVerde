@@ -38,7 +38,16 @@
                   
                   <div class="prod-box">
                      <h3 class="prod-title"><%= catalogo[i].name %></h3>
-                     <h4 class="prod-price">$ <%= parseFloat(catalogo[i].precios.price).toFixed(0) %></h4>
+                     <h4 class="prod-price">
+                        <% if(catalogo[i].precios.discount > 0){ %>
+                        <i><del>$<%= parseFloat(catalogo[i].precios.price).toFixed(0) %></del></i> 
+                        $<%= parseFloat(catalogo[i].precios.price - (catalogo[i].precios.price * (catalogo[i].precios.discount/100))).toFixed(0) %>
+
+                        <% } else { %> 
+                           $<%= parseFloat(catalogo[i].precios.price).toFixed(0) %>
+                        <% } %>
+                     
+                     </h4>
                      <h5 class="prod-type"><%= catalogo[i].especies.specie %></h5>
 
                      <form class="prod-action" action="#">
