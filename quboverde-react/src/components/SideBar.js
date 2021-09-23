@@ -28,14 +28,16 @@ function SideBar(){
                 <hr className="sidebar-divider"/>
 
                 {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
+                <div className="sidebar-heading">Acciones</div>
 
                 {/*<!-- Nav Item -->*/}
-                <SideMenu title="Productos"/>
-                <SideMenu title="Lista de precios"/>
-                <SideMenu title="Lista de Customización"/>
+                <SideMenu title="Productos" link="http://localhost:3001/products/mod/"/>
+                <SideMenu title="Lista de precios"link="http://localhost:3001/products/price/"/>
+                <SideMenu title="Customización"/>
                 <SideMenu title="Métricas"/>
-                <SideMenu title="Permisos"/>
+                <SideMenu title="Permisos" link="http://localhost:3001/products/admin/"/>
+
+                
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>

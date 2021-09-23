@@ -1,0 +1,258 @@
+main{
+    margin: 0;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.main-list{
+    width: 80vw;
+    max-width: 1300px;
+    position: absolute;
+    left: 15vw;
+}
+
+
+.header-banner{
+    display: none;
+}
+
+main h2{
+    padding-top: 13vh;
+    width: 90vw;
+    margin: auto;
+    font-size: 27px;
+}
+
+table{
+    width: 90vw;
+    margin: auto;
+    padding-bottom: 10vh;
+    border-collapse: collapse;
+    margin-bottom: 5px;
+}
+
+.t-head{
+    margin: 10px 0px;
+    height: 50px;
+    border-bottom: solid 1px #F4E7DE;
+}
+
+.t-head .t-description{
+    width: 20%;
+}
+
+.t-item{
+    border-bottom: solid 1px #F4E7DE;
+}
+
+.t-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+    margin: 20px 0px;
+}
+
+table img{
+    width: 150px;
+    margin-right: 0px;
+}
+
+.cart-img{
+    margin: 0;
+    text-align: left;
+}
+
+.cart-title{
+    width: 100%;
+    margin: 0;
+}
+
+.cart-type{
+    width: 100%; 
+    margin: 0;
+    padding-top: 5px;
+    font-style: italic;
+    color: #51505d;
+    font-weight: lighter;
+}
+
+.t-description{
+    padding: 20px 0px 20px 20px;
+}
+
+.t-quantity{
+    width: 15%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.t-permission{
+    width: 15%;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+select{
+    text-align: center;
+    width: 100px;
+    height: 30px;
+}
+
+#longfield{
+    text-align: left;
+    width: 300px;
+    margin-left: 20px;
+}
+
+tfoot{
+    border-top: 2px solid #000;
+    text-align: bottom;
+}
+
+tfoot .t-quantity{
+    height: 70px;
+}
+
+tfoot .t-price{
+    height: 70px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cart-button{
+    height: 100px;
+}
+
+form{
+    height: 100px;
+}
+
+.cart-action{
+    width: 70vw;
+    margin: auto;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 3vh;
+}
+
+/* Estilo general de botones primarios y secundarios trasladados a style.css */
+.checkout-non{
+    border: solid 1px #51505D;
+    background-color: #fff;
+    padding: 10px;
+    color: #51505D;
+    width: 90%;
+    text-transform:uppercase;
+    margin: 10px 0px;
+}
+
+.checkout-non:hover{
+    border: solid 1px rgb(239, 239, 239);
+    background-color: rgb(239, 239, 239);
+}
+
+.checkout{
+border: none;
+    padding: 10px;
+    color: #f6f2ed;
+    background-color: #51505D;
+    width: 100%;
+    text-transform:uppercase;
+    margin: 10px 0px;
+}
+
+.checkout:hover{
+    background-color: #bb7f66;
+}
+
+
+.t-price{
+    width: 5%;
+    /* padding-right: 150px; */
+}
+
+td#button{
+    padding-top: 30px;
+    text-align: right;
+}
+
+/* --------------------------------- Media Querys --------------------------------- */
+
+/* *{
+    border:solid 1px black;
+} */
+
+@media (min-width: 700px) {
+
+        main h2{
+            width: 50vw;
+            padding-left: 20px
+        }
+
+        table{
+            width: 50vw;
+        }
+
+        .t-info{
+            flex-direction: row;
+        }
+
+        table img{
+            margin-right: 30px;
+            padding-left: 20px
+        }
+
+        .cart-type{
+            padding-top: 10px;
+        }
+
+        .t-quantity{
+            width: 10%;
+        }
+
+        input{
+            width: 100px;
+        }
+        
+        .t-price{
+            width: 5%;
+            padding-right: 20px;
+        }
+
+        .checkout-non{
+            width: 70%;
+        }
+
+        .checkout{
+            width: 70%;
+        }
+
+        .cart-shipping{
+            width: 70vw;
+            flex-wrap: nowrap;
+            margin-top: 5vh;
+        }
+
+        .cart-shipping h4{
+            width: 10vw;
+        }
+
+        .cart-shipping h5{
+            width: 10vw;
+        }
+
+        .cart-shipping-icon{
+            width: 80px;
+        }
+
+        .t-item:hover {
+            background-color:rgba(253, 245, 241,0.5);
+        }
+
+}

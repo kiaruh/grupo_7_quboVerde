@@ -3,6 +3,7 @@ const product = require("../models/productModel") //Product mayuscula
 const imgController = require('../models/imgModel')
 const path = require('path'); 
 const fs = require('fs');
+const User = require("../models/userModel") //testeando lista de admin
 
 // voy a comentar todas las cosas que cambie de este archivo para armarlo en DB, asi sabemos donde es el tema.
 // requerir el modelo
@@ -418,6 +419,19 @@ const productController = {
             throw e
         }
 
+    },
+
+    adminList: async function (req, res){
+        // esta funcion manda a la vista el listado de admins
+        try{
+
+            let listadoAdmins = await db.Price.findAll();
+
+            res.render("products/admin/admin_list",{listadoAdmins: listadoAdmins})
+
+        }catch(e){
+            throw e
+        }
     }
 }
 

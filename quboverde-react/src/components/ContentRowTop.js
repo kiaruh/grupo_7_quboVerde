@@ -1,7 +1,7 @@
 import React from 'react';
 import imagenFondo from '../assets/images/planta.jpg'
 import Card from './Card';
-import ListItem from './ListItem';
+import ContenedorHalf from './ContenedorHalf';
 
 function ContentRowTop(){
 
@@ -19,9 +19,9 @@ function ContentRowTop(){
 					{/*<!-- Content Row -->*/}
 					<div className="row">
 
-						<Card title="Total productos" total='20'/>
-						<Card title="Productos Pet Friendly " total='5'/>
-						<Card title="Productos Easymode" total='8'/>
+						<Card title="Total productos" total='15'/>
+						<Card title="Productos Pet Friendly " total='10'/>
+						<Card title="Productos Easymode" total='6'/>
 						
 					</div>
 					{/*<!-- End movies in Data Base -->*/}
@@ -49,21 +49,9 @@ function ContentRowTop(){
 						{/*<!-- End content row last movie in Data Base -->*/}
 
 						{/*<!-- Genres in DB -->*/}
-						<div className="col-lg-6 mb-4">						
-							<div className="card shadow mb-4">
-								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Listado de productos</h5>
-								</div>
-								<div className="card-body">
-									<div className="row">
-										<ListItem title="Potus"/>
-										<ListItem title="Cactus"/>
-										<ListItem title="Gomero"/>
+						<ContenedorHalf/>
 
-									</div>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 				{/*<!--End Content Row Top-->*/}

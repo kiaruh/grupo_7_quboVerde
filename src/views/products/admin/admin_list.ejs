@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/panel.css">
+    <link rel="stylesheet" href="/css/adminlist.css">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
+    <title>Quboverde Admin</title>
+</head>
+<body>
+    <%- include("../../includes/header_admin") %>
+    
+    <main id="modprod" class="register-main">
+        <%- include("../../includes/navAdmin") %> 
+
+            <section class="main-list">
+                <h2>Administrar permisos</h2>
+                <table>
+                    <thead class="t-head">
+                      <th scope="col" class="t-description"></th>
+                      <th scope="col" class="t-permission">Adminstrador (SI/NO)</th>
+                    </thead>
+                    <tbody class="t-body">
+                        
+                        <!-- table row (user example) -->
+                        <tr class="t-item">
+                            <td class="t-info">
+                                <figure class="cart-img">
+                                    <img src="/img/upload/avatar/avatar3.png" alt="">
+                                </figure>
+                                <article class="t-description">
+                                    <h3 class="cart-title">Margarita Quboverde</h3>
+                                    <h5 class="cart-type">mailderegistro@example.com</h5>
+                                </article>
+                            </td>
+
+                            <td class="t-permission">
+                                <select name="aModificar">
+                                    <option value="SI"> SI </option>
+                                    <option value="NO"> NO </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- end of table row (user example) -->
+    
+                        <tr class="t-item">
+                            <td class="t-info">
+                                <figure class="cart-img">
+                                    <img src="/img/upload/avatar/avatar1.png" alt="">
+                                </figure>
+                                <article class="t-description">
+                                    <h3 class="cart-title">Daisy Blosssom</h3>
+                                    <h5 class="cart-type">daisy@gmail.com</h5>
+                                </article>
+                            </td>
+
+                            <td class="t-permission">
+                                <select name="aModificar">
+                                    <option value="SI"> SI </option>
+                                    <option value="NO"> NO </option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr class="t-item">
+                            <td class="t-info">
+                                <figure class="cart-img">
+                                    <img src="/img/upload/avatar/avatar2.png" alt="">
+                                </figure>
+                                <article class="t-description">
+                                    <h3 class="cart-title">Cosme Fulanito</h3>
+                                    <h5 class="cart-type">soycosme@gmail.com</h5>
+                                </article>
+                            </td>
+
+                            <td class="t-permission">
+                                <select name="aModificar">
+                                    <option value="SI"> SI </option>
+                                    <option value="NO"> NO </option>
+                                </select>
+                            </td>
+                        </tr>
+    
+                    </tbody>
+                    
+                    <tfoot>
+                        <form class="register-registro admin lateral-big" action="/products/modprice?_method=PUT" method="POST">
+                            
+                            <td class="t-description"> Selecciona mail </td>
+                            <td class="t-permission"></td>
+                            
+                            <tr>
+                                <td>
+                                    <select id= "longfield" name="aModificar">
+                                        <option value="mail1"> mailderegistro@example.com </option>
+                                        <option value="mail1"> margarita@mail.com </option>
+                                        <option value="mail2"> admin@gmail.com </option>
+                                        
+                                    </select>
+                                </td>
+                                <td class="t-permission">
+                                    <select name="aModificar">
+                                        <option value="SI"> SI </option>
+                                        <option value="NO"> NO </option>
+                                    </select>
+                                </td>
+                                
+                            </tr>
+
+                            <td></td>
+                            <td id="button"><button class="checkout" type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button></td>
+                        </form>
+                    </tfoot>
+
+            </section>
+        
+
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>
