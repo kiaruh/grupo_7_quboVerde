@@ -11,7 +11,7 @@ module.exports = {
     "password": null,
     "database": "qv",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
   },
   "production": {
     "username": "root",

@@ -64,10 +64,10 @@
                     <br>
                     <select class="register-input1" name="especie">
                         <option value="" selected>Seleccioná de la lista</option>
-                        <option value="Philodendron">Philodendron</option>
-                        <option value="Dracaena">Dracaena</option>
-                        <option value="Calathea">Calathea</option>
-                        <option value="Ficus">Ficus</option>
+                        <option value="<%= especies[0].id %>" selected><%= especies[0].specie %></option>
+                        <% for (let i=1; i < especies.length; i++){ %>
+                        <option value="<%= especies[i].id %>"><%= especies[i].specie %></option>
+                        <% } %>
                     </select>
                     <span class="msg-specie"></span>
                 </div> 

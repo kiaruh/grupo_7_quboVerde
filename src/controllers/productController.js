@@ -49,8 +49,17 @@ const productController = {
         }  
     },
 
-    newprod: function(req,res){
-        res.render("products/admin/product_new"); // get new product
+    newprod: async function(req,res){
+
+        try {
+
+            let especies = await db.Specie.findAll();
+
+            res.render("products/admin/product_new",{especies: especies})
+
+        } catch(e){
+            throw e
+        }
     },
 
     modprod: function(req,res) {
@@ -59,18 +68,18 @@ const productController = {
 
     modall: async function (req,res) {
 
-        try {
+    try {
 
-            let listaProductos = await db.Product.findAll({
-                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
-            })
+        let listaP = await db.Product.findAll({
+            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+        })
 
-            res.render("products/admin/all_mod",{catalogo: listaProductos})
-
-        } catch(e){
-            throw e
-        }
+        res.render("products/admin/all_mod",{catalogo: listaP})
+        console.log(listaP)
         
+        }catch(e){
+            console.log(e);
+        }
     },
 
     addProd: async function(req, res){
@@ -87,9 +96,10 @@ const productController = {
         let newProductDif = Math.round((parseFloat(req.body.riego) + parseFloat(req.body.luz))/2);
 
         let newImg;
+        let especieId;
 
         if (req.body.img == ""){
-            req.body.img = "null.jpg"
+            req.body.img = "default.jpg"
         }
 
         if (req.body.descripcion == ""){
@@ -106,6 +116,12 @@ const productController = {
             req.body.aptomascotas = 1
         } else {
             req.body.aptomascotas = 0
+        }
+
+        if (req.body.especie == 0){
+            especieId = 1
+        } else {
+            especieId = req.body.especie;
         }
 
         /* 
@@ -135,7 +151,7 @@ const productController = {
         // creo el producto en la tabla de productos
         await db.Product.create({
             name: req.body.producto,
-            specie_id: req.body.especie,
+            specie_id: especieId,
             des: req.body.descripcion,
             irr: parseInt(req.body.riego),
             light: parseInt(req.body.luz),
@@ -237,8 +253,16 @@ const productController = {
         }
     }
     */
+        let newImg = "";
+        console.log("---------------------------------------------------------" + req.body.iA);
 
-        let newImg = req.file.filename;
+        if (req.file == undefined){
+            newImg = req.body.iA;
+        } else {
+            newImg = req.file.filename;
+        }
+        
+
         let imagenesAGuardar = [];
         imagenesAGuardar.push(newImg);
         let dbimage = JSON.stringify(imagenesAGuardar);
@@ -249,12 +273,14 @@ const productController = {
         {
         where: {id: setId}
         })
+        
 
         res.redirect("/products/mod");
 
         } catch(e){
             throw e
         }
+        
     },
 
     delProd: async function(req, res){
