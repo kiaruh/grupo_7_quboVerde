@@ -2,6 +2,7 @@ import React from 'react';
 import imagenFondo from '../assets/images/planta.jpg'
 import Card from './Card';
 import ContenedorHalf from './ContenedorHalf';
+import Users from './Users';
 
 function ContentRowTop(){
 
@@ -50,6 +51,7 @@ function ContentRowTop(){
 
 						{/*<!-- Genres in DB -->*/}
 						<ContenedorHalf/>
+						<Users/>
 
 						
 					</div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import Proptypes from 'prop-types';
 import ListItem from './ListItem';
+
 
 function ContenedorHalf(props){
     return (
@@ -22,6 +22,7 @@ function ContenedorHalf(props){
 					<ListItem title="Red Anthurium"/>
 					<ListItem title="Pilea"/>
 					<ListItem title="Gomero"/>
+
 
 				</div>
 			</div>
