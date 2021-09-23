@@ -38,9 +38,9 @@ async function userLoggedMiddleware(req,res,next){
 
 	} catch(e){
 		console.log("fallo userlogghedmiddleware")
-		console.log(userFromCookie)
-		console.log(emailInCookie)
-		console.log(pruebausers)
+		//console.log(userFromCookie)
+		//console.log(emailInCookie)
+		//console.log(pruebausers)
 		console.log(e)
 		
 	}

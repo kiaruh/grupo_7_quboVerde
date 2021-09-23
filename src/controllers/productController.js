@@ -253,7 +253,7 @@ const productController = {
         res.redirect("/products/mod");
 
         } catch(e){
-            throw error
+            throw e
         }
     },
 
