@@ -18,7 +18,6 @@ module.exports = function (sequelize, dataTypes){
     
             specie_id: {
               type: dataTypes.INTEGER,
-              default: 1
             },
     
             price_id: {
@@ -74,14 +73,14 @@ module.exports = function (sequelize, dataTypes){
     
         Product.belongsTo(models.Price, {
             as: "precios",
-            foreignKey: "price_id"
+            foreignKey: "id"
         })
     
     // este esta armado asi porque le quiero mandar un array dentro de un campo. No estoy seguro que sea la mejor idea, pero queda a revisar.
     
         Product.belongsTo(models.Image, {
             as: "imagenes",
-            foreignKey: "img_id", 
+            foreignKey: "id"
         })
     }
     

@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/panel.css">
-    <link rel="stylesheet" href="/css/edit.css">
+    <!-- <link rel="stylesheet" href="/css/edit.css"> -->
+    <link rel="stylesheet" href="/css/adminlist.css">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     
@@ -22,50 +23,49 @@
 
           <form class="register-registro admin lateral-big" action="/products/modprice?_method=PUT" method="POST">
             <table style="width:100%">
-                <tr>
+                <thead>
                 
                     <th># - nombre producto</th>
                     <th>precio de lista</th>
                     <th>% descuento</th>
                     <th></th>
                 
-            </tr>
+                </thead>
 
-            <% for (let i=0; i < precios.length; i++){ %>
-                <tr>
-                
-                    <td><%= precios[i].id %> - <%= precios[i].productos.name %></td>
-                    <td><%= precios[i].price %></td>
-                    <td><%= precios[i].discount %></td>
-                
-            </tr>
-            <% } %>
+                <tbody>
+                    <% for (let i=0; i < precios.length; i++){ %>
+                        <tr>
+                        
+                            <td><%= precios[i].id %> - <%= precios[i].productos.name %></td>
+                            <td><%= precios[i].price %></td>
+                            <td><%= precios[i].discount %></td>
+                        
+                    </tr>
+                    <% } %>
+                </tbody>
        
-        <tr>
-            <td>--------------</td>
-        </tr>
-        
-            <tr>
-                <th>modificar producto</th>
-                    <th>nuevo precio</th>
-                    <th>% descuento</th>
-                    
-            </tr>
-            <tr>
-                <td>
-                    <select name="aModificar">
-                        <% for (let i=0; i < precios.length; i++){ %>
-                        <option value="<%=precios[i].id%>"><%= precios[i].productos.name %></option>
-                        <% } %>
-                      </select>
-                </td>
-                <td><input type="number" name="precioNuevo"></td>
-                <td><input type="number" name="descuentoNuevo"></td>
-                <td><button type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button></td>
-                
-                   
-            </tr>
-        </table>
+                <tfoot>
+                    <tr>
+                        <th>modificar producto</th>
+                        <th>nuevo precio</th>
+                        <th>% descuento</th>
+                            
+                        <tr>
+                            <td>
+                                <select name="aModificar">
+                                    <% for (let i=0; i < precios.length; i++){ %>
+                                    <option value="<%=precios[i].id%>"><%= precios[i].productos.name %></option>
+                                    <% } %>
+                                </select>
+                            </td>
+                            <td><input type="number" name="precioNuevo"></td>
+                            <td><input type="number" name="descuentoNuevo"></td>
+                            <td><button type="submit" onclick="alert('Cambios guardados')"> Guardar cambios </button></td>
+                                
+                        </tr>
+                    </tr>
+                </tfoot>
+            </table>
         
         </form>
 

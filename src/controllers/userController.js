@@ -111,9 +111,21 @@ const usercontroller = {
 	
 	},
 
-	profile: (req,res) => {
+	profile: async function (req,res) {
 
-		res.render("users/profile" ,{users:User.findUserId(req.session.userLogged.id)})}, // get userprofile (temporal para que no se rompa la ruta)
+		try{
+
+			let users = await db.User.findByPk(req.session.userLogged.id)
+	
+			res.render("users/profile", {users:users})
+	
+			}catch(e){
+				throw e
+			}
+	
+	}
+		
+	, // get userprofile (temporal para que no se rompa la ruta)
 	//profilebyid: (req,res) => res.render("users/profile",{users:User.findUserId(req.params.id)}), // get userprofile por id
 	getProfile: async function(req,res) {
 		try{
@@ -191,7 +203,45 @@ const usercontroller = {
 		res.clearCookie('email')
 		req.session.destroy()
 		res.redirect('/')
-	}
+	},
+
+	adminList: async function (req, res){
+        // esta funcion manda a la vista el listado de admins
+        try{
+
+            let query = await db.User.findAll();
+
+            res.render("products/admin/admin_list",{query: query})
+			console.log(query)
+			console.log("---------------------------------------------------------------------------------------------------------------")
+
+        }catch(e){
+            throw e
+        }
+    },
+
+	adminSet: async function (req, res){
+        // esta funcion manda a la vista el listado de admins
+        try{
+			console.log(req.body.estadoModificar)
+
+            await db.User.update({
+				admin: req.body.estadoModificar
+			}, {
+				where: {id: req.body.aModificar}
+			});
+
+			let query = await db.User.findAll();
+
+			res.render("products/admin/admin_list",{query: query})
+
+        }catch(e){
+            throw e
+        }
+    }
+
+
+	
 
 
 	// queda pendiente crear la función que toma la imagen de perfil preexistente, else mostrar default

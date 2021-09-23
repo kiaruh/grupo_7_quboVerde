@@ -16,12 +16,15 @@
     <%- include("../includes/header", {prod: catalogo}) %> 
 
     <main class="main">
+   <% if (listado == true) { %> 
+      <h1>Catálogo de Productos</h1> 
+   <% } else { %>
     <% if(catalogo.length == 1) { %>
       <h1>Resultado de la búsqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultado</h1> 
    <% } else { %>
       <h1>Resultados de la búsqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultados</h1> 
-   <% } %>
-      
+   <% } %> 
+   <% } %>    
       <section class="prod-container">
         
             <% for (let i=0; i < catalogo.length; i++){ %>
@@ -36,7 +39,7 @@
                   <div class="prod-box">
                      <h3 class="prod-title"><%= catalogo[i].name %></h3>
                      <h4 class="prod-price">$ <%= parseFloat(catalogo[i].precios.price).toFixed(0) %></h4>
-                     <h5 class="prod-type"><%= catalogo[i].especies.species %></h5>
+                     <h5 class="prod-type"><%= catalogo[i].especies.specie %></h5>
 
                      <form class="prod-action" action="#">
                         <button class="add-cart">agregar</button>

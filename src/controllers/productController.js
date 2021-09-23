@@ -19,13 +19,11 @@ const productController = {
 
         try {
 
-        let listaProductos = await db.Product.findAll({
-            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
-        })
+            let query = await db.Product.findAll({
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
 
-        res.render("products/all",{catalogo:listaProductos})
-        
-        
+            res.render("products/searchresult",{catalogo: query, search: 1, listado: true})
         }catch(e){
             console.log(e);
         }
@@ -43,7 +41,6 @@ const productController = {
             })
 
             res.render("products/detail",{catalogo:detalleProducto})
-
         }catch(e){
             throw error;
         }  
@@ -254,7 +251,6 @@ const productController = {
     }
     */
         let newImg = "";
-        console.log("---------------------------------------------------------" + req.body.iA);
 
         if (req.file == undefined){
             newImg = req.body.iA;
@@ -330,7 +326,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: search})
+            res.render("products/searchresult",{catalogo: query, search: search, listado: false})
 
         } catch(e){
             throw e
@@ -346,7 +342,7 @@ const productController = {
             },
             include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
         })
-        res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas"})
+        res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas", listado: false})
 
         }catch(e){
             throw e;
@@ -355,7 +351,7 @@ const productController = {
 
     bestseller: function (req, res){
         // este todavia no lo arme, porque tiene mas logica armado desde el carrito.
-        let list = product.listByRelative("price", 1000);
+        let list = product.listByRelative("price", 1000, { include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]});
         res.render("products/searchresult",{catalogo: list, search: "Los más vendidos!"});
 
     },
@@ -373,7 +369,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)"})
+            res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)", listado: false})
 
         } catch(e){
             throw e

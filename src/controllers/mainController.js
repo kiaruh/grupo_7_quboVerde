@@ -17,9 +17,6 @@ const mainController = {
             }catch(e){
                 console.log(e);
             }
-        
-        
-        
 },
     // pet: (req,res) => res.render("home",{catalogo:product.petfriendly()}),
     // index: (req,res) => res.send(product.all()),
