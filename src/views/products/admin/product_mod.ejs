@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/panel.css">
-    <link rel="stylesheet" href="/css/edit.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/panel.css">
+        <link rel="stylesheet" href="/css/edit.css">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     
@@ -67,24 +68,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="register-perfilusuario">
-                <h5>Escala</h5>
-
-                <div class="checklist">
-                    <input type="radio" id="chico" name="escala" value="1" <% if(datos.scale == 1){  %> <%="checked"%> <%}%>>
-                    <label for="chico">Chico</label>
-                </div>
-
-                <div class="checklist">
-                    <input type="radio" id="mediano" name="escala" value="2" <% if(datos.scale == 2){  %> <%="checked"%> <%}%>>
-                    <label for="mediano">Mediano</label>
-                </div>
-
-                <div class="checklist">
-                    <input type="radio" id="grande" name="escala" value="3"  <% if(datos.scale == 3){  %> <%="checked"%> <%}%>>
-                    <label for="grande">Grande</label>
-                </div>
-            </fieldset>
+         
 
             <fieldset class="register-perfilusuario">
                 <h5>Riego</h5>
@@ -132,6 +116,25 @@
             </fieldset>
 
             <fieldset class="register-perfilusuario">
+                <h5>Escala</h5>
+
+                <div class="checklist">
+                    <input type="radio" id="chico" name="escala" value="1" <% if(datos.scale == 1){  %> <%="checked"%> <%}%>>
+                    <label for="chico">Chico</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="mediano" name="escala" value="2" <% if(datos.scale == 2){  %> <%="checked"%> <%}%>>
+                    <label for="mediano">Mediano</label>
+                </div>
+
+                <div class="checklist">
+                    <input type="radio" id="grande" name="escala" value="3"  <% if(datos.scale == 3){  %> <%="checked"%> <%}%>>
+                    <label for="grande">Grande</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="register-perfilusuario">
                 <h5>Dificultad de mantenimiento</h5>
                 <p>Calculado automaticamente en base a los valores riego/luz</p>
                
@@ -154,11 +157,12 @@
                     <label for="no">No</label>
                 </div>
             </fieldset>
-
+            
             <div class="botonx2">
                 <button class="cta-sq" type="submit" > Guardar cambios </button>
                 <button class="cta-sq" type="submit" formaction="/products/mod/del/<%= datos.id%>?_method=DELETE" > Eliminar producto </button>
                 <button class="cta-cancel" type="reset"> Borrar </button>
+
             </div>
         </form>
 

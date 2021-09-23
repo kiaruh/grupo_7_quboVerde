@@ -16,6 +16,9 @@
     <%- include("../includes/header", {prod: catalogo}) %> 
 
     <main class="main">
+   <% if (filtro == true) { %> 
+      <h1>Recomendados para vos: <br> <%=search %></h1>
+      <% } else {%>
    <% if (listado == true) { %> 
       <h1>Catálogo de Productos</h1> 
    <% } else { %>
@@ -25,6 +28,7 @@
       <h1>Resultados de la búsqueda: <br> <i> <%=search %></i>  / <%= catalogo.length%> resultados</h1> 
    <% } %> 
    <% } %>    
+   <% } %>   
       <section class="prod-container">
         
             <% for (let i=0; i < catalogo.length; i++){ %>

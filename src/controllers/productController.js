@@ -23,7 +23,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: 1, listado: true})
+            res.render("products/searchresult",{catalogo: query, search: 1, listado: true, filtro: false})
         }catch(e){
             console.log(e);
         }
@@ -326,7 +326,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: search, listado: false})
+            res.render("products/searchresult",{catalogo: query, search: search, listado: false, filtro: false})
 
         } catch(e){
             throw e
@@ -342,7 +342,7 @@ const productController = {
             },
             include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
         })
-        res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas", listado: false})
+        res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas", listado: false, filtro: false})
 
         }catch(e){
             throw e;
@@ -358,7 +358,7 @@ const productController = {
 
             let ofertas = query.filter(oferta => oferta.precios.discount > 0);
 
-            res.render("products/searchresult",{catalogo: ofertas, search: "Promociones!", listado: false})
+            res.render("products/searchresult",{catalogo: ofertas, search: "Promociones!", listado: false, filtro: false})
 
         } catch(e){
             throw e
@@ -379,7 +379,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)", listado: false})
+            res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)", listado: false, filtro: true})
 
         } catch(e){
             throw e
@@ -438,7 +438,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: "Plantas para poca experiencia", listado: false})
+            res.render("products/searchresult",{catalogo: query, search: "Plantas para poca experiencia", listado: false, filtro: true})
 
         } catch(e){
             throw e
@@ -457,7 +457,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: "Plantas para 'algo' de experiencia", listado: false})
+            res.render("products/searchresult",{catalogo: query, search: "Plantas para 'algo' de experiencia", listado: false, filtro: true})
 
         } catch(e){
             throw e
@@ -476,7 +476,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: "Plantas modo HARDMODE", listado: false})
+            res.render("products/searchresult",{catalogo: query, search: "Plantas HARDMODE, para los capos en esto!", listado: false, filtro: true})
 
         } catch(e){
             throw e
