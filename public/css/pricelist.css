@@ -1,8 +1,4 @@
 
-form .register-registro{
-    max-width: 550px;
-}
-
 main{
     margin: 0;
     padding-left: 30px;
@@ -48,6 +44,7 @@ table{
 
 .t-item{
     border-bottom: solid 1px #F4E7DE;
+    line-height: 35px;
 }
 
 .t-info{
@@ -82,8 +79,19 @@ table img{
     font-weight: lighter;
 }
 
-.t-description{
-    padding: 20px 0px 20px 20px;
+thead .t-description{
+    padding: 20px 0px 20px 0px;
+    text-transform: uppercase;
+    text-align: left;
+    width: 30%;
+    letter-spacing: 1px;
+}
+
+tfoot .t-description{
+    width: 15%;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .t-quantity{
@@ -95,7 +103,7 @@ table img{
 
 .t-permission{
     width: 15%;
-    text-align: right;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -107,10 +115,15 @@ select{
     height: 30px;
 }
 
+input{
+    text-align: center;
+    width: 140px;
+    height: 30px;
+}
+
 #longfield{
     text-align: left;
     width: 300px;
-    margin-left: 20px;
 }
 
 tfoot{
@@ -126,6 +139,22 @@ tfoot .t-price{
     height: 70px;
     font-size: 24px;
     font-weight: bold;
+}
+
+tfoot .t-description{
+    color: #828287;
+}
+
+tfoot td{
+    text-align: center;
+}
+
+td#long{
+    text-align: left;
+}
+
+tfoot th{
+    padding-top: 40px;
 }
 
 .cart-button{
@@ -187,6 +216,9 @@ td#button{
     text-align: right;
 }
 
+td.t-price{
+    text-align: center;
+}
 /* --------------------------------- Media Querys --------------------------------- */
 
 /* *{
@@ -202,6 +234,7 @@ td#button{
 
         table{
             width: 50vw;
+            min-width: 1000px;
         }
 
         .t-info{
@@ -220,14 +253,11 @@ td#button{
         .t-quantity{
             width: 10%;
         }
-
-        input{
-            width: 100px;
-        }
         
         .t-price{
             width: 5%;
             padding-right: 20px;
+            text-align: left;
         }
 
         .checkout-non{
@@ -235,7 +265,7 @@ td#button{
         }
 
         .checkout{
-            width: 70%;
+            width: 95%;
         }
 
         .cart-shipping{
@@ -259,5 +289,4 @@ td#button{
         .t-item:hover {
             background-color:rgba(253, 245, 241,0.5);
         }
-
 }
