@@ -1,13 +1,10 @@
 import React from 'react';
-import ListItem from './ListItem';
-// import ListItem from './ListItem';
 
 
+function Products(props){
 
-function Users(props){
 
-
-    const [usuario, usuarios] = React.useState([])
+    const [producto, productos] = React.useState([])
 
     React.useEffect(()=> {
         obtenerData()
@@ -16,10 +13,10 @@ function Users(props){
 
 
     const obtenerData = async() => {
-       const data = await fetch('http://localhost:3001/api/users')
+       const data = await fetch('http://localhost:3001/api/products')
        const datajson = await data.json()
        console.log(datajson);
-       usuarios(datajson.users)
+       productos(datajson.products)
     }
 
 
@@ -28,14 +25,14 @@ function Users(props){
 		<div className="col-lg-6 mb-4">						
 		<div className="card shadow mb-4">
 			<div className="card-header py-3">
-				<h5 className="m-0 font-weight-bold text-gray-800">Lista de Usuarios registrados</h5>
+				<h5 className="m-0 font-weight-bold text-gray-800">Plantas por dificultad</h5>
 			</div>
 			<div className="card-body">
 				<div className="row">
                     <ul>
                         {
-                            usuario.map(item=> (
-                                <li key={item.id}>User: {item.user} - Email:  {item.email}</li>
+                            producto.map(item=> (
+                                <li key={item.id}>Nombre: {item.name} - Dificultad: {item.diff}</li>
                             ))
                         }
                     </ul>
@@ -49,4 +46,4 @@ function Users(props){
 
 
 }
-export default Users
+export default Products

@@ -2,11 +2,43 @@ import React from 'react';
 import imagenFondo from '../assets/images/planta.jpg'
 import Card from './Card';
 import ContenedorHalf from './ContenedorHalf';
+import Products from './Products';
 import Users from './Users';
 
 function ContentRowTop(){
 
-	let data = []
+	const [producto, productos] = React.useState([])
+	const [producto2, productos2] = React.useState([])
+
+    React.useEffect(()=> {
+        obtenerData()
+        
+    },[])
+
+
+    const obtenerData = async() => {
+       const data = await fetch('http://localhost:3001/api/products')
+       const datajson = await data.json()
+       console.log(datajson);
+       productos(datajson.countByCategory)
+	   productos2(datajson.count)
+    }
+
+	const [usuario, usuarios] = React.useState([])
+
+    React.useEffect(()=> {
+        obtenerDato()
+        
+    },[])
+
+
+    const obtenerDato = async() => {
+       const data = await fetch('http://localhost:3001/api/users')
+       const datajson = await data.json()
+       console.log(datajson);
+       usuarios(datajson)
+    }
+
 
 
     return(
@@ -20,9 +52,12 @@ function ContentRowTop(){
 					{/*<!-- Content Row -->*/}
 					<div className="row">
 
-						<Card title="Total productos" total='15'/>
-						<Card title="Productos Pet Friendly " total='10'/>
-						<Card title="Productos Easymode" total='6'/>
+						<Card title="Total productos" total={producto2}/>
+						<Card title="Productos Pet Friendly " total={producto.petFriendly}/>
+						<Card title="Productos Easymode" total={producto.easymode}/>
+						<Card title="Usuarios totales" total={usuario.count}/>
+						<Card title="Ventas del mes" total="120"/>
+						<Card title="Saldo total" total="$180.000,-"/>
 						
 					</div>
 					{/*<!-- End movies in Data Base -->*/}
@@ -52,6 +87,7 @@ function ContentRowTop(){
 						{/*<!-- Genres in DB -->*/}
 						<ContenedorHalf/>
 						<Users/>
+						<Products/>
 
 						
 					</div>
