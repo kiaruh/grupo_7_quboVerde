@@ -3,7 +3,6 @@ const product = require("../models/productModel") //Product mayuscula
 const imgController = require('../models/imgModel')
 const path = require('path'); 
 const fs = require('fs');
-const User = require("../models/userModel") //testeando lista de admin
 
 // voy a comentar todas las cosas que cambie de este archivo para armarlo en DB, asi sabemos donde es el tema.
 // requerir el modelo
@@ -20,13 +19,11 @@ const productController = {
 
         try {
 
-        let listaProductos = await db.Product.findAll({
-            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
-        })
+            let query = await db.Product.findAll({
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
 
-        res.render("products/all",{catalogo:listaProductos})
-        
-        
+            res.render("products/searchresult",{catalogo: query, search: 1, listado: true, filtro: false})
         }catch(e){
             console.log(e);
         }
@@ -44,7 +41,6 @@ const productController = {
             })
 
             res.render("products/detail",{catalogo:detalleProducto})
-
         }catch(e){
             throw error;
         }  
@@ -255,7 +251,6 @@ const productController = {
     }
     */
         let newImg = "";
-        console.log("---------------------------------------------------------" + req.body.iA);
 
         if (req.file == undefined){
             newImg = req.body.iA;
@@ -331,7 +326,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: search})
+            res.render("products/searchresult",{catalogo: query, search: search, listado: false, filtro: false})
 
         } catch(e){
             throw e
@@ -347,17 +342,27 @@ const productController = {
             },
             include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
         })
-        res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas"})
+        res.render("products/searchresult",{catalogo: query, search: "Productos Aptos para Mascotas", listado: false, filtro: false})
 
         }catch(e){
             throw e;
         }  
     },
 
-    bestseller: function (req, res){
-        // este todavia no lo arme, porque tiene mas logica armado desde el carrito.
-        let list = product.listByRelative("price", 1000);
-        res.render("products/searchresult",{catalogo: list, search: "Los más vendidos!"});
+    bestseller: async function (req, res){
+      
+        try {
+            let query = await db.Product.findAll({
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            let ofertas = query.filter(oferta => oferta.precios.discount > 0);
+
+            res.render("products/searchresult",{catalogo: ofertas, search: "Promociones!", listado: false, filtro: false})
+
+        } catch(e){
+            throw e
+        }
 
     },
 
@@ -374,7 +379,7 @@ const productController = {
                 include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
             })
 
-            res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)"})
+            res.render("products/searchresult",{catalogo: query, search: "Plantas fáciles de mantener (easymode!)", listado: false, filtro: true})
 
         } catch(e){
             throw e
@@ -420,16 +425,60 @@ const productController = {
         }
 
     },
+    poca: async function (req, res){
 
-    adminList: async function (req, res){
-        // esta funcion manda a la vista el listado de admins
-        try{
+        const Op = db.Sequelize.Op;
+        // el easymode sigue siendo dificultades hasta dos (1 y 2 inclusive). Si queremos poner hasta 3 modificamos en OP.lte a 3.
 
-            let listadoAdmins = await db.Price.findAll();
+        try {
+            let query = await db.Product.findAll({
+                where: {
+                    diff: 3
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
 
-            res.render("products/admin/admin_list",{listadoAdmins: listadoAdmins})
+            res.render("products/searchresult",{catalogo: query, search: "Plantas para poca experiencia", listado: false, filtro: true})
 
-        }catch(e){
+        } catch(e){
+            throw e
+        }
+    },
+    algo: async function (req, res){
+
+        const Op = db.Sequelize.Op;
+        // el easymode sigue siendo dificultades hasta dos (1 y 2 inclusive). Si queremos poner hasta 3 modificamos en OP.lte a 3.
+
+        try {
+            let query = await db.Product.findAll({
+                where: {
+                    diff: 4,
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            res.render("products/searchresult",{catalogo: query, search: "Plantas para 'algo' de experiencia", listado: false, filtro: true})
+
+        } catch(e){
+            throw e
+        }
+    },
+    capo: async function (req, res){
+
+        const Op = db.Sequelize.Op;
+        // el easymode sigue siendo dificultades hasta dos (1 y 2 inclusive). Si queremos poner hasta 3 modificamos en OP.lte a 3.
+
+        try {
+            let query = await db.Product.findAll({
+                where: {
+                    diff: 5
+                },
+                include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+            })
+
+            res.render("products/searchresult",{catalogo: query, search: "Plantas HARDMODE, para los capos en esto!", listado: false, filtro: true})
+
+        } catch(e){
             throw e
         }
     }

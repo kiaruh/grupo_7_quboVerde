@@ -19,27 +19,30 @@
       <h1>Todos los productos</h1>
       <section class="prod-container">
         
-            <% for (let i=0; i < catalogo.length; i++){ %>
-               <article class="prod">
-                  <picture class="prod-img">
-                     <a href="/products/detail/<%= catalogo[i].id%>">
-                        <% let imagenes = JSON.parse(catalogo[i].imagenes.image) %>
-                        <img src="/img/upload/product/<%= imagenes[0] %>" alt="">
-                     </a>
-                  </picture>
-                  
-                  <div class="prod-box">
-                     <h3 class="prod-title"><%= catalogo[i].name %></h3>
-                     <h4 class="prod-price">$ <%= parseFloat(catalogo[i].precios.price).toFixed(0) %></h4>
-                     <h5 class="prod-type"><%= catalogo[i].especies.specie %></h5>
+         <% for (let i=0; i < catalogo.length; i++){ %>
+            <article class="prod">
+               <picture class="prod-img">
+                  <a href="/products/detail/<%= catalogo[i].id%>">
+                     <% let imagenes = [] %>
+                     <% if (catalogo[i].imagenes == undefined) { imagenes = ["default.jpg"]} else { imagenes = JSON.parse(catalogo[i].imagenes.image)} %>
+                     <img src="/img/upload/product/<%= imagenes[0] %>" alt="">
+                  </a>
+               </picture>
+               
+               <div class="prod-box">
+                  <h3 class="prod-title"><%= catalogo[i].name %></h3>
+                  <% if (catalogo[i].precios =! undefined){ %>
+                  <h4 class="prod-price">$ <%= parseFloat(catalogo[i].precios.price).toFixed(0) %></h4>
+                  <% } %>
+                  <h5 class="prod-type"><%= catalogo[i].especies.specie %></h5>
 
-                     <form class="prod-action" action="#">
-                        <button class="add-cart">agregar</button>
-                        <button class="fav"><img src="/img/fav.svg" alt=""></button>
-                     </form>
-                  </div>
-               </article>
-            <% } %>
+                  <form class="prod-action" action="#">
+                     <button class="add-cart">agregar</button>
+                     <button class="fav"><img src="/img/fav.svg" alt=""></button>
+                  </form>
+               </div>
+            </article>
+         <% } %>
          
   </section>
 

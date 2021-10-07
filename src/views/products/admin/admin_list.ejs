@@ -19,6 +19,8 @@
     
     <main id="modprod" class="register-main">
         <%- include("../../includes/navAdmin") %> 
+        <% console.log("------------------------------------------------------") %>
+        <% console.log(query) %>
 
             <section class="main-list">
                 <h2>Administrar permisos</h2>
@@ -28,87 +30,57 @@
                       <th scope="col" class="t-permission">Adminstrador (SI/NO)</th>
                     </thead>
                     <tbody class="t-body">
-                        
+                        <% for (let i=0; i < query.length; i++){ %>
                         <!-- table row (user example) -->
                         <tr class="t-item">
                             <td class="t-info">
                                 <figure class="cart-img">
-                                    <img src="/img/upload/avatar/avatar3.png" alt="">
+                                    <img src="/img/upload/avatar/<%= query[i].avatar %>" alt="">
                                 </figure>
                                 <article class="t-description">
-                                    <h3 class="cart-title">Margarita Quboverde</h3>
-                                    <h5 class="cart-type">mailderegistro@example.com</h5>
+                                    <h3 class="cart-title"><%=query[i].firstname + " " +query[i].lastname %></h3>
+                                    <h5 class="cart-type"><%=query[i].email %></h5>
                                 </article>
                             </td>
 
                             <td class="t-permission">
-                                <select name="aModificar">
-                                    <option value="SI"> SI </option>
-                                    <option value="NO"> NO </option>
-                                </select>
+                                    <% if (query[i].admin == 1) { %>
+                                    <h4>SI</h4>
+                                    <% } else { %>
+                                    <h4>NO</h4>
+                                    <% } %>
                             </td>
                         </tr>
                         <!-- end of table row (user example) -->
-    
-                        <tr class="t-item">
-                            <td class="t-info">
-                                <figure class="cart-img">
-                                    <img src="/img/upload/avatar/avatar1.png" alt="">
-                                </figure>
-                                <article class="t-description">
-                                    <h3 class="cart-title">Daisy Blosssom</h3>
-                                    <h5 class="cart-type">daisy@gmail.com</h5>
-                                </article>
-                            </td>
-
-                            <td class="t-permission">
-                                <select name="aModificar">
-                                    <option value="SI"> SI </option>
-                                    <option value="NO"> NO </option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr class="t-item">
-                            <td class="t-info">
-                                <figure class="cart-img">
-                                    <img src="/img/upload/avatar/avatar2.png" alt="">
-                                </figure>
-                                <article class="t-description">
-                                    <h3 class="cart-title">Cosme Fulanito</h3>
-                                    <h5 class="cart-type">soycosme@gmail.com</h5>
-                                </article>
-                            </td>
-
-                            <td class="t-permission">
-                                <select name="aModificar">
-                                    <option value="SI"> SI </option>
-                                    <option value="NO"> NO </option>
-                                </select>
-                            </td>
-                        </tr>
+                        <% } %>
     
                     </tbody>
                     
                     <tfoot>
-                        <form class="register-registro admin lateral-big" action="/products/modprice?_method=PUT" method="POST">
+                        <form class="register-registro admin lateral-big" action="/users/admin?_method=PUT" method="POST">
                             
-                            <td class="t-description"> Selecciona mail </td>
+                            <td class="t-description"> Selecciona mail - usuario </td>
                             <td class="t-permission"></td>
                             
                             <tr>
                                 <td>
                                     <select id= "longfield" name="aModificar">
-                                        <option value="mail1"> mailderegistro@example.com </option>
-                                        <option value="mail1"> margarita@mail.com </option>
-                                        <option value="mail2"> admin@gmail.com </option>
-                                        
+                                        <% for (let i=0; i < query.length; i++){ %>
+                                        <option value="<%= query[i].id %>">  
+                                            <% if (query[i].admin == 1) { %> 
+                                                (admin) - 
+                                            <%= query[i].email %> - <%= query[i].user %> 
+                                            <% } else { %>
+                                                <%= query[i].email %> - <%= query[i].user %> 
+                                                <% } %>
+                                        </option>
+                                        <% } %>
                                     </select>
                                 </td>
                                 <td class="t-permission">
-                                    <select name="aModificar">
-                                        <option value="SI"> SI </option>
-                                        <option value="NO"> NO </option>
+                                    <select name="estadoModificar">
+                                        <option value="1"> SI </option>
+                                        <option value="0"> NO </option>
                                     </select>
                                 </td>
                                 
@@ -120,9 +92,11 @@
                     </tfoot>
 
             </section>
+            <% console.log("---------------------------------------------------------------------------------------------------------------") %>
         
 
     </main>
+    
     <script src="/js/script.js"></script>
 </body>
 </html>

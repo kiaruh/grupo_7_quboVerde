@@ -64,8 +64,10 @@ main h1{
 /* menu para version movil oculto */
 
 .navbar-menu{
-    display: none; 
-    position: absolute;
+    /* display: none; */
+    display: flex;
+    flex-wrap: nowrap;
+    /* position: absolute; */
     top: 40px; /* antes estaba en 0px  y le puse left 0*/
     width: 180px;
     height: 100vh;

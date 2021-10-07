@@ -11,12 +11,17 @@
 
         <!-- barra de navegacion-->
         <article class="navbar-menu" id="IDburgerMenu">
+            <li><a href="/products/all">Todas las plantas</a></li>
+            <li><a href="/products/bestseller">Promociones</a></li>
+            <li><a href="/products/easymode">Para principiantes</a></li>
+            <li><a href="/products/pet">Pet Friendly</a></li>
         
 <% if (locals.userLogged) { %> 
     <% if (locals.userLogged.admin) { %>
-        <li> <a href="/admin/panel">Administrar</a></li>
+        <li><a href="/admin/panel">Administrar</a></li>
     <% } %>
 <% } %>    
+
           
         
         </article>

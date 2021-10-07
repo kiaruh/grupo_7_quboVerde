@@ -52,12 +52,15 @@ function ContentRowTop(){
 					{/*<!-- Content Row -->*/}
 					<div className="row">
 
-						<Card title="Total productos" total={producto2}/>
-						<Card title="Productos Pet Friendly " total={producto.petFriendly}/>
-						<Card title="Productos Easymode" total={producto.easymode}/>
-						<Card title="Usuarios totales" total={usuario.count}/>
-						<Card title="Ventas del mes" total="120"/>
-						<Card title="Saldo total" total="$180.000,-"/>
+					<Card title="Total productos" total={producto2}/>
+					<Card title="Productos Pet Friendly " total={producto.petFriendly}/>
+					<Card title="Productos Easymode" total={producto.easymode}/>
+					<Card title="Productos poca" total={producto.poca}/>
+					<Card title="Productos algo" total={producto.algo}/>
+					<Card title="Productos capo" total={producto.capo}/>
+					<Card title="Usuarios totales" total={usuario.count}/>
+					<Card title="Ventas del mes" total="120"/>
+					<Card title="Saldo total" total="$180.000,-"/>
 						
 					</div>
 					{/*<!-- End movies in Data Base -->*/}

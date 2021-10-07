@@ -37,7 +37,7 @@ router.get("/login",guestMiddleware, controller.login)
 router.post("/login", controller.loginProcess)
 
 // rutas para perfil de usuario
-router.get("/profile/:username",authMiddleware, controller.profile);
+// router.get("/profile/:username",authMiddleware, controller.profile);
 router.get("/profile/",authMiddleware, controller.profile);
 
 // rutas para modificar perfil de usuario
@@ -48,5 +48,9 @@ router.delete("/delete/:id", controller.delUser);
 
 // Logout
 router.get('/logout/', controller.logout);
+
+// rutas para modificar lista de admins
+router.get("/admin", controller.adminList);
+router.put("/admin", controller.adminSet);
 
 module.exports = router

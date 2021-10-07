@@ -6,14 +6,13 @@ const cookies = require('cookie-parser');
 const bodyParser = require('body-parser')
 
 const app = express();
-const cors = require('cors')
-
-
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 
 const { send } = require('process');
+
+const cors = require('cors')
 
 //session
 app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
@@ -23,8 +22,10 @@ app.use(session({secret: "quboverde",resave: false,saveUninitialized: false}))
 app.use(cookies())
 app.use(express.urlencoded({ extended: false }))
 app.use(userLoggedMiddleware)
-//CORS
-app.use(cors())
+
+//CORS 
+app.use(cors());
+
 
 
 // micro-middleware para enviar los datos de productos al formulario de busqueda en todas las vistas
@@ -36,7 +37,7 @@ let dataSearch = async function(req, res, next) {
     try {
     let data = await db.Product.findAll(
         {
-            include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
+         include: [{association: 'precios'}, {association: 'especies'}, {association: 'imagenes'}]
         });
     res.locals.produ = data;
     next();
@@ -86,5 +87,4 @@ app.use('/admin',rutasAdmin);
 // API 
 const rutasApi = require('./routes/api');
 app.use('/api',rutasApi);
-
 

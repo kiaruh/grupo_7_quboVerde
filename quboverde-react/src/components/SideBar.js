@@ -35,7 +35,7 @@ function SideBar(){
                 <SideMenu title="Lista de precios"link="http://localhost:3001/products/price/"/>
                 <SideMenu title="Customización"/>
                 <SideMenu title="Métricas"/>
-                <SideMenu title="Permisos" link="http://localhost:3001/products/admin/"/>
+                <SideMenu title="Permisos" link="http://localhost:3001/users/admin/"/>
 
                 
 

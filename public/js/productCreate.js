@@ -8,11 +8,7 @@ window.addEventListener('load',function(){
 
 
     form.addEventListener('submit', (e)=>{
-<<<<<<< HEAD
-      //  e.preventDefault()
-=======
        // e.preventDefault()
->>>>>>> 23c664c3879b849272abac6fec1ae71eba5929ae
         if(isEmpty(product,msgproduct)){
             if(isEmpty(price,msgprice)){
                 if(isEmpty(picture,msgpicture)){

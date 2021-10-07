@@ -53,9 +53,9 @@ router.get("/pet", controller.pet);
 router.get("/bestseller", controller.bestseller);
 router.get("/easymode", controller.easymode);
 
-// rutas para modificar lista de admins
-router.get("/admin", controller.adminList);
-// router.put("/admin", controller.adminSet);
+router.get("/poca", controller.poca);
+router.get("/algo", controller.algo);
+router.get("/capo", controller.capo);
 
 
 module.exports = router;
